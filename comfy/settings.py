@@ -32,7 +32,6 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'products.apps.ProductsConfig',
-    'filter.apps.FilterConfig',
     'search.apps.SearchConfig',
     'django.contrib.admin',
     'django.contrib.auth',
