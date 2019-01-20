@@ -92,8 +92,6 @@
     <div class="col-sm-4">
       <div class="card" style="width: auto; border: none; align-items: center">
         <div class="card-title text-center"><h4>Step two</h4></div>
-        {% if listing %}
-        {% for Product_Clothes in listing %}
         <img src="{% static 'lolz-final1.png' %}" class="card-img-top" alt="..." >
         <div class="card-body text-center">
           <p class="card-text">Copy sizes to our filter and find similar clothes:</p>
@@ -104,8 +102,7 @@
         </div>
       </div>
     </div>
-    {% endfor %}
-    {% endif %}
+
     <div class="col-sm-4">
       <div class="card" style="width: auto; border: none; align-items: center">
         <div class="card-title text-center"><h4>Step three</h4></div>
