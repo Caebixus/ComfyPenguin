@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+{% load static %}
+{% block content %}
+
+{% if error %}
+{{error}}
+{% endif %}
+
+<br>
+
+<title>Profile</title>
+
+<div class="container py-3">
+  <h1>Můj profil</h1>
+  <br>
+  <p>Email: {{ user.email }}</p>
+  <p>Jméno: {{ user.first_name }}</p>
+  <p>Příjmení: {{ user.last_name }}</p>
+</div>
+
+{% endblock %}

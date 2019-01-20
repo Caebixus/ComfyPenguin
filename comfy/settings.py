@@ -31,7 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'products.apps.ProductsConfig',
+    'accounts.apps.AccountsConfig',
+    'clothes.apps.ClothesConfig',
     'search.apps.SearchConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_filters',
+    'bootstrapform'
 ]
 
 MIDDLEWARE = [
@@ -65,6 +68,11 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+
+            'libraries':{
+            'filter_pagination_tag': 'search.templatetags.filter_pagination_tag',
+
+            }
         },
     },
 ]
@@ -78,7 +86,7 @@ WSGI_APPLICATION = 'comfy.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'comfypenguindb',
+        'NAME': 'comfypenguinnewdb',
         'USER': 'postgres',
         'PASSWORD': 'necumkurva',
         'HOST': 'localhost',
@@ -130,3 +138,6 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
