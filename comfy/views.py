@@ -3,7 +3,7 @@ from clothes.models import Product_Clothes
 from comfy.choices import GENDER_CHOICES, CATEGORY_CHOICES
 
 def homepage(request):
-    listing = Product_Clothes.objects.filter(id__iexact='18')[:1]
+    listing = Product_Clothes.objects.all()
     my_total = Product_Clothes.objects.count()
 
     context = {
