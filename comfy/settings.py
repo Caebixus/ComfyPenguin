@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_filters',
-    'bootstrapform'
+    'bootstrapform',
 ]
 
 MIDDLEWARE = [
@@ -133,7 +133,6 @@ USE_TZ = True
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'comfy/static/')
-
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
