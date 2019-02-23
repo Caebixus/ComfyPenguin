@@ -45,11 +45,44 @@
 </head>
 {% block content %}
 {% endblock %}
-
-<div class="footer pt-4 my-md-5 pt-md-5" id="footer">
-  <hr>
-  <div class="container">
-    <p>&copy; 2019 Comfy-penguin.com</p>
+<br>
+<div class="footer bg-dark" id="footer" style="padding-top: 2rem">
+  <div class="container text-light">
+    <div class="row">
+      <div class="col-md-6">
+        <span class="copyright">Copyright &copy; 2019 Comfy-penguin.com</span>
+      </div>
+      <div class="col-md-6">
+        <span class="copyright">Social networks</span>
+        <ul class="list-inline social-buttons">
+          <li hidden class="list-inline-item">
+            <a href="">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li class="list-inline-item" style="padding-top: 4px">
+            <a href="https://www.facebook.com/Comfy-penguin-2176026249317885/">
+              <img src="{% static 'facebook-logo-white.png' %}" width="30" height="30" alt="facebook icon">
+            </a>
+          </li>
+          <li hidden class="list-inline-item">
+            <a href="#">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div hidden class="col-md-4">
+        <ul class="list-inline quicklinks">
+          <li class="list-inline-item">
+            <a href="#">Ochrana osobních údajů</a>
+          </li>
+          <li hidden class="list-inline-item">
+            <a href="#">Terms of Use</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
 
