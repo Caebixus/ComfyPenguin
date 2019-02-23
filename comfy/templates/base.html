@@ -5,11 +5,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Comfy-penguin helps you find fashion with right size. Just take your favorite sweatshirt, shirt or hoodie and copy parameters to our filter!">
-  <meta name="keywords" content="amazon fashion, amazon fashion size, fashion size, clothes size, sweatshirt size, shirt size, hoodies size, fashion measurement, clothes measurement">
+  <meta name="keywords" content="amazon fashion, amazon fashion size, aliexpress fashion, fashion size, clothes size, sweatshirt size, shirt size, hoodies size, fashion measurement, clothes measurement">
   <meta name="author" content="Comfy-penguin.com">
   <meta name="fo-verify" content="9cd43a88-8fc9-4bbc-a4b2-b41e2161ae56">
-  <link rel="icon" href="../../../../favicon.ico" src="{% static 'Logo ComfyPenguin alone.jpg' %}">
-  <title>Comfy-penguin</title>
+  <link rel="icon" href="{% static 'Comfyfav.png' %}" sizes="32x32" type="image/png">
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -36,8 +35,8 @@
           <input type="hidden" />
         </form>
         {% else %}
-        <a class="nav-item nav-link" href="{% url 'interesting-facts' %}"><ins>Interesting facts</ins></a>
-        <a class="nav-item nav-link" href="{% url 'filter' %}"><ins>Search</ins></a>
+        <a class="nav-item nav-link" href="{% url 'interesting-facts' %}" style="color: black">Interesting facts</a>
+        <a class="nav-item nav-link" href="{% url 'filter' %}" style="color: black">Search</a>
         <a hidden class="nav-item nav-link" href="{% url 'signup' %}">Sign up</a>
         <a hidden class="nav-item nav-link" href="{% url 'login' %}">Sign in</a>
         {% endif %}
