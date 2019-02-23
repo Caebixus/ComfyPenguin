@@ -9,7 +9,7 @@
     <h1 class="display-6" style="color:white; text-align: center">of your favorite clothes</h1>
     <br>
     <br>
-    <a class="btn btn-primary btn-lg" href="#how" role="button" id="filter">Show me how</a>
+    <a class="btn btn-dark btn-lg" href="#how" role="button" id="filter">Show me how</a>
   </div>
 </main>
 
@@ -64,9 +64,9 @@
   <div class="row featurette">
       <div class="col-md-7">
         <h2 class="featurette-heading">Step One. <span class="text-muted">Get measurements of favorite clothing!</span></h2>
-        <p class="lead">Choose your favorite, most comfy clothing you want to buy and get parameters to find new one. You can use smartphone measure apps to get your sizes.</p>
+        <p>Choose your favorite, most comfy clothing you want to buy and get parameters to find new one. You can use smartphone measure apps to get your sizes.</p>
         <div class="odkazy" style="text-align: center; padding-top: 4rem">
-          <p style="font-size:160%;"><a href="https://play.google.com/store/apps/details?id=com.google.tango.measure&hl=cs" class="card-text text-center">Android</a></p>
+          <p style="font-size:160%; padding-bottom:1rem"><a href="https://play.google.com/store/apps/details?id=com.google.tango.measure&hl=cs" class="card-text text-center">Android</a></p>
           <p style="font-size:160%;"><a href="https://itunes.apple.com/us/app/measure/id1383426740?mt=8" class="card-text text-center">iOS</a></p>
         </div>
       </div>
@@ -80,12 +80,12 @@
     <div class="row featurette">
       <div class="col-md-7 order-md-2">
         <h2 class="featurette-heading">Step Two. <span class="text-muted">Copy your measurements and search!</span></h2>
-        <p class="lead">Copy sizes to our filter and start searching with hundreds of products from popular fashion stores and brands.</p>
-        <p class="lead">I found pretty nice jumper on left. I wanted longer height so more than 67cm is fine for me:</p>
-        <div class="míry">
-          <p class="card-text text-center" style="font-size:160%;">Jumper parameters:</p>
-          <p class="card-text text-center" style="font-size:160%;">Width = 49 cm</p>
-          <p class="card-text text-center" style="font-size:160%;">Height = 69 cm</p>
+        <p>Copy sizes to our filter and start searching with hundreds of products from popular fashion stores and brands.</p>
+        <p>I found pretty nice jumper on left. I wanted longer height so more than 67cm is fine for me:</p>
+        <div class="míry" style="padding-top: 2rem">
+          <p class="card-text text-center" style="font-size:120%;">Jumper parameters:</p>
+          <p class="card-text text-center" style="font-size:120%;">Width = 49 cm</p>
+          <p class="card-text text-center" style="font-size:120%;">Height = 69 cm</p>
         </div>
       </div>
       <div class="col-md-5 order-md-1">
@@ -98,9 +98,9 @@
     <div class="row featurette">
       <div class="col-md-7">
         <h2 class="featurette-heading">Step Three. <span class="text-muted">Checkmate.</span></h2>
-        <p class="lead">After few days I get my ordered jumper. At first I needed to wear it for a little, because it need t stretch, but after a while parameters are exactly as I ordered by!</p>
+        <p>After few days I get my ordered jumper. At first I needed to wear it for a little, because it need t stretch, but after a while parameters are exactly as I ordered by!</p>
         <div class="tlačítko" style="text-align: center; padding-top: 3rem;">
-          <a class="btn btn-dark" href="#filter" style="width: 13rem">Start searching</a>
+          <a class="btn btn-dark" href="{% url 'filter' %}" style="width: 13rem">Start searching</a>
         </div>
       </div>
       <div class="col-md-5">

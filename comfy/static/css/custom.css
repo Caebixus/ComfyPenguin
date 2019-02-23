@@ -9,3 +9,26 @@
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   filter: grayscale(100%);
 }
+
+p {
+  color: #7a7c7f;
+  font-size: 20px;
+  font-family: 'Didact Gothic';
+}
+
+h1 {
+  font-family: 'Didact Gothic';
+}
+
+h2 {
+  font-family: 'Didact Gothic';
+}
+
+a {
+  color: #c64119;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #993213;
+}

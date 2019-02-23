@@ -54,3 +54,6 @@ def search(request):
         'values': request.GET,
     }
     return render(request, 'search.html', context)
+
+def sitemap(request):
+    return render(request, 'sitemap.xml')
