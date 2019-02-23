@@ -22,6 +22,8 @@ class Product_Clothes(models.Model):
 
     item_asin = models.CharField(max_length=40, null = True)
 
+    item_size = models.CharField(max_length=4, null = True)
+
     item_price = models.DecimalField(help_text='Price of product even with decimals', max_digits=10, decimal_places=2, null = True)
 
     CURRENCY_CHOICES = (
@@ -36,9 +38,9 @@ class Product_Clothes(models.Model):
 
     item_url = models.URLField(help_text='To add size to link on Amazon - use Short links', max_length=150, null = True)
 
-    image_main = models.ImageField(max_length=200, upload_to='images/', null = True)
-    image_secondary = models.ImageField(max_length=200, upload_to='images/', null = True, blank = True)
-    image_third = models.ImageField(max_length=200, upload_to='images/', null = True, blank = True)
+    image_main = models.ImageField(help_text='600 x 900', max_length=200, upload_to='images/', null = True)
+    image_secondary = models.ImageField(help_text='600 x 900', max_length=200, upload_to='images/', null = True, blank = True)
+    image_third = models.ImageField(help_text='600 x 900', max_length=200, upload_to='images/', null = True, blank = True)
 
     upload_date = models.DateTimeField(default=datetime.now, null = True)
 

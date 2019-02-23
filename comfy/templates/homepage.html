@@ -2,13 +2,14 @@
 {% load bootstrap %}
 {% load static %}
 {% block content %}
+<link rel="canonical" href="https://www.comfy-penguin.com/" />
 <main role="main" style="text-align: center">
-  <div class="container-fluid" style="background-image: url('static/lolhomepage.jpg'); position: relative; background-repeat: no-repeat; width:auto;; height:25rem; background-size: cover">
-    <h1 class="display-6" style="color:white; padding-top: 3rem; text-align: center">Find comfy fashion on Amazon that fits</h1>
-    <p class="lead" style="color:white; text-align: center">with size of favorite clothes</p>
+  <div class="container-fluid" style="background-image: url('static/lolhomepage.jpg'); position: relative; background-repeat: no-repeat; width:auto;; height:45rem; background-size: cover">
+    <h1 class="display-6" style="color:white; padding-top: 12rem; text-align: center">Find new fashion with size</h1>
+    <h1 class="display-6" style="color:white; text-align: center">of your favorite clothes</h1>
     <br>
     <br>
-    <a class="btn btn-light btn-lg" href="#how" role="button">Show me how</a>
+    <a class="btn btn-primary btn-lg" href="#how" role="button" id="filter">Show me how</a>
   </div>
 </main>
 
@@ -54,92 +55,88 @@
 </div>
 <br>
 <br>
-<hr>
+<hr width="75%">
 
 <div class="container py-3" id="how">
   <h2 class="card-text" style="text-align: center">How it works</h2>
   <br>
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="card" style="width: auto; border: none">
-        <div class="card-title text-center"><h4>Step one</h4></div>
-        <img src="{% static 'pokus2.jpg' %}" class="card-img-top" id="my_image1" alt="..." data-toggle="modal" data-target=".bd-example-modal-lg">
-
-        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <div class="modal-content">
-              <img src="{% static 'pokus2.jpg' %}" id="my_image1" alt="Stara mikina" style="width: 900px; height: 900px">
-            </div>
-          </div>
+  <br>
+  <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Step One. <span class="text-muted">Get measurements of favorite clothing!</span></h2>
+        <p class="lead">Choose your favorite, most comfy clothing you want to buy and get parameters to find new one. You can use smartphone measure apps to get your sizes.</p>
+        <div class="odkazy" style="text-align: center; padding-top: 4rem">
+          <p style="font-size:160%;"><a href="https://play.google.com/store/apps/details?id=com.google.tango.measure&hl=cs" class="card-text text-center">Android</a></p>
+          <p style="font-size:160%;"><a href="https://itunes.apple.com/us/app/measure/id1383426740?mt=8" class="card-text text-center">iOS</a></p>
         </div>
-
-
-        <div class="card-body text-center">
-          <p class="card-text">Use smartphone measure apps to get your sizes:</p>
-        </div>
-        <div class="card-body" style="text-align: center">
-          <p><a href="https://play.google.com/store/apps/details?id=com.google.tango.measure&hl=cs" class="card-text text-center">Android</a></p>
-          <p><a href="https://itunes.apple.com/us/app/measure/id1383426740?mt=8" class="card-text text-center">iOS</a></p>
-        </div>
+      </div>
+      <div class="col-md-5">
+        <img src="{% static 'pokus2.jpg' %}" class="card-img-top" id="my_image1" alt="Old hoodie width" data-toggle="modal" data-target=".bd-example-modal-lg">
       </div>
     </div>
 
-    <div class="col-sm-4">
-      <div class="card" style="width: auto; border: none; align-items: center">
-        <div class="card-title text-center"><h4>Step two</h4></div>
-        <img src="{% static 'lolz-final1.png' %}" class="card-img-top" alt="..." >
-        <div class="card-body text-center">
-          <p class="card-text">Copy sizes to our filter and find similar clothes:</p>
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">Step Two. <span class="text-muted">Copy your measurements and search!</span></h2>
+        <p class="lead">Copy sizes to our filter and start searching with hundreds of products from popular fashion stores and brands.</p>
+        <p class="lead">I found pretty nice jumper on left. I wanted longer height so more than 67cm is fine for me:</p>
+        <div class="míry">
+          <p class="card-text text-center" style="font-size:160%;">Jumper parameters:</p>
+          <p class="card-text text-center" style="font-size:160%;">Width = 49 cm</p>
+          <p class="card-text text-center" style="font-size:160%;">Height = 69 cm</p>
         </div>
-        <div class="card-body">
-          <p class="card-text text-center">Width = 50 cm</p>
-          <p class="card-text text-center">Height = 69 cm</p>
-        </div>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img src="{% static 'lolz-final1.png' %}" class="card-img-top" id="my_image1" alt="Old hoodie width" data-toggle="modal" data-target=".bd-example-modal-lg">
       </div>
     </div>
 
-    <div class="col-sm-4">
-      <div class="card" style="width: auto; border: none; align-items: center">
-        <div class="card-title text-center"><h4>Step three</h4></div>
-        <img class="card-img-top" src="{% static 'pokus1.jpg' %}" id="myIMG" alt="..." data-toggle="modal" data-target=".bd-example-modal-lg">
+    <hr class="featurette-divider">
 
-        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <div class="modal-content">
-              <img src="{% static 'pokus1.jpg' %}" id="myIMG" alt="..." style="width: 900px; height: 900px">
-            </div>
-          </div>
-        </div>
-
-
-        <div class="card-body text-center">
-          <p class="card-text">And this is what I've got with my parameters:</p>
-        </div>
-        <div class="card-body">
-          <p class="card-text text-center">Width = 49 cm</p>
-          <p class="card-text text-center">Height = 69 cm</p>
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Step Three. <span class="text-muted">Checkmate.</span></h2>
+        <p class="lead">After few days I get my ordered jumper. At first I needed to wear it for a little, because it need t stretch, but after a while parameters are exactly as I ordered by!</p>
+        <div class="tlačítko" style="text-align: center; padding-top: 3rem;">
+          <a class="btn btn-dark" href="#filter" style="width: 13rem">Start searching</a>
         </div>
       </div>
+      <div class="col-md-5">
+        <img src="{% static 'pokus1.jpg' %}" class="card-img-top" id="my_image1" alt="Old hoodie width" data-toggle="modal" data-target=".bd-example-modal-lg">
+      </div>
     </div>
-  </div>
+
+
+
 </div>
 <br>
 <br>
-<hr>
+<hr width="75%">
 <div class="container py-3" id="quantity" style="text-align: center">
-  <h3 class="card-text" style="text-align: center">How many clothes did we process from Amazon?</h3>
+  <h2 class="card-text" style="text-align: center">How many clothes did we process?</h2>
   <br>
   {% for Product_Clothes in listing %}
   <button class="btn btn-dark" style="width: 6rem"><strong>{{ my_total }}</strong></button>
   {% endfor %}
 </div>
-
+<br>
+<br>
+<hr width="75%">
+<div class="container py-3" style="text-align: center">
+  <h2 class="card-text" style="text-align: center">Brands</h2>
+  <p>We are cooperating with biggest brands and new ones are comming!</p>
+  <br>
+  <div class="row" style="text-align: center">
+    <div class="col">
+      <img id="brandlogo" src="{% static 'alilogo.jpg' %}" alt="Aliexpress logo" class="img-thumbnail" style="border: none; width: 10rem">
+    </div>
+    <div class="col">
+      <img id="brandlogo" src="{% static 'amalogo.jpg' %}" alt="Amazon logo" class="img-thumbnail" style="border: none; width: 10rem">
+    </div>
+  </div>
+</div>
 <br>
 <br>
 <br>

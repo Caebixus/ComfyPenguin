@@ -51,3 +51,12 @@ def searchpage(request):
         'paginationing': paginationing,
     }
     return render(request, 'search.html', context)
+
+def filter(request):
+
+    context = {
+        'CATEGORY_CHOICES': CATEGORY_CHOICES,
+        'GENDER_CHOICES': GENDER_CHOICES,
+    }
+
+    return render(request, 'filter.html', context)
