@@ -16,6 +16,11 @@ p {
   font-family: 'Didact Gothic';
 }
 
+#paragraphSearchProduct {
+  line-height: 12px;   /* within paragraph */
+  margin-bottom: 12px; /* between paragraphs */
+}
+
 h1 {
   font-family: 'Didact Gothic';
 }
