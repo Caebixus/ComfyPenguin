@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
 {% load bootstrap %}
 {% load filter_pagination_tag %}
 {% block content %}
@@ -82,13 +81,13 @@
         <div id="carouselExampleInterval" class="carousel slide" data-interval="false" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active" data-interval="false">
-              <img src="{{ Product_Clothes.image_main.url }}" class="d-block w-100" alt="Main product image" style="height: 20rem; width: fluid;">
+              <img src="{{ Product_Clothes.image_main.url }}" class="d-block w-100" alt="Main product image" style="height: 20rem; max-width:18rem">
             </div>
             <div class="carousel-item" data-interval="False">
-              <img src="{{ Product_Clothes.image_secondary.url }}" class="d-block w-100" alt="Secondary product image" style="height:20rem; width: fluid;">
+              <img src="{{ Product_Clothes.image_secondary.url }}" class="d-block w-100" alt="Secondary product image" style="height:20rem; max-width:18rem">
             </div>
             <div class="carousel-item" data-interval="False">
-              <img src="{{ Product_Clothes.image_third.url }}" class="d-block w-100" alt="Third product image" style="height:20rem; width: fluid;">
+              <img src="{{ Product_Clothes.image_third.url }}" class="d-block w-100" alt="Third product image" style="height:20rem; max-width:18rem">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
@@ -112,7 +111,7 @@
         </div>
         <div class="card-text" style="width: 100%;">
           <div class="d-flex">
-            <a href="{{ Product_Clothes.item_url }}" target="_blank" class="btn btn-block btn-success" style="align-items:center">Detail</a>
+            <a href="{{ Product_Clothes.item_url }}" target="_blank" class="btn btn-block btn-success" style="align-items:center;">Detail</a>
           </div>
         </div>
       </div>
