@@ -44,10 +44,12 @@ class Product_Clothes(models.Model):
 
     item_url = models.URLField(help_text='To add size to link on Amazon - use Short links', max_length=150, null = True)
 
+    item_seller = models.CharField(max_length=25, null = True)
+
     image_main = models.ImageField(help_text='600 x 900', max_length=200, upload_to='images/', null = True)
 
     image_secondary = models.ImageField(help_text='600 x 900', max_length=200, upload_to='images/', null = True, blank = True)
-    
+
     image_third = models.ImageField(help_text='600 x 900', max_length=200, upload_to='images/', null = True, blank = True)
 
     upload_date = models.DateTimeField(default=datetime.now, null = True)
