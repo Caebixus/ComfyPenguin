@@ -32,7 +32,7 @@ class Product_Clothes(models.Model):
 
     item_size = models.CharField(max_length=4, null = True)
 
-    item_price = models.DecimalField(help_text='Price of product even with decimals', max_digits=10, decimal_places=2, null = True)
+    item_price = models.DecimalField(help_text='Price of product even with decimals', max_digits=10, decimal_places=2, null = True, default="32,99")
 
     CURRENCY_CHOICES = (
     ('EUR', 'EUR'),
@@ -42,7 +42,7 @@ class Product_Clothes(models.Model):
 
     item_color = models.CharField(max_length=60, null = True)
 
-    item_currency = models.CharField(max_length=3, choices=CURRENCY_CHOICES, null = True)
+    item_currency = models.CharField(max_length=3, choices=CURRENCY_CHOICES, null = True, default="EUR")
 
     item_width = models.IntegerField(default=52, help_text='Use width in centimeters', null = True)
 
@@ -50,7 +50,7 @@ class Product_Clothes(models.Model):
 
     item_url = models.URLField(help_text='To add size to link on Amazon - use Short links', max_length=150, null = True)
 
-    item_seller = models.CharField(max_length=25, null = True)
+    item_seller = models.CharField(max_length=25, null = True, default="Amazon")
 
     image_main = models.ImageField(help_text='600 x 900', max_length=200, upload_to='images/', null = True)
 
