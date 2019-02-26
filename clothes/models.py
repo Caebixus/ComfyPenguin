@@ -8,10 +8,13 @@ class Product_Clothes(models.Model):
 
     item_title = models.CharField(max_length=35, null = True)
 
+    item_material_composition = models.CharField(max_length=80, blank=True, null = True, default="No information")
+
     GENDER_CHOICES = (
     ('Male', 'Male'),
     ('Female', 'Female'),
     ('Unisex', 'Unisex'),
+    ('Kids', 'Kids'),
     )
 
     item_gender = models.CharField(max_length=40, choices=GENDER_CHOICES, null = True)
@@ -20,6 +23,7 @@ class Product_Clothes(models.Model):
     ('Sweatshirt', 'Sweatshirt'),
     ('Hoodies', 'Hoodies'),
     ('Jumper', 'Jumper'),
+    ('T-shirt', 'T-shirt'),
     )
 
     item_category = models.CharField(max_length=40, choices=CATEGORY_CHOICES, null = True)

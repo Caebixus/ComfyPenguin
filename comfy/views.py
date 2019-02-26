@@ -24,6 +24,7 @@ def search(request):
     if 'width' in request.GET:
         widths = request.GET['width']
         widthx = int(widths) + 2
+
         if widths:
             queryset_list = queryset_list.filter(item_width__range=(widths, widthx))
 

@@ -50,6 +50,7 @@ def searchpage(request):
         'values': request.GET,
         'paginationing': paginationing,
     }
+    print(context)
     return render(request, 'search.html', context)
 
 def filter(request):

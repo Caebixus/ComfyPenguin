@@ -74,19 +74,19 @@
   <div class="row">
     {% if paginationing %}
     {% for Product_Clothes in paginationing %}
-    <div class="col-md-3" style="min-width: 17rem;">
-      <div class="card mb-5" style="align-items: center;">
+    <div class="col-md-3" style="min-width: 17rem; border-radius: 25px;">
+      <div class="card mb-5" style="align-items: center; border-radius: 25px;">
 
-        <div id="carouselExampleInterval" class="carousel slide" data-interval="false" data-ride="carousel">
+        <div id="carouselExampleInterval" class="carousel slide" data-interval="false" data-ride="carousel" style="width: 100%; max-width:18rem; border-radius: 25px;">
           <div class="carousel-inner">
             <div class="carousel-item active" data-interval="false">
-              <img src="{{ Product_Clothes.image_main.url }}" class="d-block w-100" alt="Main product image" style="height: 20rem; max-width:18rem">
+              <img src="{{ Product_Clothes.image_main.url }}" class="d-block w-100" alt="Main product image" style="height: 20rem; max-width:18rem; border-radius: 25px;">
             </div>
             <div class="carousel-item" data-interval="False">
-              <img src="{{ Product_Clothes.image_secondary.url }}" class="d-block w-100" alt="Secondary product image" style="height:20rem; max-width:18rem">
+              <img src="{{ Product_Clothes.image_secondary.url }}" class="d-block w-100" alt="Secondary product image" style="height:20rem; max-width:18rem; border-radius: 25px;">
             </div>
             <div class="carousel-item" data-interval="False">
-              <img src="{{ Product_Clothes.image_third.url }}" class="d-block w-100" alt="Third product image" style="height:20rem; max-width:18rem">
+              <img src="{{ Product_Clothes.image_third.url }}" class="d-block w-100" alt="Third product image" style="height:20rem; max-width:18rem; border-radius: 25px;">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
@@ -99,17 +99,44 @@
           </a>
         </div>
 
-        <div class="card-header bg-dark" style="height: 5rem; width: 100%;">
-          <p id="paragraphSearchProduct" style="font-size:90%;" class="card-text text-center text-light">{{ Product_Clothes.item_title }}</p>
-          <p id="paragraphSearchProduct" style="font-size:150%; padding-top:8px" class="text-center text-light">{{ Product_Clothes.item_brand }}</p>
+        <div id="carouselExampleInterval2" class="carousel slide" data-interval="false" data-ride="carousel" style="width: 100%">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-interval="false">
+              <div class="card-header bg-dark" style="height: 5rem; width: 100%;">
+                <p id="paragraphSearchProduct" style="font-size:90%;" class="card-text text-center text-light">{{ Product_Clothes.item_title }}</p>
+                <p id="paragraphSearchProduct" style="font-size:150%; padding-top:8px" class="text-center text-light">{{ Product_Clothes.item_brand }}</p>
+              </div>
+            </div>
+            <div class="carousel-item" data-interval="False">
+              <div class="card-header bg-dark" style="height: 5rem; width: 100%;">
+                <p id="paragraphSearchProduct" style="font-size:90%;" class="card-text text-center text-light">{{ Product_Clothes.item_material_composition }}</p>
+                <p id="paragraphSearchProduct" style="font-size:150%; padding-top:8px" class="text-center text-light">{{ Product_Clothes.item_seller }}</p>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleInterval2" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleInterval2" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
+
         <div class="card-body">
-          <p id="paragraphSearchProduct">Item width = {{ Product_Clothes.item_width }} cm</p>
-          <p id="paragraphSearchProduct">Item height = {{ Product_Clothes.item_height }} cm</p>
+          <p id="paragraphSearchProduct">Product width = {{ Product_Clothes.item_width }} cm</p>
+          <div class="text-right">
+            <p id="paragraphMyParameters" style="font-size:90%;">My width = {{ values.width }} cm</p>
+          </div>
+          <p id="paragraphSearchProduct">Product height = {{ Product_Clothes.item_height }} cm</p>
+          <div class="text-right">
+            <p id="paragraphMyParameters" style="font-size:90%;">My height = {{ values.height }} cm</p>
+          </div>
         </div>
         <div class="card-text" style="width: 100%;">
           <div class="d-flex">
-            <a href="{{ Product_Clothes.item_url }}" target="_blank" class="btn btn-block btn-success" style="align-items:center;">Detail</a>
+            <a href="{{ Product_Clothes.item_url }}" target="_blank" class="btn btn-block btn-success" style="align-items:center; border-radius: 25px;">Detail</a>
           </div>
         </div>
       </div>
