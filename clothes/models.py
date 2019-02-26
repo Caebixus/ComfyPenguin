@@ -32,7 +32,7 @@ class Product_Clothes(models.Model):
 
     item_size = models.CharField(max_length=4, null = True)
 
-    item_price = models.DecimalField(help_text='Price of product even with decimals', max_digits=10, decimal_places=2, null = True, default="32,99")
+    item_price = models.DecimalField(help_text='Price of product even with decimals', max_digits=10, decimal_places=2, null = True)
 
     CURRENCY_CHOICES = (
     ('EUR', 'EUR'),
