@@ -40,6 +40,8 @@ class Product_Clothes(models.Model):
     ('USD', 'USD'),
     )
 
+    item_color = models.CharField(max_length=60, null = True)
+
     item_currency = models.CharField(max_length=3, choices=CURRENCY_CHOICES, null = True)
 
     item_width = models.IntegerField(default=52, help_text='Use width in centimeters', null = True)
