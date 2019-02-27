@@ -37,7 +37,7 @@ def searchpage(request):
         if types:
             queryset_list = queryset_list.filter(item_category__iexact=types)
 
-    paginator = Paginator(queryset_list, 4, orphans=4)
+    paginator = Paginator(queryset_list, 16, orphans=4)
 
     page = request.GET.get('page')
     paginationing = paginator.get_page(page)

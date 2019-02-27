@@ -74,19 +74,19 @@
   <div class="row">
     {% if paginationing %}
     {% for Product_Clothes in paginationing %}
-    <div class="col-md-3" style="min-width: 17rem; border-radius: 25px;">
-      <div class="card mb-5" style="align-items: center; border-radius: 25px;">
+    <div class="col-md-3" style="min-width: 17rem; border-radius: 10px;">
+      <div class="card mb-5" style="align-items: center; border-radius: 10px;">
 
-        <div id="carouselExampleInterval{{ Product_Clothes.id }}" class="carousel slide" data-interval="false" data-ride="carousel" style="width: 100%; max-width:18rem; border-radius: 25px;">
+        <div id="carouselExampleInterval{{ Product_Clothes.id }}" class="carousel slide" data-interval="false" data-ride="carousel" style="width: 100%; max-width:18rem; border-radius: 10px;">
           <div class="carousel-inner">
             <div class="carousel-item active" data-interval="false">
-              <img src="{{ Product_Clothes.image_main.url }}" class="d-block w-100" alt="Main product image" style="height: 20rem; max-width:18rem; border-radius: 25px;">
+              <img src="{{ Product_Clothes.image_main.url }}" class="d-block w-100" alt="Main product image" style="height: 20rem; max-width:18rem; border-radius: 10px;">
             </div>
             <div class="carousel-item" data-interval="False">
-              <img src="{{ Product_Clothes.image_secondary.url }}" class="d-block w-100" alt="Secondary product image" style="height:20rem; max-width:18rem; border-radius: 25px;">
+              <img src="{{ Product_Clothes.image_secondary.url }}" class="d-block w-100" alt="Secondary product image" style="height:20rem; max-width:18rem; border-radius: 10px;">
             </div>
             <div class="carousel-item" data-interval="False">
-              <img src="{{ Product_Clothes.image_third.url }}" class="d-block w-100" alt="Third product image" style="height:20rem; max-width:18rem; border-radius: 25px;">
+              <img src="{{ Product_Clothes.image_third.url }}" class="d-block w-100" alt="Third product image" style="height:20rem; max-width:18rem; border-radius: 10px;">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleInterval{{ Product_Clothes.id }}" role="button" data-slide="prev">
@@ -136,7 +136,7 @@
         </div>
         <div class="card-text" style="width: 100%;">
           <div class="d-flex">
-            <a href="{{ Product_Clothes.item_url }}" target="_blank" class="btn btn-block btn-success" style="align-items:center; border-radius: 25px;">Detail</a>
+            <a href="{{ Product_Clothes.item_url }}" target="_blank" class="btn btn-block btn-success" style="align-items:center; border-radius: 10px;">Detail</a>
           </div>
         </div>
       </div>
