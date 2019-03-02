@@ -5,52 +5,37 @@
 <link rel="canonical" href="https://www.comfy-penguin.com/search" />
 <title>2019 | Find fashion</title>
 <!------ content ---------->
-<body>
-  <div class="accordion" id="accordionExample" style="padding-bottom:2rem">
-    <div class="card bg-dark">
-      <div class="card-header" id="headingOne">
-        <h5 class="mb-0 text-center">
-          <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="align-items:center; text-align:center; width:15rem; margin:auto">
-            Main Filter
-          </button>
-        </h5>
-      </div>
-      <form action="{% url 'searchpage' %}">
-        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-          <div class="container-fluid bg-white" style="height: fluid">
-            <div class="row align-items-center justify-content-md-center" style="padding-top: 1rem">
-              <div class="col-md-auto">
-                <div class="form-group">
-                  <input type="number" name="width" class="form-control" placeholder="Width/Chest (in cm)" value="{{ values.width }}" style="align-items:center; text-align:center; width:15rem; margin:auto" required>
-                </div>
-              </div>
-              <div class="col-md-auto">
-                <div class="form-group">
-                  <input type="number" name="height" class="form-control" placeholder="Height (in cm)" value="{{ values.height }}" style="align-items:center; text-align:center; width:15rem; margin:auto" required>
-                </div>
-              </div>
-            </div>
-            <div class="row justify-content-md-center">
-              <div class="col-md-auto">
-                <div class="form-group" style="align-items:center; text-align:center; width:15rem; margin:auto">
-                  <select name="Type" class="form-control">
-                    <option value="" selected>Select type</option>
-                    {% for key, value in CATEGORY_CHOICES.items %}
-                    <option value="{{ key }}" {% if key == values.Type %}
-                    selected
-                    {% endif %}
-                    >{{ value }}
-                  </option>
-                  {% endfor %}
-                </select>
+<div class="accordion" id="accordionExample" style="padding-bottom:2rem">
+  <div class="card bg-dark">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0 text-center">
+        <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="align-items:center; text-align:center; width:15rem; margin:auto">
+          Main Filter
+        </button>
+      </h5>
+    </div>
+    <form action="{% url 'searchpage' %}">
+      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="container-fluid bg-white" style="height: fluid">
+          <div class="row align-items-center justify-content-md-center" style="padding-top: 1rem">
+            <div class="col-md-auto">
+              <div class="form-group">
+                <input type="number" name="width" class="form-control" placeholder="Width/Chest (in cm)" value="{{ values.width }}" style="align-items:center; text-align:center; width:15rem; margin:auto" required>
               </div>
             </div>
             <div class="col-md-auto">
               <div class="form-group">
-                <select name="Gender" class="form-control" style="align-items:center; text-align:center; width:15rem; margin:auto">
-                  <option value="" selected>Select gender</option>
-                  {% for key, value in GENDER_CHOICES.items %}
-                  <option value="{{ key }}"{% if key == values.Gender %}
+                <input type="number" name="height" class="form-control" placeholder="Height (in cm)" value="{{ values.height }}" style="align-items:center; text-align:center; width:15rem; margin:auto" required>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-md-center">
+            <div class="col-md-auto">
+              <div class="form-group" style="align-items:center; text-align:center; width:15rem; margin:auto">
+                <select name="Type" class="form-control">
+                  <option value="" selected>Select type</option>
+                  {% for key, value in CATEGORY_CHOICES.items %}
+                  <option value="{{ key }}" {% if key == values.Type %}
                   selected
                   {% endif %}
                   >{{ value }}
@@ -59,14 +44,28 @@
               </select>
             </div>
           </div>
+          <div class="col-md-auto">
+            <div class="form-group">
+              <select name="Gender" class="form-control" style="align-items:center; text-align:center; width:15rem; margin:auto">
+                <option value="" selected>Select gender</option>
+                {% for key, value in GENDER_CHOICES.items %}
+                <option value="{{ key }}"{% if key == values.Gender %}
+                selected
+                {% endif %}
+                >{{ value }}
+              </option>
+              {% endfor %}
+            </select>
+          </div>
         </div>
-        <div class="row justify-content-md-center">
-          <button type="submit" class="btn btn-dark" style="align-items:center; text-align:center; width:15rem; margin:auto">Search</button>
-        </div>
-        <br>
       </div>
+      <div class="row justify-content-md-center">
+        <button type="submit" class="btn btn-dark" style="align-items:center; text-align:center; width:15rem; margin:auto">Search</button>
+      </div>
+      <br>
     </div>
-  </form>
+  </div>
+</form>
 </div>
 </div>
 </body>
@@ -82,12 +81,20 @@
             <div class="carousel-item active" data-interval="false">
               <img src="{{ Product_Clothes.image_main.url }}" class="d-block w-100" alt="Main product image" style="height: 20rem; max-width:18rem; border-radius: 10px;">
             </div>
+            {% if Product_Clothes.image_secondary %}
             <div class="carousel-item" data-interval="False">
               <img src="{{ Product_Clothes.image_secondary.url }}" class="d-block w-100" alt="Secondary product image" style="height:20rem; max-width:18rem; border-radius: 10px;">
             </div>
+            {% else %}
+              {{pass}}
+            {% endif %}
+            {% if Product_Clothes.third_secondary %}
             <div class="carousel-item" data-interval="False">
               <img src="{{ Product_Clothes.image_third.url }}" class="d-block w-100" alt="Third product image" style="height:20rem; max-width:18rem; border-radius: 10px;">
             </div>
+            {% else %}
+              {{pass}}
+            {% endif %}
           </div>
           <a class="carousel-control-prev" href="#carouselExampleInterval{{ Product_Clothes.id }}" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -136,7 +143,7 @@
         </div>
         <div class="card-text" style="width: 100%;">
           <div class="d-flex">
-            <a href="{{ Product_Clothes.item_url }}" target="_blank" class="btn btn-block btn-success" style="align-items:center; border-radius: 10px;">Detail</a>
+            <a href="{{ Product_Clothes.item_url }}" target="_blank" class="btn btn-block" style="align-items:center; border-radius: 10px;">Detail</a>
           </div>
         </div>
       </div>
@@ -176,8 +183,6 @@
     </li>
   </ul>
 </nav>
-
-
 <br>
 <br>
 <br>
