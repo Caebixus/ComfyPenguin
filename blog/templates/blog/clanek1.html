@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link rel="canonical" href="...." />
+<title>2019 | ..... </title>
+<div class="container">
+  <h1 style="text-align: center; margin-top:2rem">Jak udělat taxi zkoušky co nejrychleji?</h1>
+  <br>
+  <br>
+  <p>Úspěšně složit taxi zkoušky je povinností každého uchazeče o taxi koncesi v Praze.</p>
+  <p>Zkouška je nejdříve rozdělena na teroretickou a praktickou část přičemž teoretická část se dále dělí na legislativní test po 30 otázkách a test z místopisu, který má také 30 otázek.</p>
+  <p>Praktická část se poté skládá z několika otázek k funkčnosti a používání taxametru.</p>
+  <br>
+  <div class="text" style="text-align: center">
+    <p style="font-size:120%;"><b>Jak tedy začít a nejrychleji se připravit? Příprava kolegům trvá 2-3 týdny</b></p>
+  </div>
+  <br>
+  <ul>
+    <li>Jako první doporučujeme najít nejbližší datum taxi zkoušky na stránkách pražského magistrátu <a href="http://www.praha.eu/app/mpo_dopzzm/index.jsp">zde</a> a přihlásit se</li>
+  </ul>
+  <br>
+  <ul>
+    <li>Dále se zaregistrujte na našich webových stránkách <a href="https://www.taxizkousky.cz/">Taxizkousky.cz</a>. Projekt je zdarma a je určen uchazečům pro procvičování jednotlivých druhů testů k přípravě na teoretickou část zkoušky.</li>
+  </ul>
+  <div class="container" style="text-align: center">
+    <a href="#" class="btn btn-warning" style="width: 10rem">Registrovat se</a>
+  </div>
+  <br>
+  <ul>
+    <li>Nyní to nejdůležitější: dostát své vytrvalosti a trénovat kdykoliv budete mít volný čas. Naštěstí je naše webová stránka ooptimalizovaná i pro mobilní telefony, takže nebudete mít problém v jakémkoliv prostředí. Po přihlášení si zadejte nejprve procvičovací testy a projděte si každou kapitolu.</li>
+  </ul>
+  <div class="container">
+    <div class="row" style="text-align: center">
+      <div class="col">
+        <img src="{% static 'Test2.jpg' %}" alt="" style="height: 20rem">
+      </div>
+      <div class="col">
+        <img src="{% static 'Test3.jpg' %}" alt="" style="height: 20rem">
+      </div>
+    </div>
+  </div>
+  <br>
+  <p>Například legislativní kategorie se skládají z Živnostenského zákona, otázek ze silniční dopravy nebo cen. Test z místopisu je rozdělen na určení adres objektů v Praze, orientační vzdálenosti nebo přibližné určení polohy známějších ulic v Praze. Snažte se pochopit logiku otázky a odpovědi, případně si detailní dovysvětlení vyhledejte na google.cz. Pomáhá to při učení!</p>
+  <br>
+  <p>Až budete cítit, že Vám procvičovací testy jdou od ruky, můžete zkusit hlavní test. Tento test je určen k simulování opravdových podmínek při zkouškách. Čili dostanete 30 otázek a odpovědi se dozvíte až na konci testu spolu s Vaším scóre. Hlavní test Vám ale do detailu řekne ve kterých kategoriích děláte nejvíce chyb a měli byste si je procvičit znovu v procvičovacích testech.</p>
+  <br>
+  <p>Jakmile uděláte 2-3x po sobě nad 80% jste připraveni, ale nic nepodceňujte! Dále si párkrát pravidelně procházejte a opakujte všechny kategorie. Nejdůležitější bude čerstvé opakování znalostí v den zkoušky!</p>
+  <br>
+  <p>Ohledně praktické části s taxametrem, je možné si <a href="https://www.taxizkousky.cz/profile/">objednat</a> kurz s kolegou, který Vás osobně zaučí. Tento kurz je již zpoplatněn.</p>
+  <br>
+  <div class="container" style="text-align: center">
+    <a href="{% url 'clanky' %}" class="btn btn-primary" style="width: 10rem">Zpět</a>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+{% endblock %}
