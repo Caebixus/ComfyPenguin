@@ -69,6 +69,8 @@
 </div>
 </div>
 </body>
+<hr>
+<br>
 <div class="container" id="listing">
   <div class="row">
     {% if paginationing %}
@@ -86,14 +88,14 @@
               <img src="{{ Product_Clothes.image_secondary.url }}" class="d-block w-100" alt="Secondary product image" style="height:20rem; max-width:18rem; border-radius: 10px;">
             </div>
             {% else %}
-              {{pass}}
+            {{pass}}
             {% endif %}
             {% if Product_Clothes.image_third %}
             <div class="carousel-item" data-interval="False">
               <img src="{{ Product_Clothes.image_third.url }}" class="d-block w-100" alt="Third product image" style="height:20rem; max-width:18rem; border-radius: 10px;">
             </div>
             {% else %}
-              {{pass}}
+            {{pass}}
             {% endif %}
           </div>
           <a class="carousel-control-prev" href="#carouselExampleInterval{{ Product_Clothes.id }}" role="button" data-slide="prev">
@@ -140,10 +142,14 @@
           <div class="text-right">
             <p id="paragraphMyParameters" style="font-size:90%;">My height = {{ values.height }} cm</p>
           </div>
+          <br>
+          <div class="text-center">
+            <p id="paragraphSearchProduct"><u>Pick this size: {{ Product_Clothes.item_size }}</u></p>
+          </div>
         </div>
         <div class="card-text" style="width: 100%;">
           <div class="d-flex">
-            <a href="{{ Product_Clothes.item_url }}" target="_blank" class="btn btn-block" style="align-items:center; border-radius: 10px;">Detail</a>
+            <a href="{{ Product_Clothes.item_url }}" target="_blank" class="btn btn-block" style="align-items:center; border-radius: 10px;">View more</a>
           </div>
         </div>
       </div>
@@ -184,6 +190,29 @@
   </ul>
 </nav>
 <br>
+<br>
+<br>
+<hr>
+<div class="container py-3" id="quantity" style="text-align: center">
+  <div class="row">
+    <div class="col-sm">
+      <h4 class="card-text" style="text-align: center">Clothes for woman</h4>
+      <button class="btn btn-dark" style="width: 6rem"><strong>{{ my_total_woman_count }}</strong></button>
+    </div>
+    <div class="col-sm">
+      <h4 class="card-text" style="text-align: center">Clothes for Men</h4>
+      <button class="btn btn-dark" style="width: 6rem"><strong>{{ my_total_men_count }}</strong></button>
+    </div>
+    <div class="col-sm">
+      <h4 class="card-text" style="text-align: center">Clothes for Kids</h4>
+      <button class="btn btn-dark" style="width: 6rem"><strong>{{ my_total_kid_count }}</strong></button>
+    </div>
+    <div class="col-sm">
+      <h4 class="card-text" style="text-align: center">Unisex clothes</h4>
+      <button class="btn btn-dark" style="width: 6rem"><strong>{{ my_total_uni_count }}</strong></button>
+    </div>
+  </div>
+</div>
 <br>
 <br>
 <br>

@@ -5,19 +5,53 @@
 <link rel="canonical" href="https://www.comfy-penguin.com/" />
 <title>2019 | Find comfy fashion that fits you!</title>
 <main role="main" style="text-align: center">
-  <div class="container-fluid" style="background-image: url('static/lolhomepage.jpg'); position: relative; background-repeat: no-repeat; width:auto;; height:45rem; background-size: cover">
-    <h1 class="display-6" style="color:white; padding-top: 12rem; text-align: center">Find new fashion with size</h1>
-    <h1 class="display-6" style="color:white; text-align: center">of your favorite clothes</h1>
-    <br>
-    <br>
-    <a class="btn btn-dark btn-lg" href="#how" role="button" id="filter">Show me how</a>
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="container-fluid" style="background-image: url('static/lolhomepage.jpg'); position: relative; background-repeat: no-repeat; width:auto;; height:45rem; background-size: cover"></div>
+      <div class="carousel-item active">
+        <div class="carousel-caption" style="padding-bottom: 12rem">
+          <h1>Stil using size chart to find your comfortable size?</h1>
+          <br>
+          <a class="btn btn-dark btn-lg" href="#how" role="button">Show me how</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-caption" style="padding-bottom: 12rem">
+          <h1>Find new fashion with size of your favorite clothes</h1>
+          <br>
+          <a class="btn btn-dark btn-lg" href="#filter" role="button">Find new fashion</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-caption" style="padding-bottom: 12rem">
+          <h1>What?</h1>
+          <br>
+          <a class="btn btn-dark btn-lg" href="#filter" role="button">Find new fashion</a>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
+  <br>
 </main>
 
 <br>
 <br>
+<br>
 <div class="container">
-  <h2 class="card-text" style="text-align: center">Find similar clothes</h2>
+  <h2 class="card-text" style="text-align: center" id="filter">Find similar clothes</h2>
   <form action="{% url 'searchpage' %}">
     <div class="row align-items-center justify-content-md-center" style="padding-top: 1rem">
       <div class="col-md-auto">
@@ -56,6 +90,7 @@
 </div>
 <br>
 <br>
+<br>
 <hr width="75%">
 
 <div class="container py-3" id="how">
@@ -65,8 +100,8 @@
   <div class="row featurette">
     <div class="col-md-7">
       <h2 class="featurette-heading">Step One.</h2>
-        <h2><span class="text-muted">Get measurements of favorite clothing!</span></h2>
-        <br>
+      <h2><span class="text-muted">Get measurements of favorite clothing!</span></h2>
+      <br>
       <p>Choose your favorite, most comfy clothing you want to buy and get parameters to find new one. You can use smartphone measure apps to get your sizes.</p>
       <div class="odkazy" style="text-align: center; padding-top: 4rem">
         <p style="font-size:160%; padding-bottom:1rem"><a href="https://play.google.com/store/apps/details?id=com.google.tango.measure&hl=cs" class="card-text text-center">Android</a></p>
@@ -122,9 +157,35 @@
 <br>
 <hr width="75%">
 <div class="container py-3" id="quantity" style="text-align: center">
-  <h2 class="card-text" style="text-align: center">How many clothes did we process?</h2>
+  <h2 class="card-text" style="text-align: center">How many clothes did we process so far?</h2>
   <br>
   <button class="btn btn-dark" style="width: 6rem"><strong>{{ my_total }}</strong></button>
+</div>
+<br>
+<div class="container py-3" id="quantity" style="text-align: center">
+  <div class="row">
+    <br>
+    <div class="col-sm">
+      <h4 class="card-text" style="text-align: center">Clothes for woman</h4>
+      <button class="btn btn-dark" style="width: 6rem"><strong>{{ my_total_woman_count }}</strong></button>
+    </div>
+    <br>
+    <div class="col-sm">
+      <h4 class="card-text" style="text-align: center">Clothes for Men</h4>
+      <button class="btn btn-dark" style="width: 6rem"><strong>{{ my_total_men_count }}</strong></button>
+    </div>
+    <br>
+    <div class="col-sm">
+      <h4 class="card-text" style="text-align: center">Clothes for Kids</h4>
+      <button class="btn btn-dark" style="width: 6rem"><strong>{{ my_total_kid_count }}</strong></button>
+    </div>
+    <br>
+    <div class="col-sm">
+      <h4 class="card-text" style="text-align: center">Unisex clothes</h4>
+      <button class="btn btn-dark" style="width: 6rem"><strong>{{ my_total_uni_count }}</strong></button>
+    </div>
+    <br>
+  </div>
 </div>
 <br>
 <br>

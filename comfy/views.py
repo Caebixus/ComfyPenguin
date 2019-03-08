@@ -6,11 +6,31 @@ def homepage(request):
     listing = Product_Clothes.objects.all()
     my_total = Product_Clothes.objects.count()
 
+    # counting Mans clothes
+    my_total_men = Product_Clothes.objects.filter(item_gender__iexact="Male")
+    my_total_men_count = my_total_men.count()
+
+    # counting Mans clothes
+    my_total_woman = Product_Clothes.objects.filter(item_gender__iexact="Female")
+    my_total_woman_count = my_total_woman.count()
+
+    # counting Mans clothes
+    my_total_kid = Product_Clothes.objects.filter(item_gender__iexact="Kids")
+    my_total_kid_count = my_total_kid.count()
+
+    # counting Mans clothes
+    my_total_uni = Product_Clothes.objects.filter(item_gender__iexact="Unisex")
+    my_total_uni_count = my_total_uni.count()
+
     context = {
         'CATEGORY_CHOICES': CATEGORY_CHOICES,
         'GENDER_CHOICES': GENDER_CHOICES,
         'listing': listing,
         'my_total': my_total,
+        'my_total_men_count': my_total_men_count,
+        'my_total_woman_count': my_total_woman_count,
+        'my_total_kid_count': my_total_kid_count,
+        'my_total_uni_count': my_total_uni_count,
     }
 
     return render(request, 'homepage.html', context)
