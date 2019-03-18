@@ -57,6 +57,8 @@ def searchpage(request):
 
     paginator = Paginator(queryset_list, 16, orphans=4)
 
+    my_total_searched = queryset_list.count()
+
     page = request.GET.get('page')
     paginationing = paginator.get_page(page)
 
@@ -67,6 +69,7 @@ def searchpage(request):
         'my_total': my_total,
         'values': request.GET,
         'paginationing': paginationing,
+        'my_total_searched': my_total_searched,
         'my_total_men_count': my_total_men_count,
         'my_total_woman_count': my_total_woman_count,
         'my_total_kid_count': my_total_kid_count,

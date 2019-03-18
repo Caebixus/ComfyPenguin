@@ -71,6 +71,12 @@
 </body>
 <hr>
 <br>
+<div class="container" style="text-align: center">
+  <h4 class="card-text" style="text-align: center">Found products with your parameters</h4>
+  <button class="btn btn-dark" style="width: 6rem"><strong>{{ my_total_searched }}</strong></button>
+</div>
+<br>
+<br>
 <div class="container" id="listing">
   <div class="row">
     {% if paginationing %}
@@ -144,12 +150,12 @@
           </div>
           <br>
           <div class="text-center">
-            <p id="paragraphSearchProduct"><u>Pick this size: {{ Product_Clothes.item_size }}</u></p>
+            <p id="paragraphSearchProduct"><u>Pick this size: {{ Product_Clothes.item_size }} {{ width_percent_total }}</u></p>
           </div>
         </div>
         <div class="card-text" style="width: 100%;">
           <div class="d-flex">
-            <a href="{{ Product_Clothes.item_url }}" target="_blank" class="btn btn-block" style="align-items:center; border-radius: 10px;">View more</a>
+            <a href="{{ Product_Clothes.item_url }}" target="_blank" onclick="affiliateTriggered" class="btn btn-block" style="align-items:center; border-radius: 10px;">View more</a>
           </div>
         </div>
       </div>
@@ -193,7 +199,7 @@
 <br>
 <br>
 <hr>
-<div class="container py-3" id="quantity" style="text-align: center">
+<div hidden class="container py-3" id="quantity" style="text-align: center">
   <div class="row">
     <div class="col-sm">
       <h4 class="card-text" style="text-align: center">Clothes for woman</h4>
