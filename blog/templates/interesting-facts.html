@@ -2,7 +2,7 @@
 {% load bootstrap %}
 {% load static %}
 {% block content %}
-<link rel="canonical" href="https://www.comfy-penguin.com/blog/interesting-facts" />
+<link rel="canonical" href="https://www.comfy-penguin.com/Interesting-facts" />
 <title>2019 | Interesting facts about Comfy-Penguin</title>
 
 <div class="container">
@@ -25,15 +25,19 @@
   <div class="container">
     <div class="row">
       <div class="col-md-4">
-        <div class="card mb-4 shadow-sm">
-          <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-          <div class="card-body">
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <div class="d-flex justify-content-between align-items-center">
+        <div class="card mb-4 shadow-sm" style="min-width: 20rems">
+          <a href="{% url 'clanek1' %}">
+            <img class="card-img-top" src="{% static 'blog1picmain.jpg' %}" alt="" width="100%" height="250">
+          </a>
+          <div class="card-body" style="text-align: center">
+            <a href="{% url 'clanek1' %}">
+              <p class="card-text">Why size chart does not work and what are our options?</p>
+            </a>
+            <br>
+            <div class="d-flex justify-content-between align-items-center" style="text-align: center">
               <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">View more</button>
+                <button type="button" class="btn btn-lg btn-outline-secondary">Read more</button>
               </div>
-              <small class="text-muted">9 mins</small>
             </div>
           </div>
         </div>

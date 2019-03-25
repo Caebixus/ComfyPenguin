@@ -58,7 +58,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <input type="hidden" />
         </form>
         {% else %}
-        <a hidden class="nav-item nav-link" href="{% url 'interesting-facts' %}" style="color: black">Interesting facts</a>
+        <a class="nav-item nav-link" href="{% url 'interesting-facts' %}" style="color: black"><i class="fa fa-fw fa-book"></i>Interesting facts</a>
         <a class="nav-item nav-link" href="{% url 'filter' %}" style="color: black"><i class="fa fa-fw fa-search"></i>Search</a>
         <a hidden class="nav-item nav-link" href="{% url 'signup' %}">Sign up</a>
         <a hidden class="nav-item nav-link" href="{% url 'login' %}">Sign in</a>

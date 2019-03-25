@@ -78,3 +78,6 @@ def search(request):
 
 def sitemap(request):
     return render(request, 'sitemap.xml')
+
+def how_to_measure(request):
+    return render(request, 'how-to-measure.html')
