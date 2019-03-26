@@ -113,7 +113,11 @@
     Anyway, the goal I had at the beginning - that is, to enter the parameters of my favorite sweatshirt into the form and to find the size clones differing in colors, fabric, and brand, was completed.
   </p>
   <br>
-  <br>
+  <div class="picture" style="text-align:center">
+    <a href="{% url 'homepage' %}">
+      <img src="{% static 'LogoComfyPenguin.png' %}" alt="" style="max-width:25rem; width: 100%; padding-bottom:4rem">
+    </a>
+  </div>
   <br>
   <h2><b>How many sweatshirts I found for my parameters?</b></h2>
   <br>
@@ -129,9 +133,10 @@
   <p>
     Now it is your turn to try it - get parameters of your or anyone's favorite sweatshirt, jumper or hoodie and copy it to our <a href="https://www.comfy-penguin.com/search/filter">form</a>. Comfy-penguin should find the best match.
   </p>
+  <br>
   <div class="picture" style="text-align:center">
     <a href="{% url 'homepage' %}">
-      <img src="{% static 'LogoComfyPenguin.png' %}" alt="" style="max-width:25rem; width: 100%; padding-bottom:4rem">
+      <button type="button" class="btn btn-lg btn-outline-secondary">Start searching</button>
     </a>
   </div>
   <div class="photo-footer" style="padding-top: 4rem">
