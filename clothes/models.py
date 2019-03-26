@@ -23,7 +23,6 @@ class Product_Clothes(models.Model):
     ('Sweatshirt', 'Sweatshirt'),
     ('Hoodies', 'Hoodies'),
     ('Jumper', 'Jumper'),
-    ('T-shirt', 'T-shirt'),
     ('Jacket', 'Jacket'),
     )
 
@@ -58,6 +57,18 @@ class Product_Clothes(models.Model):
     image_secondary = models.ImageField(help_text='600 x 900', max_length=200, upload_to='images/', null = True, blank = True)
 
     image_third = models.ImageField(help_text='600 x 900', max_length=200, upload_to='images/', null = True, blank = True)
+
+    CONTINENT_CHOICES = (
+    ('Europe', 'Europe'),
+    ('North America', 'North America'),
+    ('South America', 'South America'),
+    ('Asia', 'Asia'),
+    ('Africa', 'Africa'),
+    ('Australia', 'Australia'),
+    ('Worldwide', 'Worldwide'),
+    )
+
+    item_continent = models.CharField(max_length=20, choices=CONTINENT_CHOICES, null = True, default="Europe")
 
     upload_date = models.DateTimeField(default=datetime.now, null = True)
 

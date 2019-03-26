@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from clothes.models import Product_Clothes
-from comfy.choices import GENDER_CHOICES, CATEGORY_CHOICES
+from comfy.choices import GENDER_CHOICES, CATEGORY_CHOICES, CONTINENT_CHOICES
 
 def homepage(request):
     listing = Product_Clothes.objects.all()
@@ -25,6 +25,7 @@ def homepage(request):
     context = {
         'CATEGORY_CHOICES': CATEGORY_CHOICES,
         'GENDER_CHOICES': GENDER_CHOICES,
+        'CONTINENT_CHOICES': CONTINENT_CHOICES,
         'listing': listing,
         'my_total': my_total,
         'my_total_men_count': my_total_men_count,
@@ -67,9 +68,16 @@ def search(request):
         if types:
             queryset_list = queryset_list.filter(item_category__iexact=types)
 
+    #Country
+    if 'Continent' in request.GET:
+        countries = request.GET['Continent']
+        if countries:
+            queryset_list = queryset_list.filter(item_continent__iexact=countries)
+
     context = {
         'CATEGORY_CHOICES': CATEGORY_CHOICES,
         'GENDER_CHOICES': GENDER_CHOICES,
+        'CONTINENT_CHOICES': CONTINENT_CHOICES,
         'listing': queryset_list,
         'my_total': my_total,
         'values': request.GET,
