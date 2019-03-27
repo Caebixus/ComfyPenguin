@@ -3,6 +3,7 @@ CATEGORY_CHOICES = {
     'Hoodies': 'Hoodies',
     'Jumper': 'Jumper',
     'Jacket': 'Jacket',
+    'Cardigan': 'Cardigan',
     }
 
 

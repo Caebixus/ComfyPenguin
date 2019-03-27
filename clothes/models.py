@@ -24,6 +24,7 @@ class Product_Clothes(models.Model):
     ('Hoodies', 'Hoodies'),
     ('Jumper', 'Jumper'),
     ('Jacket', 'Jacket'),
+    ('Cardigan', 'Cardigan'),
     )
 
     item_category = models.CharField(max_length=40, choices=CATEGORY_CHOICES, null = True)
