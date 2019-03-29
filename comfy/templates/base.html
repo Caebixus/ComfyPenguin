@@ -62,61 +62,108 @@
       </div>
     </div>
   </nav>
+  <div class="nav-fashion" style="text-align: center">
+    <nav class="navbar navbar-expand navbar-light bg-light">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Women
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" data-thumbnail="{% static 'women-vest.png' %}" href="{% url 'filter_womens_tops' %}"><b>Tops</b></a>
+            <a class="dropdown-item disabled" href="#">Bottoms</a>
+            <a class="dropdown-item disabled" href="#">Accessories</a>
+            <a class="dropdown-item disabled" href="#">Underwear</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            | Men
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{% url 'filter_mens_tops' %}"><b>Tops</b></a>
+            <a class="dropdown-item disabled" href="#">Bottoms</a>
+            <a class="dropdown-item disabled" href="#">Accessories</a>
+            <a class="dropdown-item disabled" href="#">Underwear</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="max-width:5rem">
+            | Kids
+          </a>
+          <div class="dropdown-menu disabled" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item disabled" href="#">Tops</a>
+            <a class="dropdown-item disabled" href="#">Bottoms</a>
+            <a class="dropdown-item disabled" href="#">Accessories</a>
+            <a class="dropdown-item disabled" href="#">Underwear</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NQVWT8T"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-{% block content %}
-{% endblock %}
-</body>
-<br>
-<div class="footer bg-dark" id="footer" style="padding-top: 2rem">
-  <div class="container text-light">
-    <div class="row">
-      <div class="col-md-6">
-        <span class="copyright">Copyright &copy; 2019 Comfy-penguin.com</span>
-      </div>
-      <div class="col-md-6">
-        <span class="copyright">Social networks</span>
-        <ul class="list-inline social-buttons">
-          <li hidden class="list-inline-item">
-            <a href="">
-              <i class="fab fa-twitter"></i>
-            </a>
-          </li>
-          <li class="list-inline-item" style="padding-top: 4px">
-            <a href="https://www.facebook.com/Comfy-penguin-2176026249317885/">
-              <img src="{% static 'facebook-logo-white.png' %}" width="30" height="30" alt="facebook icon">
-            </a>
-          </li>
-          <li hidden class="list-inline-item">
-            <a href="#">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div hidden class="col-md-4">
-        <ul class="list-inline quicklinks">
-          <li class="list-inline-item">
-            <a href="#">Ochrana osobních údajů</a>
-          </li>
-          <li hidden class="list-inline-item">
-            <a href="#">Terms of Use</a>
-          </li>
-        </ul>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NQVWT8T"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    {% block content %}
+    {% endblock %}
+  </body>
+  <br>
+  <div class="footer bg-dark" id="footer" style="padding-top: 2rem">
+    <div class="container text-light">
+      <div class="row">
+        <div class="col-md-4">
+          <span class="copyright">Copyright &copy; 2019 Comfy-penguin.com</span>
+        </div>
+        <div class="col-md-4">
+          <span class="copyright">Social networks</span>
+          <ul class="list-inline social-buttons">
+            <li hidden class="list-inline-item">
+              <a href="">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="list-inline-item" style="padding-top: 4px">
+              <a href="https://www.facebook.com/Comfy-penguin-2176026249317885/">
+                <img src="{% static 'facebook-logo-white.png' %}" width="30" height="30" alt="facebook icon">
+              </a>
+            </li>
+            <li hidden class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <div class="nadpis">
+            <p style="color:white">Credits</p>
+            <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@mahjur?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Mahjur Ahmed"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Mahjur Ahmed</span></a>
+            <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@tothnorex?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Norbert Tóth"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Norbert Tóth</span></a>
+            <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@kaimantha?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Claudia"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Claudia</span></a>
+          </div>
+        </div>
+        <div hidden class="col-md-3">
+          <ul class="list-inline quicklinks">
+            <li class="list-inline-item">
+              <a href="#">Ochrana osobních údajů</a>
+            </li>
+            <li hidden class="list-inline-item">
+              <a href="#">Terms of Use</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script type="text/javascript" src="{% static 'comfy/js/myjavascript.js' %}"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-</html>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="{% static 'comfy/js/myjavascript.js' %}"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </html>

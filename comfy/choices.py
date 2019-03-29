@@ -9,6 +9,9 @@ CATEGORY_CHOICES = {
 
 GENDER_CHOICES = {
     'Male': 'Male',
+    'Female': 'Female',
+    'Unisex': 'Unisex',
+    'Kids': 'Kids',
     }
 
 CONTINENT_CHOICES = {

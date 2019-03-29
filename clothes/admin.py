@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Product_Clothes
+from .models import Product_Clothes_Tops
 
 class PostAdmin(admin.ModelAdmin):
     save_as = True
@@ -10,4 +10,4 @@ class PostAdmin(admin.ModelAdmin):
     list_filter = ('item_category', 'item_gender', 'item_seller')
     search_fields = ('item_title', 'item_asin')
 
-admin.site.register(Product_Clothes, PostAdmin)
+admin.site.register(Product_Clothes_Tops, PostAdmin)

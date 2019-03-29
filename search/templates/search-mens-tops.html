@@ -3,7 +3,7 @@
 {% load filter_pagination_tag %}
 {% block content %}
 <link rel="canonical" href="https://www.comfy-penguin.com/search" />
-<title>2019 | Find fashion</title>
+<title>2019 | Find fashion | Men's tops search</title>
 <!------ content ---------->
 <div class="accordion" id="accordionExample" style="padding-bottom:2rem">
   <div class="card bg-dark">
@@ -14,9 +14,11 @@
         </button>
       </h5>
     </div>
-    <form action="{% url 'searchpage' %}">
+    <form action="{% url 'search_mens_tops' %}">
       <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
         <div class="container-fluid bg-white" style="height: fluid">
+          <br>
+          <h5 class="card-text" style="text-align: center">Copy parameters on which you want to find clothes</h5>
           <div class="row align-items-center justify-content-md-center" style="padding-top: 1rem">
             <div class="col-md-auto">
               <div class="form-group">
@@ -29,61 +31,37 @@
               </div>
             </div>
           </div>
-          <div class="row justify-content-md-center">
-            <div class="col-md-auto">
-              <div class="form-group" style="align-items:center; text-align:center; width:15rem; margin:auto">
-                <select name="Type" class="form-control">
-                  <option value="" selected>Select type</option>
-                  {% for key, value in CATEGORY_CHOICES.items %}
-                  <option value="{{ key }}" {% if key == values.Type %}
-                  selected
-                  {% endif %}
-                  >{{ value }}
-                </option>
+          <hr width="70%">
+          <div class="col-md-auto">
+            <div class="form-group" style="align-items:center; text-align:center; width:15rem; margin:auto">
+              <select name="Type" class="form-control">
+                <option value="" selected>Select type</option>
+                {% for key, value in CATEGORY_CHOICES.items %}
+                <option value="{{ key }}" {% if key == values.Type %}selected{% endif %}>{{ value }}</option>
                 {% endfor %}
               </select>
             </div>
           </div>
+          <br>
           <div class="col-md-auto">
             <div class="form-group">
-              <select name="Gender" class="form-control" style="align-items:center; text-align:center; width:15rem; margin:auto">
-                <option value="" selected>Select gender</option>
-                {% for key, value in GENDER_CHOICES.items %}
-                <option value="{{ key }}"{% if key == values.Gender %}
-                selected
-                {% endif %}
-                >{{ value }}
-              </option>
-              {% endfor %}
-            </select>
+              <select name="Continent" class="form-control" style="align-items:center; text-align:center; width:15rem; margin:auto">
+                <option value="" selected>Select continent</option>
+                {% for key, value in CONTINENT_CHOICES.items %}
+                <option value="{{ key }}"{% if key == values.Continent %}selected{% endif %}>{{ value }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+          <div class="row justify-content-md-center">
+            <button type="submit" class="btn btn-dark" style="align-items:center; text-align:center; width:15rem; margin:auto">Search</button>
           </div>
         </div>
-        <div class="col-md-auto">
-          <div class="form-group">
-            <select name="Continent" class="form-control" style="align-items:center; text-align:center; width:15rem; margin:auto">
-              <option value="" selected>Select continent</option>
-              {% for key, value in CONTINENT_CHOICES.items %}
-              <option value="{{ key }}"{% if key == values.Continent %}
-              selected
-              {% endif %}
-              >{{ value }}
-            </option>
-            {% endfor %}
-          </select>
-        </div>
-        </div>
       </div>
-      <div class="row justify-content-md-center">
-        <button type="submit" class="btn btn-dark" style="align-items:center; text-align:center; width:15rem; margin:auto">Search</button>
-      </div>
-      <br>
-    </div>
+    </form>
   </div>
-</form>
 </div>
-</div>
-</body>
-<hr>
+<hr width="70%">
 <br>
 <div class="container" style="text-align: center">
   <h4 class="card-text" style="text-align: center">Found products with your parameters</h4>
