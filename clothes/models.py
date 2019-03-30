@@ -4,7 +4,7 @@ from datetime import datetime
 # Create your models here.
 
 class Product_Clothes_Tops(models.Model):
-    item_brand = models.CharField(max_length=25, null = True)
+    item_brand = models.CharField(max_length=35, null = True)
 
     item_title = models.CharField(max_length=35, null = True)
 

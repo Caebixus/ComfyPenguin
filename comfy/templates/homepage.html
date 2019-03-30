@@ -61,7 +61,7 @@
     <div class="col-md-6" style="text-align: center">
       <br>
       <h2>Men's Tops</h2>
-      <p>Find new men's T-shirts or sweatshirts similar to size of your favourite ones!</p>
+      <p>Find new men's Shirts or hoodies similar to size of your favourite ones!</p>
       <a href="{% url 'filter_mens_tops' %}"><img src="{% static 'Mens-top.jpg'%}" alt="..." class="img-thumbnail" style="border-radius: 10px;"></a>
       <div class="button" style="padding-top:1rem">
         <a class="btn btn-dark" href="{% url 'filter_mens_tops' %}" style="align-items:center; text-align:center; width:15rem; margin:auto;">Search in men's tops</a>
@@ -180,7 +180,9 @@
     </div>
   </div>
 </div>
-<br>
+<div class="tlačítko" style="text-align: center; padding-top: 3rem;">
+  <a class="btn btn-dark btn-lg" href="{% url 'filter' %}" style="width: 13rem">Find new clothes</a>
+</div>
 <br>
 <br>
 {% endblock %}
