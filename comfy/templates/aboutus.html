@@ -1,0 +1,34 @@
+{% extends 'base2.html' %}
+{% load bootstrap %}
+{% load static %}
+{% block content %}
+<link rel="canonical" href="https://www.comfy-penguin.com/" />
+<title>2019 | Find comfy fashion that fits you!</title>
+<div class="container" style="text-align: justify">
+  <div class="nadpis" style="padding-top: 2rem; text-align: center">
+    <h1> - Our Mission - </h1>
+  </div>
+  <div class="nadpis 2" style="padding-top: 1rem; color: #3e3b39">
+    <h2 style="font-size: 140%; text-align: center"><u>To provide new fashion based on the sizes of your already used and favorite clothing</u></h2>
+  </div>
+  <div class="text" style="padding-top: 4rem;">
+    <p style="font-size: 140%; color: #626262; text-align: center">My name is David. And I develop quite a unique website called Comfy-penguin.com</p>
+    <div class="imageFounder" style="padding-top: 1rem; text-align: center">
+      <img src="{% static 'Founder.jpg' %}" alt="" class="img-thumbnail" style="border-radius: 10px; max-height: 25rem">
+    </div>
+    <p style="font-size: 140%; color: #626262; padding-top: 2rem">The idea for this project was born in 2014 when I noticed that there were no straightforward websites for search by clothing parameters. Just e-commerce sites, with clothing I was interested, but not sure if the size is right. My idea was simple: measure your favorite sweatshirt and find the same-sized sweatshirts according to these parameters.</p>
+    <p style="font-size: 140%; color: #626262">I believe this is very effective and if the parameters from size charts are precise, this method could bring time-saving. Also, if we could discover which parameters are heavily used and which are not, it could lead us to a more sustainable fashion world.</p>
+    <p style="font-size: 140%; color: #626262">The fashion industry could focus on clothing parameters which are mostly used and apply more sustainable materials in order to protect our environment for the next generations!</p>
+  </div>
+  <br>
+  <hr>
+  <br>
+  <div class="tlačítko" style="text-align: center; padding-top: 3rem;">
+    <a class="btn btn-dark btn-lg" href="{% url 'filter' %}" style="width: 13rem">Let's try it</a>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+{% endblock %}
