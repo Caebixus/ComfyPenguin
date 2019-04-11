@@ -6,51 +6,27 @@
 <link rel="canonical" href="https://www.comfy-penguin.com/search/filter" />
 <title>2019 | Find fashion with your size of your favourite clothes</title>
 <!------ content ---------->
-<div class="container" style="padding-top: 4rem">
-  <h2 class="card-text" style="text-align: center">Find similar clothes</h2>
-  <form action="{% url 'searchpage' %}">
-    <div class="row align-items-center justify-content-md-center" style="padding-top: 1rem">
-      <div class="col-md-auto">
-        <div class="form-group">
-          <input type="number" name="width" class="form-control" placeholder="Width (in cm)" value="{{ values.width }}" style="align-items:center; text-align:center; width:15rem; margin:auto" required>
-        </div>
-      </div>
-      <div class="col-md-auto">
-        <div class="form-group">
-          <input type="number" name="height" class="form-control" placeholder="Length (in cm)" value="{{ values.height }}" style="align-items:center; text-align:center; width:15rem; margin:auto" required>
-        </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6" style="text-align: center">
+      <br>
+      <h2>Women's Tops</h2>
+      <p>Find new women's T-shirts or sweatshirts similar to size of your favourite ones!</p>
+      <a href="{% url 'filter_womens_tops' %}"><img src="{% static 'Womens-top.jpg'%}" alt="..." class="img-thumbnail" style="border-radius: 10px;"></a>
+      <div class="button" style="padding-top:1rem">
+        <a class="btn btn-dark" href="{% url 'filter_womens_tops' %}" style="align-items:center; text-align:center; width:15rem; margin:auto;">Search in women's tops</a>
       </div>
     </div>
-    <div class="row justify-content-md-center">
-      <div class="col-md-auto">
-        <div class="form-group" style="align-items:center; text-align:center; width:15rem; margin:auto">
-          <select name="Type" class="form-control">
-            <option value="" selected>Select type</option>{% for key, value in CATEGORY_CHOICES.items %}
-            <option value="{{ key }}" {% if key == values.Type %}selected{% endif %}>{{ value }}</option>{% endfor %}
-          </select>
-        </div>
-      </div>
-      <div class="col-md-auto">
-        <div class="form-group">
-          <select name="Gender" class="form-control" style="align-items:center; text-align:center; width:15rem; margin:auto">
-            <option value="" selected>Select gender</option>{% for key, value in GENDER_CHOICES.items %}
-            <option value="{{ key }}"{% if key == values.Gender %}selected{% endif %}>{{ value }}</option>{% endfor %}
-          </select>
-        </div>
-      </div>
-      <div class="col-md-auto">
-        <div class="form-group">
-          <select name="Continent" class="form-control" style="align-items:center; text-align:center; width:15rem; margin:auto">
-            <option value="" selected>Select continent</option>{% for key, value in CONTINENT_CHOICES.items %}
-            <option value="{{ key }}"{% if key == values.Continent %}selected{% endif %}>{{ value }}</option>{% endfor %}
-          </select>
-        </div>
+    <div class="col-md-6" style="text-align: center">
+      <br>
+      <h2>Men's Tops</h2>
+      <p>Find new men's Shirts or hoodies similar to size of your favourite ones!</p>
+      <a href="{% url 'filter_mens_tops' %}"><img src="{% static 'Mens-top.jpg'%}" alt="..." class="img-thumbnail" style="border-radius: 10px;"></a>
+      <div class="button" style="padding-top:1rem">
+        <a class="btn btn-dark" href="{% url 'filter_mens_tops' %}" style="align-items:center; text-align:center; width:15rem; margin:auto;">Search in men's tops</a>
       </div>
     </div>
-    <div class="row">
-      <button type="submit" class="btn btn-dark" style="align-items:center; text-align:center; width:15rem; margin:auto">Search</button>
-    </div>
-  </form>
+  </div>
 </div>
 <br>
 <br>

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from clothes.models import Product_Clothes_Tops
-from comfy.choices import GENDER_CHOICES, CATEGORY_CHOICES, CONTINENT_CHOICES
+from comfy.choices import GENDER_CHOICES, CATEGORY_CHOICES, CONTINENT_CHOICES, CATEGORY_CHOICES_MALE, CATEGORY_CHOICES_FEMALE
 from comfy.views import search
 from django.core.paginator import Paginator
 
@@ -132,7 +132,7 @@ def search_mens_tops(request):
     page = request.GET.get('page')
     paginationing = paginator.get_page(page)
     context = {
-        'CATEGORY_CHOICES': CATEGORY_CHOICES,
+        'CATEGORY_CHOICES_MALE': CATEGORY_CHOICES_MALE,
         'GENDER_CHOICES': GENDER_CHOICES,
         'CONTINENT_CHOICES': CONTINENT_CHOICES,
         'listing': queryset_list,
@@ -150,7 +150,7 @@ def search_mens_tops(request):
 def filter_mens_tops(request):
 
     context = {
-        'CATEGORY_CHOICES': CATEGORY_CHOICES,
+        'CATEGORY_CHOICES_MALE': CATEGORY_CHOICES_MALE,
         'CONTINENT_CHOICES': CONTINENT_CHOICES,
     }
 
@@ -204,7 +204,7 @@ def search_mens_tops_sweatshirts(request):
     page = request.GET.get('page')
     paginationing = paginator.get_page(page)
     context = {
-        'CATEGORY_CHOICES': CATEGORY_CHOICES,
+        'CATEGORY_CHOICES_MALE': CATEGORY_CHOICES_MALE,
         'GENDER_CHOICES': GENDER_CHOICES,
         'CONTINENT_CHOICES': CONTINENT_CHOICES,
         'listing': queryset_list,
@@ -267,7 +267,7 @@ def search_mens_tops_hoodies(request):
     page = request.GET.get('page')
     paginationing = paginator.get_page(page)
     context = {
-        'CATEGORY_CHOICES': CATEGORY_CHOICES,
+        'CATEGORY_CHOICES_MALE': CATEGORY_CHOICES_MALE,
         'GENDER_CHOICES': GENDER_CHOICES,
         'CONTINENT_CHOICES': CONTINENT_CHOICES,
         'listing': queryset_list,
@@ -330,7 +330,7 @@ def search_mens_tops_jumpers(request):
     page = request.GET.get('page')
     paginationing = paginator.get_page(page)
     context = {
-        'CATEGORY_CHOICES': CATEGORY_CHOICES,
+        'CATEGORY_CHOICES_MALE': CATEGORY_CHOICES_MALE,
         'GENDER_CHOICES': GENDER_CHOICES,
         'CONTINENT_CHOICES': CONTINENT_CHOICES,
         'listing': queryset_list,
@@ -399,7 +399,7 @@ def search_womens_tops(request):
     page = request.GET.get('page')
     paginationing = paginator.get_page(page)
     context = {
-        'CATEGORY_CHOICES': CATEGORY_CHOICES,
+        'CATEGORY_CHOICES_FEMALE': CATEGORY_CHOICES_FEMALE,
         'GENDER_CHOICES': GENDER_CHOICES,
         'CONTINENT_CHOICES': CONTINENT_CHOICES,
         'listing': queryset_list,
@@ -464,7 +464,7 @@ def search_womens_tops_sweatshirts(request):
     page = request.GET.get('page')
     paginationing = paginator.get_page(page)
     context = {
-        'CATEGORY_CHOICES': CATEGORY_CHOICES,
+        'CATEGORY_CHOICES_FEMALE': CATEGORY_CHOICES_FEMALE,
         'GENDER_CHOICES': GENDER_CHOICES,
         'CONTINENT_CHOICES': CONTINENT_CHOICES,
         'listing': queryset_list,
@@ -527,7 +527,7 @@ def search_womens_tops_hoodies(request):
     page = request.GET.get('page')
     paginationing = paginator.get_page(page)
     context = {
-        'CATEGORY_CHOICES': CATEGORY_CHOICES,
+        'CATEGORY_CHOICES_FEMALE': CATEGORY_CHOICES_FEMALE,
         'GENDER_CHOICES': GENDER_CHOICES,
         'CONTINENT_CHOICES': CONTINENT_CHOICES,
         'listing': queryset_list,
@@ -590,7 +590,7 @@ def search_womens_tops_jumpers(request):
     page = request.GET.get('page')
     paginationing = paginator.get_page(page)
     context = {
-        'CATEGORY_CHOICES': CATEGORY_CHOICES,
+        'CATEGORY_CHOICES_FEMALE': CATEGORY_CHOICES_FEMALE,
         'GENDER_CHOICES': GENDER_CHOICES,
         'CONTINENT_CHOICES': CONTINENT_CHOICES,
         'listing': queryset_list,
@@ -608,7 +608,7 @@ def search_womens_tops_jumpers(request):
 def filter_womens_tops(request):
 
     context = {
-        'CATEGORY_CHOICES': CATEGORY_CHOICES,
+        'CATEGORY_CHOICES_FEMALE': CATEGORY_CHOICES_FEMALE,
         'CONTINENT_CHOICES': CONTINENT_CHOICES,
     }
 

@@ -1,4 +1,13 @@
-CATEGORY_CHOICES = {
+CATEGORY_CHOICES_FEMALE = {
+    'Sweatshirt': 'Sweatshirt',
+    'Hoodies': 'Hoodies',
+    'Jumper': 'Jumper',
+    'Jacket': 'Jacket',
+    'Cardigan': 'Cardigan',
+    'Short': 'Short',
+    }
+
+CATEGORY_CHOICES_MALE = {
     'Sweatshirt': 'Sweatshirt',
     'Hoodies': 'Hoodies',
     'Jumper': 'Jumper',
@@ -6,6 +15,14 @@ CATEGORY_CHOICES = {
     'Cardigan': 'Cardigan',
     }
 
+CATEGORY_CHOICES = {
+    'Sweatshirt': 'Sweatshirt',
+    'Hoodies': 'Hoodies',
+    'Jumper': 'Jumper',
+    'Jacket': 'Jacket',
+    'Cardigan': 'Cardigan',
+    'Short': 'Short',
+    }
 
 GENDER_CHOICES = {
     'Male': 'Male',

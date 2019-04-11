@@ -36,7 +36,7 @@
             <div class="form-group" style="align-items:center; text-align:center; width:15rem; margin:auto">
               <select name="Type" class="form-control">
                 <option value="" selected>Select type</option>
-                {% for key, value in CATEGORY_CHOICES.items %}
+                {% for key, value in CATEGORY_CHOICES_MALE.items %}
                 <option value="{{ key }}" {% if key == values.Type %}selected{% endif %}>{{ value }}</option>
                 {% endfor %}
               </select>
@@ -88,7 +88,7 @@
           <div class="form-group" style="align-items:center; text-align:center; width:15rem; margin:auto">
             <select name="Type" class="form-control">
               <option value="sweatshirt" selected>Select type</option>
-              {% for key, value in CATEGORY_CHOICES.items %}
+              {% for key, value in CATEGORY_CHOICES_MALE.items %}
               <option value="{{ key }}" {% if key == values.Type %}selected{% endif %}>{{ value }}</option>
               {% endfor %}
             </select>
@@ -126,7 +126,7 @@
             <div class="form-group" style="align-items:center; text-align:center; width:15rem; margin:auto">
               <select name="Type" class="form-control">
                 <option value="hoodies" selected>Select type</option>
-                {% for key, value in CATEGORY_CHOICES.items %}
+                {% for key, value in CATEGORY_CHOICES_MALE.items %}
                 <option value="{{ key }}" {% if key == values.Type %}selected{% endif %}>{{ value }}</option>
                 {% endfor %}
               </select>
@@ -165,7 +165,7 @@
             <div class="form-group" style="align-items:center; text-align:center; width:15rem; margin:auto">
               <select name="Type" class="form-control">
                 <option value="Jumper" selected>Select type</option>
-                {% for key, value in CATEGORY_CHOICES.items %}
+                {% for key, value in CATEGORY_CHOICES_MALE.items %}
                 <option value="{{ key }}" {% if key == values.Type %}selected{% endif %}>{{ value }}</option>
                 {% endfor %}
               </select>

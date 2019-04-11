@@ -20,7 +20,9 @@ class Product_Clothes_Tops(models.Model):
     ('Jumper', 'Jumper'),
     ('Jacket', 'Jacket'),
     ('Cardigan', 'Cardigan'),
+    ('Short', 'Short'),
     )
+    
     item_category = models.CharField(max_length=40, choices=CATEGORY_CHOICES, null = True)
     item_asin = models.CharField(max_length=40, null = True)
     item_size = models.CharField(max_length=4, null = True)
