@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+{% load static %}
+{% block content %}
+<title>2019 | Find comfy fashion that fits you!</title>
+<link rel="canonical" href="https://www.comfy-penguin.com/how-to-measure-sweatshirt" />
+<br>
+<br>
+<h1>How to measure sweatshirt</h1>
+<div class="container">
+  <div class="Aligner">
+    <div class="row">
+      <div class="col">
+        <div class="Aligner-item">
+          <img src="{% static 'sweatshirt-completeJPG.jpg' %}" style="height: 40rem" alt="">
+        </div>
+      </div>
+      <div class="col">
+        <div class="Aligner-item">
+          <p>To determine the exact size and fit for you, you simply need to measure a few precise points of a pullover or sweater you already own and then compare the measurements with our size chart.</p>
+          <p>To be sure you are measuring with accuracy, we advise you to first lay the garment on a table or any other flat surface.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row featurette">
+    <div class="col-md-6">
+      <h2><span class="text-muted">Step One. Get measurements of your favourite clothing!</span></h2>
+      <br>
+      <p>Choose your favourite, most comfy clothing you want to buy and get parameters (for example width and length). You can use smartphone measure apps to get your sizes, but I recommend to measure it with measuring tape or meter.</p>
+    </div>
+    <div class="col-md-6">
+      <img src="{% static 'sweatshirt-completeJPG.jpg' %}" class="card-img-top" id="my_image1" alt="Old hoodie width" data-toggle="modal" data-target=".bd-example-modal-lg">
+    </div>
+  </div>
+  <br>
+  <hr class="featurette-divider py-2">
+</div>
+
+<br>
+<br>
+<br>
+{% endblock %}

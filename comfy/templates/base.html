@@ -31,9 +31,9 @@
   <link rel="apple-touch-icon" href="{% static 'favicon-120.png' %}" sizes="120x120">
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  <link rel="stylesheet" href="{% static 'css/custom.css' %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" media="all">
+  <link rel="stylesheet" href="{% static 'css/custom.css' %}" media="all">
 
   <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
     <a class="navbar-brand" href="{% url 'homepage' %}">
@@ -68,7 +68,7 @@
     <nav class="navbar navbar-expand navbar-light">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" name="nav-link-style" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Women
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -80,7 +80,7 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            | Men
+            Men
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="{% url 'filter_mens_tops' %}"><b>Tops</b></a>
@@ -91,7 +91,7 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="max-width:5rem">
-            | Kids
+            Kids
           </a>
           <div class="dropdown-menu disabled" aria-labelledby="navbarDropdown">
             <a class="dropdown-item disabled" href="#">Tops</a>

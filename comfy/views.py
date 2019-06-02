@@ -87,3 +87,6 @@ def aboutus(request):
 
 def how_to_measure(request):
     return render(request, 'how-to-measure.html')
+
+def how_to_measure_sweatshirt(request):
+    return render(request, 'how-to-measure-sweatshirt.html')

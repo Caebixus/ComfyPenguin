@@ -26,20 +26,22 @@
     <div class="row">
       <div class="col-md-4">
         <div class="card mb-4 shadow-sm" style="min-width: 20rem">
-          <a href="{% url 'clanek1' %}" style="text-align: center">
+          <a class="BlogImage" href="{% url 'clanek1' %}" style="text-align: center">
             <img class="card-img-top" src="{% static 'blog1picmain.jpg' %}" alt="" width="100%" height="250" style="max-width: 23rem">
-          </a>
-          <div class="card-body" style="text-align: center">
-            <a href="{% url 'clanek1' %}">
-              <p class="card-text">Why size chart does not work and what are our options?</p>
-            </a>
-            <br>
-            <div class="d-flex justify-content-between align-items-center" style="text-align: center">
-              <div class="btn-group">
-                <button type="button" class="btn btn-lg btn-outline-secondary">Read more</button>
+            <div class="card-body" style="text-align: left">
+              <a href="{% url 'clanek1' %}">
+                <p class="card-text">Why size chart does not work and what are our options?</p>
+              </a>
+              <br>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="{% url 'clanek1' %}">
+                    <button type="button" class="btn btn-lg btn-outline-secondary">Read more</button>
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
       <div hidden class="col-md-4">
