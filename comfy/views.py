@@ -90,3 +90,9 @@ def how_to_measure(request):
 
 def how_to_measure_sweatshirt(request):
     return render(request, 'how-to-measure-sweatshirt.html')
+
+def how_to_measure_jumper(request):
+    return render(request, 'how-to-measure-jumper.html')
+
+def how_to_measure_hoodie(request):
+    return render(request, 'how-to-measure-hoodie.html')

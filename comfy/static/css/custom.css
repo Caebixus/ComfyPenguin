@@ -8,7 +8,6 @@ h1 {
   font-family: 'Didact Gothic';
 }
 
-
 h2 {
   font-family: 'Didact Gothic';
   font-weight: bold;
@@ -19,7 +18,7 @@ a {
   text-decoration: none;
 }
 
-a:not(.BlogImage):not(.dropdown-item):hover {
+a:not(.BlogImage):not(.dropdown-item):not(.navbar-brand):hover {
   transform: scale(1.1);
 }
 
@@ -30,7 +29,19 @@ a:not(.BlogImage):not(.dropdown-item):hover {
   text-align: center;
 }
 
-.btn:hover{
+.btn:hover {
   background-color: #C3073F;
   color: white;
+}
+
+.paragraphSearchProductText {
+  color: purple;
+}
+
+.paragraphMyParameters {
+  color: #C3073F;
+}
+
+.cardClothes {
+  height: 10rem;
 }

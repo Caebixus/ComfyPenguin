@@ -255,20 +255,20 @@
         <div class="card-body">
           <p id="paragraphSearchProduct">Product width = {{ Product_Clothes_Tops.item_width }} cm</p>
           <div class="text-right">
-            <p id="paragraphMyParameters" style="font-size:90%;">My width = {{ values.width }} cm</p>
+            <p class="paragraphMyParameters" style="font-size:90%;">My width = {{ values.width }} cm</p>
           </div>
           <p id="paragraphSearchProduct">Product height = {{ Product_Clothes_Tops.item_height }} cm</p>
           <div class="text-right">
-            <p id="paragraphMyParameters" style="font-size:90%;">My height = {{ values.height }} cm</p>
+            <p class="paragraphMyParameters" style="font-size:90%;">My height = {{ values.height }} cm</p>
           </div>
           <br>
           <div class="text-center">
-            <p id="paragraphSearchProduct"><u>Pick this size: {{ Product_Clothes_Tops.item_size }} {{ width_percent_total }}</u></p>
+            <p>⇥ Pick this size: <strong class="paragraphSearchProductText" style="font-size:120%">{{ Product_Clothes_Tops.item_size }} </strong>⇤</p>
           </div>
         </div>
         <div class="card-text" style="width: 100%;">
           <div class="d-flex">
-            <a href="{{ Product_Clothes_Tops.item_url }}" target="_blank" id="OdkazanNaShop" onclick="affiliateTriggered" class="btn btn-block" style="align-items:center; border-radius: 10px;">View more</a>
+            <a href="{{ Product_Clothes_Tops.item_url }}" target="_blank" id="OdkazanNaShop" onclick="affiliateTriggered" class="btn btn-block" style="align-items:center; border-radius: 10px;">Check price</a>
           </div>
         </div>
       </div>
