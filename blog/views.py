@@ -7,3 +7,6 @@ def blog(request):
 
 def clanek1(request):
     return render(request, 'clanek1.html',)
+
+def clanek2(request):
+    return render(request, 'clanek2.html',)
