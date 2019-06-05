@@ -22,9 +22,9 @@ class Product_Clothes_Tops(models.Model):
     ('Cardigan', 'Cardigan'),
     ('Short', 'Short'),
     )
-    
+
     item_category = models.CharField(max_length=40, choices=CATEGORY_CHOICES, null = True)
-    item_asin = models.CharField(max_length=40, null = True)
+    item_asin = models.CharField(max_length=40, null = True, unique=True)
     item_size = models.CharField(max_length=4, null = True)
     item_price = models.DecimalField(help_text='Price of product even with decimals', max_digits=10, decimal_places=2, null = True)
     CURRENCY_CHOICES = (
