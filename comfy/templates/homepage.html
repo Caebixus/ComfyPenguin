@@ -100,9 +100,51 @@
   <div class="tlačítko" style="text-align: center; padding-top: 3rem;">
     <a class="btn btn-dark btn-lg" href="#searchfilter" style="width: 13rem">Start searching</a>
   </div>
-
-
-
+</div>
+<br>
+<br>
+<hr width="75%">
+<div class="album py-5">
+  <div class="container" style="text-align: center">
+    <div class="row align-items-center justify-content-md-center">
+      <div class="col-md-auto">
+        <div class="card mb-4 shadow-sm" style="max-width: 30rem; max-height: 50rem">
+          <a class="BlogImage" href="{% url 'clanek2' %}">
+            <img class="card-img-top" src="{% static 'blog2pic1.jpg' %}" alt="guy with hoodie siting on bridge" width="auto" height="400">
+            <div class="card-body">
+              <p class="card-text">How size chart might not work and how correctly buy hoodies online</p>
+              <br>
+              <div class="d-flex justify-content-center">
+                <div class="btn-group">
+                  <a href="{% url 'clanek2' %}">
+                    <button type="button" class="btn btn-lg btn-outline-secondary">Read more</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-auto">
+        <div class="card mb-4 shadow-sm" style="max-width: 30rem; max-height: 50rem">
+          <a class="BlogImage" href="{% url 'clanek1' %}">
+            <img class="card-img-top" src="{% static 'blog1picmain.jpg' %}" alt="sad woman is about to cry" width="auto" height="400">
+            <div class="card-body">
+              <p class="card-text">Why size chart does not work and what are our options?</p>
+              <br>
+              <div class="d-flex justify-content-center">
+                <div class="btn-group">
+                  <a href="{% url 'clanek1' %}">
+                    <button type="button" class="btn btn-lg btn-outline-secondary">Read more</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <br>
 <br>
