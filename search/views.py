@@ -87,6 +87,7 @@ def filter(request):
 def search_mens_tops(request):
     listing = Product_Clothes_Tops.objects.all()[:8]
     my_total = Product_Clothes_Tops.objects.count()
+
     # counting Mans clothes
     my_total_men = Product_Clothes_Tops.objects.filter(item_gender__iexact="Male")
     my_total_men_count = my_total_men.count()
@@ -126,6 +127,7 @@ def search_mens_tops(request):
         countries = request.GET['Continent']
         if countries:
             queryset_list = queryset_list.filter(item_continent__iexact=countries)
+
     queryset_list = queryset_list.filter(item_gender__iexact='Male')
     paginator = Paginator(queryset_list, 16, orphans=4)
     my_total_searched = queryset_list.count()
