@@ -1,31 +1,32 @@
 from django.shortcuts import render
-from clothes.models import Product_Clothes_Tops
-from comfy.choices import GENDER_CHOICES, CATEGORY_CHOICES, CONTINENT_CHOICES
+from clothes.models import Product_Clothes_Tops, Product_Clothes_Tops_US
+from comfy.choices import GENDER_CHOICES, CATEGORY_CHOICES, CONTINENT_CHOICES, CONTINENT_CHOICES_US
 
 def homepage(request):
-    listing = Product_Clothes_Tops.objects.all()
-    my_total = Product_Clothes_Tops.objects.count()
+    listing = Product_Clothes_Tops_US.objects.all()
+    my_total = Product_Clothes_Tops_US.objects.count()
 
     # counting Mans clothes
-    my_total_men = Product_Clothes_Tops.objects.filter(item_gender__iexact="Male")
+    my_total_men = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Male")
     my_total_men_count = my_total_men.count()
 
     # counting Mans clothes
-    my_total_woman = Product_Clothes_Tops.objects.filter(item_gender__iexact="Female")
+    my_total_woman = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Female")
     my_total_woman_count = my_total_woman.count()
 
     # counting Mans clothes
-    my_total_kid = Product_Clothes_Tops.objects.filter(item_gender__iexact="Kids")
+    my_total_kid = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Kids")
     my_total_kid_count = my_total_kid.count()
 
     # counting Mans clothes
-    my_total_uni = Product_Clothes_Tops.objects.filter(item_gender__iexact="Unisex")
+    my_total_uni = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Unisex")
     my_total_uni_count = my_total_uni.count()
 
     context = {
         'CATEGORY_CHOICES': CATEGORY_CHOICES,
         'GENDER_CHOICES': GENDER_CHOICES,
         'CONTINENT_CHOICES': CONTINENT_CHOICES,
+        'CONTINENT_CHOICES_US': CONTINENT_CHOICES_US,
         'listing': listing,
         'my_total': my_total,
         'my_total_men_count': my_total_men_count,
@@ -37,21 +38,21 @@ def homepage(request):
     return render(request, 'homepage.html', context)
 
 def search(request):
-    listing = Product_Clothes_Tops.objects.all()[:8]
-    my_total = Product_Clothes_Tops.objects.count()
-    queryset_list = Product_Clothes_Tops.objects.order_by('?')
+    listing = Product_Clothes_Tops_US.objects.all()[:8]
+    my_total = Product_Clothes_Tops_US.objects.count()
+    queryset_list = Product_Clothes_Tops_US.objects.order_by('?')
 
     #Width
     if 'width' in request.GET:
         widths = request.GET['width']
-        widthx = int(widths) + 2
+        widthx = int(widths) + 1
         if widths:
             queryset_list = queryset_list.filter(item_width__range=(widths, widthx))
 
     #Height
     if 'height' in request.GET:
         heights = request.GET['height']
-        heightx = int(heights) + 2
+        heightx = int(heights) + 1
         if heights:
             queryset_list = queryset_list.filter(item_height__range=(heights, heightx))
 
@@ -73,6 +74,7 @@ def search(request):
         'CATEGORY_CHOICES': CATEGORY_CHOICES,
         'GENDER_CHOICES': GENDER_CHOICES,
         'CONTINENT_CHOICES': CONTINENT_CHOICES,
+        'CONTINENT_CHOICES_US': CONTINENT_CHOICES_US,
         'listing': queryset_list,
         'my_total': my_total,
         'values': request.GET,

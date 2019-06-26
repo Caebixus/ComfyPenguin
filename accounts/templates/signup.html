@@ -2,26 +2,39 @@
 {% load bootstrap %}
 {% load static %}
 {% block content %}
+<link rel="canonical" href="https://www.comfy-penguin.com/accounts/signup" />
+<link rel="stylesheet" href="{% static 'css/custom.css' %}" media="all">
+<meta name="description" content="Creat your account on our site. Use it to save favorite cloth parameters in order to quickly search for new fashion next time!">
+<meta name="keywords" content="comfy-penguin login">
+<meta name="author" content="Comfy-penguin.com">
+<title>2019 | Comfy-penguin account signup</title>
+
+{% if error %}
+<div class="container" style="text-align: center">
+  <p style="color: red">{{error}}</p>
+</div>
+{% endif %}
 
 <br />
 <br />
 
 <main role="main">
-  <h1 style="text-align: center">Zaregistrujte se</h1>
+  <div class="container" style="width: 50rem">
+    <h1 style="text-align: center">Create account</h1>
+    <h2 style="text-align: center; font-size:110%;">Throught your account you can save your parameters, get notifications for clothes that have same parameters or sell your second hand clothes to others!</h2>
+  </div>
   <div class="container" style="width: 25rem">
     <form method="POST" action="{% url 'signup' %}" style="margin-top: 5rem">
       {% csrf_token %}
       <div class="form-group" style="text-align: center">
-        <label for="exampleInputEmail1">Zadejte Vaši email adresu</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Emailová adresa" name="usernameEmail">
+        <input style="text-align: center" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email address or Username" name="usernameEmail">
+      </div>
+      <hr width="75%">
+      <div class="form-group" style="text-align: center">
+        <input style="text-align: center" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password1">
       </div>
       <div class="form-group" style="text-align: center">
-        <label for="exampleInputPassword1">Zadejte Vaše heslo</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Heslo" name="password1">
-      </div>
-      <div class="form-group" style="text-align: center">
-        <label for="exampleInputPassword2">Potvrďte Vaše heslo</label>
-        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Heslo" name="password2">
+        <input style="text-align: center" type="password" class="form-control" id="exampleInputPassword2" placeholder="Confirm password" name="password2">
       </div>
       {% if error %}
       <div class="error" style="color: red;text-align: center">
@@ -29,9 +42,9 @@
       </div>
       {% endif %}
       <p align="center">
-        <button type="submit" class="btn btn-dark" style="margin-top: 1rem">Registrovat</button>
+        <button type="submit" class="btn btn-dark" style="margin-top: 1rem">Create your account</button>
       </p>
     </form>
   </div>
-
+</main>
 {% endblock %}

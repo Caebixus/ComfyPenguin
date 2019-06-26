@@ -4,7 +4,50 @@
 {% block content %}
 <title>2019 | Find fashion with your size of your favourite clothes</title>
 <link rel="canonical" href="https://www.comfy-penguin.com/search/" />
+<meta name="description" content="Comfy-penguin helps you find fashion with right size. Just take your favorite sweatshirt, shirt or hoodie and copy parameters to our size search engine!">
+<meta name="keywords" content="search tops">
+<meta name="author" content="Comfy-penguin.com">
 <!------ content ---------->
+<div class="nav-fashion" style="text-align: center">
+  <nav class="navbar navbar-expand navbar-light">
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" name="nav-link-style" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Women
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'filter_womens_tops' %}"><b>Tops</b></a>
+          <a class="dropdown-item disabled" href="#">Bottoms - soon</a>
+          <a class="dropdown-item disabled" href="#">Accessories - soon</a>
+          <a class="dropdown-item disabled" href="#">Underwear - soon</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Men
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'filter_mens_tops' %}"><b>Tops</b></a>
+          <a class="dropdown-item disabled" href="#">Bottoms - soon</a>
+          <a class="dropdown-item disabled" href="#">Accessories - soon</a>
+          <a class="dropdown-item disabled" href="#">Underwear - soon</a>
+        </div>
+      </li>
+      <li hidden class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="max-width:5rem">
+          Kids
+        </a>
+        <div class="dropdown-menu disabled" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item disabled" href="#">Tops</a>
+          <a class="dropdown-item disabled" href="#">Bottoms</a>
+          <a class="dropdown-item disabled" href="#">Accessories</a>
+          <a class="dropdown-item disabled" href="#">Underwear</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</div>
+<hr>
 <div class="accordion" id="accordionExample" style="padding-bottom:2rem">
   <div class="card bg-dark">
     <div class="card-header" id="headingOne">
@@ -20,12 +63,12 @@
           <div class="row align-items-center justify-content-md-center" style="padding-top: 1rem">
             <div class="col-md-auto">
               <div class="form-group">
-                <input type="number" name="width" class="form-control" placeholder="Width (in cm)" value="{{ values.width }}" style="align-items:center; text-align:center; width:15rem; margin:auto" required>
+                <input type="number" name="width" class="form-control" placeholder="Width (in cm)" value="{{ values.width }}" style="align-items:center; text-align:center; width:15rem; margin:auto" step="0.5" required>
               </div>
             </div>
             <div class="col-md-auto">
               <div class="form-group">
-                <input type="number" name="height" class="form-control" placeholder="Length (in cm)" value="{{ values.height }}" style="align-items:center; text-align:center; width:15rem; margin:auto" required>
+                <input type="number" name="height" class="form-control" placeholder="Length (in cm)" value="{{ values.height }}" style="align-items:center; text-align:center; width:15rem; margin:auto" step="0.5" required>
               </div>
             </div>
           </div>
@@ -94,82 +137,82 @@
 <div class="container" id="listing">
   <div class="row">
     {% if paginationing %}
-    {% for Product_Clothes_Tops in paginationing %}
+    {% for Product_Clothes_Tops_US in paginationing %}
     <div class="col-md-3" style="min-width: 17rem; border-radius: 10px;">
       <div class="card mb-5" style="align-items: center; border-radius: 10px;">
 
-        <div id="carouselExampleInterval{{ Product_Clothes_Tops.id }}" class="carousel slide" data-interval="false" data-ride="carousel" style="width: 100%; max-width:18rem; border-radius: 10px;">
+        <div id="carouselExampleInterval{{ Product_Clothes_Tops_US.id }}" class="carousel slide" data-interval="false" data-ride="carousel" style="width: 100%; max-width:18rem; border-radius: 10px;">
           <div class="carousel-inner">
             <div class="carousel-item active" data-interval="false">
-              <img src="{{ Product_Clothes_Tops.image_main.url }}" class="d-block w-100" alt="Main product image" style="height: 20rem; max-width:18rem; border-radius: 10px;">
+              <img src="{{ Product_Clothes_Tops_US.image_main.url }}" class="d-block w-100" alt="Main product image" style="height: 20rem; max-width:18rem; border-radius: 10px;">
             </div>
-            {% if Product_Clothes_Tops.image_secondary %}
+            {% if Product_Clothes_Tops_US.image_secondary %}
             <div class="carousel-item" data-interval="False">
-              <img src="{{ Product_Clothes_Tops.image_secondary.url }}" class="d-block w-100" alt="Secondary product image" style="height:20rem; max-width:18rem; border-radius: 10px;">
+              <img src="{{ Product_Clothes_Tops_US.image_secondary.url }}" class="d-block w-100" alt="Secondary product image" style="height:20rem; max-width:18rem; border-radius: 10px;">
             </div>
             {% else %}
             {{pass}}
             {% endif %}
-            {% if Product_Clothes_Tops.image_third %}
+            {% if Product_Clothes_Tops_US.image_third %}
             <div class="carousel-item" data-interval="False">
-              <img src="{{ Product_Clothes_Tops.image_third.url }}" class="d-block w-100" alt="Third product image" style="height:20rem; max-width:18rem; border-radius: 10px;">
+              <img src="{{ Product_Clothes_Tops_US.image_third.url }}" class="d-block w-100" alt="Third product image" style="height:20rem; max-width:18rem; border-radius: 10px;">
             </div>
             {% else %}
             {{pass}}
             {% endif %}
           </div>
-          <a class="carousel-control-prev" href="#carouselExampleInterval{{ Product_Clothes_Tops.id }}" role="button" data-slide="prev">
+          <a class="carousel-control-prev" href="#carouselExampleInterval{{ Product_Clothes_Tops_US.id }}" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
           </a>
-          <a class="carousel-control-next" href="#carouselExampleInterval{{ Product_Clothes_Tops.id }}" role="button" data-slide="next">
+          <a class="carousel-control-next" href="#carouselExampleInterval{{ Product_Clothes_Tops_US.id }}" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
           </a>
         </div>
 
-        <div id="carouselExampleInterval2{{ Product_Clothes_Tops.id }}" class="carousel slide" data-interval="false" data-ride="carousel" style="width: 100%">
+        <div id="carouselExampleInterval2{{ Product_Clothes_Tops_US.id }}" class="carousel slide" data-interval="false" data-ride="carousel" style="width: 100%">
           <div class="carousel-inner">
             <div class="carousel-item active" data-interval="false">
               <div class="card-header bg-dark" style="height: 6rem; width: 100%;">
-                <p id="paragraphSearchProduct" style="font-size:90%;" class="card-text text-center text-light">{{ Product_Clothes_Tops.item_title }}</p>
-                <p id="paragraphSearchProduct" style="font-size:150%; padding-top:2px" class="text-center text-light">{{ Product_Clothes_Tops.item_brand }}</p>
+                <p id="paragraphSearchProduct" style="font-size:90%;" class="card-text text-center text-light">{{ Product_Clothes_Tops_US.item_title }}</p>
+                <p id="paragraphSearchProduct" style="font-size:150%; padding-top:2px" class="text-center text-light">{{ Product_Clothes_Tops_US.item_brand }}</p>
               </div>
             </div>
             <div class="carousel-item" data-interval="False">
               <div class="card-header bg-dark" style="height: 6rem; width: 100%;">
-                <p id="paragraphSearchProduct" style="font-size:90%;" class="card-text text-center text-light">{{ Product_Clothes_Tops.item_material_composition }}</p>
-                <p id="paragraphSearchProduct" style="font-size:150%; padding-top:2px" class="text-center text-light">{{ Product_Clothes_Tops.item_seller }}</p>
+                <p id="paragraphSearchProduct" style="font-size:90%;" class="card-text text-center text-light">{{ Product_Clothes_Tops_US.item_material_composition }}</p>
+                <p id="paragraphSearchProduct" style="font-size:150%; padding-top:2px" class="text-center text-light">{{ Product_Clothes_Tops_US.item_seller }}</p>
               </div>
             </div>
           </div>
-          <a class="carousel-control-prev" href="#carouselExampleInterval2{{ Product_Clothes_Tops.id }}" role="button" data-slide="prev">
+          <a class="carousel-control-prev" href="#carouselExampleInterval2{{ Product_Clothes_Tops_US.id }}" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
           </a>
-          <a class="carousel-control-next" href="#carouselExampleInterval2{{ Product_Clothes_Tops.id }}" role="button" data-slide="next">
+          <a class="carousel-control-next" href="#carouselExampleInterval2{{ Product_Clothes_Tops_US.id }}" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
           </a>
         </div>
 
         <div class="card-body">
-          <p id="paragraphSearchProduct">Product width = {{ Product_Clothes_Tops.item_width }} cm</p>
+          <p id="paragraphSearchProduct">Product width = {{ Product_Clothes_Tops_US.item_width }} cm</p>
           <div class="text-right">
             <p id="paragraphMyParameters" style="font-size:90%;">My width = {{ values.width }} cm</p>
           </div>
-          <p id="paragraphSearchProduct">Product height = {{ Product_Clothes_Tops.item_height }} cm</p>
+          <p id="paragraphSearchProduct">Product height = {{ Product_Clothes_Tops_US.item_height }} cm</p>
           <div class="text-right">
             <p id="paragraphMyParameters" style="font-size:90%;">My height = {{ values.height }} cm</p>
           </div>
           <br>
           <div class="text-center">
-            <p>Pick this size: <strong class="paragraphSearchProductText" style="font-size:120%">{{ Product_Clothes_Tops.item_size }}</strong></p>
+            <p>Pick this size: <strong class="paragraphSearchProductText" style="font-size:120%">{{ Product_Clothes_Tops_US.item_size }}</strong></p>
           </div>
         </div>
         <div class="card-text" style="width: 100%;">
           <div class="d-flex">
-            <a href="{{ Product_Clothes_Tops.item_url }}" target="_blank" id="OdkazanNaShop" onclick="affiliateTriggered" class="btn btn-block" style="align-items:center; border-radius: 10px;">View more</a>
+            <a href="{{ Product_Clothes_Tops_US.item_url }}" target="_blank" id="OdkazanNaShop" onclick="affiliateTriggered" class="btn btn-block" style="align-items:center; border-radius: 10px;">View more</a>
           </div>
         </div>
       </div>

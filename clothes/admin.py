@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Product_Clothes_Tops
+from .models import Product_Clothes_Tops, Product_Clothes_Tops_US
 
 class PostAdmin(admin.ModelAdmin):
     save_as = True
@@ -11,3 +11,4 @@ class PostAdmin(admin.ModelAdmin):
     search_fields = ('item_title', 'item_asin', 'item_brand')
 
 admin.site.register(Product_Clothes_Tops, PostAdmin)
+admin.site.register(Product_Clothes_Tops_US, PostAdmin)

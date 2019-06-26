@@ -5,7 +5,55 @@
 {% block content %}
 <title>2019 | Find fashion with your size of your favourite clothes</title>
 <link rel="canonical" href="https://www.comfy-penguin.com/search/filter" />
+<meta name="description" content="Comfy-penguin helps you find fashion with the right size. Try our new size search engine and never use size chart ever again!">
+<meta name="keywords" content="filter tops">
+<meta name="author" content="Comfy-penguin.com">
 <!------ content ---------->
+<div class="nav-fashion" style="text-align: center">
+  <nav class="navbar navbar-expand navbar-light">
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" name="nav-link-style" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Women
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'filter_womens_tops' %}"><b>Tops</b></a>
+          <a class="dropdown-item disabled" href="#">Bottoms - soon</a>
+          <a class="dropdown-item disabled" href="#">Accessories - soon</a>
+          <a class="dropdown-item disabled" href="#">Underwear - soon</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Men
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'filter_mens_tops' %}"><b>Tops</b></a>
+          <a class="dropdown-item disabled" href="#">Bottoms - soon</a>
+          <a class="dropdown-item disabled" href="#">Accessories - soon</a>
+          <a class="dropdown-item disabled" href="#">Underwear - soon</a>
+        </div>
+      </li>
+      <li hidden class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="max-width:5rem">
+          Kids
+        </a>
+        <div class="dropdown-menu disabled" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item disabled" href="#">Tops</a>
+          <a class="dropdown-item disabled" href="#">Bottoms</a>
+          <a class="dropdown-item disabled" href="#">Accessories</a>
+          <a class="dropdown-item disabled" href="#">Underwear</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</div>
+<hr>
+<br>
+<div class="container" style="text-align: center">
+  <h1>Choose gender to continue to our size search engine</h1>
+</div>
+<br>
 <div class="container">
   <div class="row">
     <div class="col-md-6" style="text-align: center">

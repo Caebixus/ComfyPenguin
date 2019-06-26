@@ -1,0 +1,54 @@
+  {% extends 'base.html' %}
+  {% load bootstrap %}
+  {% load static %}
+  {% block content %}
+
+  {% if error %}
+  <div class="container" style="text-align: center">
+    <p style="color: red">{{error}}</p>
+  </div>
+  {% endif %}
+  <hr>
+  <div class="container">
+    <h1 style="text-align:center">{{ product.item_title }}</h1>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-md-6 pt-2" style="text-align:center;">
+        <img src="{{ product.image_main.url }}" alt="" style="height:20rem">
+      </div>
+      <div class="col-md-6 pt-2" style="text-align:center">
+        <p>Saved type: <strong>{{ product.item_category }}</strong></p>
+        <p>Saved gender: <strong>{{ product.item_gender }}</strong></p>
+        <p>Saved width: <strong>{{ product.item_width }}</strong></p>
+        <p>Saved length: <strong>{{ product.item_length }}</strong></p>
+      </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    {% if product.item_gender == "Male" %}
+    <form action="{% url 'search_mens_tops' %}">
+      <div class="row">
+        <input hidden type="number" name="width" class="form-control" placeholder="Width/Chest (in inches)" value="{{ product.item_width }}" style="align-items:center; text-align:center; width:15rem; margin:auto" step="0.5">
+        <input hidden type="number" name="height" class="form-control" placeholder="Length (in inches)" value="{{ product.item_length }}" style="align-items:center; text-align:center; width:15rem; margin:auto" step="0.5">
+        <button type="submit" class="btn btn-dark" style="align-items:center; text-align:center; width:15rem; margin:auto; background-color: black">Search with these parameters</button>
+      </div>
+    </form>
+    {% else %}
+    <form action="{% url 'search_womens_tops' %}">
+      <div class="row">
+        <input hidden type="number" name="width" class="form-control" placeholder="Width/Chest (in inches)" value="{{ product.item_width }}" style="align-items:center; text-align:center; width:15rem; margin:auto" step="0.5">
+        <input hidden type="number" name="height" class="form-control" placeholder="Length (in inches)" value="{{ product.item_length }}" style="align-items:center; text-align:center; width:15rem; margin:auto" step="0.5">
+        <button type="submit" class="btn btn-dark" style="align-items:center; text-align:center; width:15rem; margin:auto; background-color: black">Search with these parameters</button>
+      </div>
+    </form>
+    {% endif %}
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  {% endblock %}

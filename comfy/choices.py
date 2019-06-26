@@ -10,6 +10,10 @@ CATEGORY_CHOICES_MALE = {
     'Jumper': 'Jumper',
     }
 
+CATEGORY_CHOICES_COUNTRY = {
+    'United States': 'United States',
+    }
+
 CATEGORY_CHOICES = {
     'Sweatshirt': 'Sweatshirt',
     'Hoodies': 'Hoodies',
@@ -24,4 +28,9 @@ GENDER_CHOICES = {
 CONTINENT_CHOICES = {
 'Europe': 'Europe',
 'North America': 'North America',
+}
+
+CONTINENT_CHOICES_US = {
+'United States': 'United States',
+'Canada': 'Canada',
 }

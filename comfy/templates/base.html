@@ -8,9 +8,6 @@
   <!-- End Google Tag Manager -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Comfy-penguin helps you find fashion with right size. Just take your favorite sweatshirt, shirt or hoodie and copy parameters to our size search engine!">
-  <meta name="keywords" content="comfy penguin, comfy sweatshirt, comfy clothes, comfy hoodies, comfy sweater, most comfortable hoodie, comfy dresses, comfy cardigan, comfy t shirts, comfortable hoodies, comfortable t shirts, comfy shirts, comfy jeans, comfortable sweatshirts, size search engine">
-  <meta name="author" content="Comfy-penguin.com">
   <meta name="fo-verify" content="9cd43a88-8fc9-4bbc-a4b2-b41e2161ae56">
   <meta name="msvalidate.01" content="7D0F9463E815E73F694F564D4FF70DEB" />
   <link rel="icon" href="{% static 'Comfyfav.png' %}" sizes="32x32" type="image/png">
@@ -45,64 +42,25 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <div class="navbar-nav ml-auto">
         {% if user.is_authenticated %}
-        <a hidden class="nav-item nav-link" href="{% url 'profile' %}">My comfy clothes</a>
-        <a hidden class="nav-item nav-link" href="{% url 'profile' %}">My wishlist</a>
-        <a hidden class="nav-item nav-link" href="{% url 'profile' %}">My profile</a>
-        <a hidden class="nav-item nav-link" href="{% url 'searchpage' %}">Searchpage</a>
-        <a hidden class="nav-item nav-link" href="javascript:{document.getElementById('logout').submit()}" onclick="">Logout</a>
+        <a class="nav-item nav-link" href="{% url 'profile' %}" style="color: black"><img src="{% static 'man-user.png' %}" style="height:1.5rem" alt="my profile icon"> My profile</a>
+        <a hidden class="nav-item nav-link" href="{% url 'profile' %}" style="color: black"><img src="{% static 'wishlist.png' %}" style="height:1.5rem" alt="wishlist icon"> My wishlist</a>
+        <a hidden class="nav-item nav-link" href="{% url 'profile' %}" style="color: black"><img src="{% static 'fair-stand.png' %}" style="height:1.5rem" alt="selling icon"> My offers</a>
+        <a class="nav-item nav-link" href="{% url 'filter' %}" style="color: black"><img src="{% static 'magnifier.png' %}" style="height:1.5rem" alt="magnifier icon"> Searchpage</a>
+        <a class="nav-item nav-link" href="javascript:{document.getElementById('logout').submit()}" onclick="" style="color: black"><img src="{% static 'tshirt-solid.svg' %}" style="height:1.5rem" alt="tshirt icon"> Logout</a>
         <form id='logout' method="POST" action="{% url 'logout' %}">
           {% csrf_token %}
           <input type="hidden" />
         </form>
         {% else %}
-        <a class="nav-item nav-link" href="{% url 'interesting-facts' %}" style="color: black"><i class="fa fa-fw fa-book"></i>Interesting facts</a>
-        <a class="nav-item nav-link" href="{% url 'aboutus' %}" style="color: black"><i class="fa fa-fw fa-child"></i>About</a>
-        <a hidden class="nav-item nav-link" href="{% url 'signup' %}">Sign up</a>
-        <a hidden class="nav-item nav-link" href="{% url 'login' %}">Sign in</a>
+        <a class="nav-item nav-link" href="{% url 'filter' %}" style="color: black"><i class="fa fa-fw fa-search"></i> Size search engine</a>
+        <a class="nav-item nav-link" href="{% url 'interesting-facts' %}" style="color: black"><i class="fa fa-fw fa-book"></i> Interesting facts</a>
+        <a class="nav-item nav-link" href="{% url 'aboutus' %}" style="color: black"><i class="fa fa-fw fa-child"></i> About</a>
+        <a class="nav-item nav-link" href="{% url 'signup' %}" style="color: black"><i class="fa fa-fw fa-user-plus"></i> Sign up</a>
+        <a class="nav-item nav-link" href="{% url 'login' %}" style="color: black"><i class="fa fa-fw fa-sign-in"></i> Sign in</a>
         {% endif %}
       </div>
     </div>
   </nav>
-  <hr>
-  <div class="nav-fashion" style="text-align: center">
-    <nav class="navbar navbar-expand navbar-light">
-      <ul class="navbar-nav mx-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" name="nav-link-style" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Women
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" data-thumbnail="{% static 'women-vest.png' %}" href="{% url 'filter_womens_tops' %}"><b>Tops</b></a>
-            <a class="dropdown-item disabled" href="#">Bottoms</a>
-            <a class="dropdown-item disabled" href="#">Accessories</a>
-            <a class="dropdown-item disabled" href="#">Underwear</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Men
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{% url 'filter_mens_tops' %}"><b>Tops</b></a>
-            <a class="dropdown-item disabled" href="#">Bottoms</a>
-            <a class="dropdown-item disabled" href="#">Accessories</a>
-            <a class="dropdown-item disabled" href="#">Underwear</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="max-width:5rem">
-            Kids
-          </a>
-          <div class="dropdown-menu disabled" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item disabled" href="#">Tops</a>
-            <a class="dropdown-item disabled" href="#">Bottoms</a>
-            <a class="dropdown-item disabled" href="#">Accessories</a>
-            <a class="dropdown-item disabled" href="#">Underwear</a>
-          </div>
-        </li>
-      </ul>
-    </nav>
-  </div>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->

@@ -1,38 +1,41 @@
 from django.shortcuts import render
-from clothes.models import Product_Clothes_Tops
-from comfy.choices import GENDER_CHOICES, CATEGORY_CHOICES, CONTINENT_CHOICES, CATEGORY_CHOICES_MALE, CATEGORY_CHOICES_FEMALE
+from clothes.models import Product_Clothes_Tops, Product_Clothes_Tops_US
+from comfy.choices import GENDER_CHOICES, CATEGORY_CHOICES, CONTINENT_CHOICES, CATEGORY_CHOICES_MALE, CATEGORY_CHOICES_FEMALE, CONTINENT_CHOICES_US
 from comfy.views import search
 from django.core.paginator import Paginator
+from django import template
+
+register = template.Library()
 
 # Create your views here.
 
 def searchpage(request):
-    listing = Product_Clothes_Tops.objects.all()[:8]
-    my_total = Product_Clothes_Tops.objects.count()
+    listing = Product_Clothes_Tops_US.objects.all()[:8]
+    my_total = Product_Clothes_Tops_US.objects.count()
 # counting Mans clothes
-    my_total_men = Product_Clothes_Tops.objects.filter(item_gender__iexact="Male")
+    my_total_men = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Male")
     my_total_men_count = my_total_men.count()
 # counting Mans clothes
-    my_total_woman = Product_Clothes_Tops.objects.filter(item_gender__iexact="Female")
+    my_total_woman = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Female")
     my_total_woman_count = my_total_woman.count()
 # counting Mans clothes
-    my_total_kid = Product_Clothes_Tops.objects.filter(item_gender__iexact="Kids")
+    my_total_kid = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Kids")
     my_total_kid_count = my_total_kid.count()
 # counting Mans clothes
-    my_total_uni = Product_Clothes_Tops.objects.filter(item_gender__iexact="Unisex")
+    my_total_uni = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Unisex")
     my_total_uni_count = my_total_uni.count()
 
-    queryset_list = Product_Clothes_Tops.objects.order_by('?')
+    queryset_list = Product_Clothes_Tops_US.objects.order_by('?')
     #Width
     if 'width' in request.GET:
         widths = request.GET['width']
-        widthx = int(widths) + 2
+        widthx = float(widths) + 1
         if widths:
             queryset_list = queryset_list.filter(item_width__range=(widths, widthx))
     #Height
     if 'height' in request.GET:
         heights = request.GET['height']
-        heightx = int(heights) + 2
+        heightx = float(heights) + 1
         if heights:
             queryset_list = queryset_list.filter(item_height__range=(heights, heightx))
     #Type
@@ -53,6 +56,7 @@ def searchpage(request):
         'CATEGORY_CHOICES': CATEGORY_CHOICES,
         'GENDER_CHOICES': GENDER_CHOICES,
         'CONTINENT_CHOICES': CONTINENT_CHOICES,
+        'CONTINENT_CHOICES_US': CONTINENT_CHOICES_US,
         'listing': queryset_list,
         'my_total': my_total,
         'values': request.GET,
@@ -75,6 +79,7 @@ def filter(request):
         'CATEGORY_CHOICES': CATEGORY_CHOICES,
         'GENDER_CHOICES': GENDER_CHOICES,
         'CONTINENT_CHOICES': CONTINENT_CHOICES,
+        'CONTINENT_CHOICES_US': CONTINENT_CHOICES_US,
     }
 
     return render(request, 'filter.html', context)
@@ -85,38 +90,38 @@ def filter(request):
 # ------------------------------------------------------------------------------
 
 def search_mens_tops(request):
-    listing = Product_Clothes_Tops.objects.all()[:8]
-    my_total = Product_Clothes_Tops.objects.count()
+    listing = Product_Clothes_Tops_US.objects.all()[:8]
+    my_total = Product_Clothes_Tops_US.objects.count()
 
     # counting Mans clothes
-    my_total_men = Product_Clothes_Tops.objects.filter(item_gender__iexact="Male")
+    my_total_men = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Male")
     my_total_men_count = my_total_men.count()
 
     # counting Mans clothes
-    my_total_woman = Product_Clothes_Tops.objects.filter(item_gender__iexact="Female")
+    my_total_woman = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Female")
     my_total_woman_count = my_total_woman.count()
 
     # counting Mans clothes
-    my_total_kid = Product_Clothes_Tops.objects.filter(item_gender__iexact="Kids")
+    my_total_kid = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Kids")
     my_total_kid_count = my_total_kid.count()
 
     # counting Mans clothes
-    my_total_uni = Product_Clothes_Tops.objects.filter(item_gender__iexact="Unisex")
+    my_total_uni = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Unisex")
     my_total_uni_count = my_total_uni.count()
 
-    queryset_list = Product_Clothes_Tops.objects.order_by('?')
+    queryset_list = Product_Clothes_Tops_US.objects.order_by('?')
     #Width
     if 'width' in request.GET:
         widths = request.GET['width']
-        widthx = int(widths) + 2
+        widthx = float(widths) + 1
         if widths:
-            queryset_list = queryset_list.filter(item_width__range=(widths, widthx))
+            queryset_list = queryset_list.filter(item_width__range=(float(widths), float(widthx)))
     #Height
     if 'height' in request.GET:
         heights = request.GET['height']
-        heightx = int(heights) + 2
+        heightx = float(heights) + 1
         if heights:
-            queryset_list = queryset_list.filter(item_height__range=(heights, heightx))
+            queryset_list = queryset_list.filter(item_height__range=(float(heights), float(heightx)))
     #Type
     if 'Type' in request.GET:
         types = request.GET['Type']
@@ -128,6 +133,14 @@ def search_mens_tops(request):
         if countries:
             queryset_list = queryset_list.filter(item_continent__iexact=countries)
 
+    @register.simple_tag
+    def percentValue():
+        widths = request.GET['width']
+        if widths:
+            queryset_list2 = queryset_list2.filter('item_width')
+            calculationValue = widths / queryset_list2
+            return calculationValue
+
     queryset_list = queryset_list.filter(item_gender__iexact='Male')
     paginator = Paginator(queryset_list, 16, orphans=4)
     my_total_searched = queryset_list.count()
@@ -137,6 +150,7 @@ def search_mens_tops(request):
         'CATEGORY_CHOICES_MALE': CATEGORY_CHOICES_MALE,
         'GENDER_CHOICES': GENDER_CHOICES,
         'CONTINENT_CHOICES': CONTINENT_CHOICES,
+        'CONTINENT_CHOICES_US': CONTINENT_CHOICES_US,
         'listing': queryset_list,
         'my_total': my_total,
         'values': request.GET,
@@ -154,40 +168,42 @@ def filter_mens_tops(request):
     context = {
         'CATEGORY_CHOICES_MALE': CATEGORY_CHOICES_MALE,
         'CONTINENT_CHOICES': CONTINENT_CHOICES,
+        'CONTINENT_CHOICES_US': CONTINENT_CHOICES_US,
     }
 
     return render(request, 'filter-mens-tops.html', context)
 
 def search_mens_tops_sweatshirts(request):
-    listing = Product_Clothes_Tops.objects.all()[:8]
-    my_total = Product_Clothes_Tops.objects.count()
+    listing = Product_Clothes_Tops_US.objects.all()[:8]
+    my_total = Product_Clothes_Tops_US.objects.count()
+
     # counting Mans clothes
-    my_total_men = Product_Clothes_Tops.objects.filter(item_gender__iexact="Male")
+    my_total_men = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Male")
     my_total_men_count = my_total_men.count()
 
     # counting Mans clothes
-    my_total_woman = Product_Clothes_Tops.objects.filter(item_gender__iexact="Female")
+    my_total_woman = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Female")
     my_total_woman_count = my_total_woman.count()
 
     # counting Mans clothes
-    my_total_kid = Product_Clothes_Tops.objects.filter(item_gender__iexact="Kids")
+    my_total_kid = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Kids")
     my_total_kid_count = my_total_kid.count()
 
     # counting Mans clothes
-    my_total_uni = Product_Clothes_Tops.objects.filter(item_gender__iexact="Unisex")
+    my_total_uni = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Unisex")
     my_total_uni_count = my_total_uni.count()
 
-    queryset_list = Product_Clothes_Tops.objects.order_by('?')
+    queryset_list = Product_Clothes_Tops_US.objects.order_by('?')
     #Width
     if 'width' in request.GET:
         widths = request.GET['width']
-        widthx = int(widths) + 2
+        widthx = float(widths) + 1
         if widths:
             queryset_list = queryset_list.filter(item_width__range=(widths, widthx))
     #Height
     if 'height' in request.GET:
         heights = request.GET['height']
-        heightx = int(heights) + 2
+        heightx = float(heights) + 1
         if heights:
             queryset_list = queryset_list.filter(item_height__range=(heights, heightx))
     #Type
@@ -209,6 +225,7 @@ def search_mens_tops_sweatshirts(request):
         'CATEGORY_CHOICES_MALE': CATEGORY_CHOICES_MALE,
         'GENDER_CHOICES': GENDER_CHOICES,
         'CONTINENT_CHOICES': CONTINENT_CHOICES,
+        'CONTINENT_CHOICES_US': CONTINENT_CHOICES_US,
         'listing': queryset_list,
         'my_total': my_total,
         'values': request.GET,
@@ -222,35 +239,36 @@ def search_mens_tops_sweatshirts(request):
     return render(request, 'search-mens-tops.html', context)
 
 def search_mens_tops_hoodies(request):
-    listing = Product_Clothes_Tops.objects.all()[:8]
-    my_total = Product_Clothes_Tops.objects.count()
+    listing = Product_Clothes_Tops_US.objects.all()[:8]
+    my_total = Product_Clothes_Tops_US.objects.count()
+
     # counting Mans clothes
-    my_total_men = Product_Clothes_Tops.objects.filter(item_gender__iexact="Male")
+    my_total_men = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Male")
     my_total_men_count = my_total_men.count()
 
     # counting Mans clothes
-    my_total_woman = Product_Clothes_Tops.objects.filter(item_gender__iexact="Female")
+    my_total_woman = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Female")
     my_total_woman_count = my_total_woman.count()
 
     # counting Mans clothes
-    my_total_kid = Product_Clothes_Tops.objects.filter(item_gender__iexact="Kids")
+    my_total_kid = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Kids")
     my_total_kid_count = my_total_kid.count()
 
     # counting Mans clothes
-    my_total_uni = Product_Clothes_Tops.objects.filter(item_gender__iexact="Unisex")
+    my_total_uni = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Unisex")
     my_total_uni_count = my_total_uni.count()
 
-    queryset_list = Product_Clothes_Tops.objects.order_by('?')
+    queryset_list = Product_Clothes_Tops_US.objects.order_by('?')
     #Width
     if 'width' in request.GET:
         widths = request.GET['width']
-        widthx = int(widths) + 2
+        widthx = float(widths) + 1
         if widths:
             queryset_list = queryset_list.filter(item_width__range=(widths, widthx))
     #Height
     if 'height' in request.GET:
         heights = request.GET['height']
-        heightx = int(heights) + 2
+        heightx = float(heights) + 1
         if heights:
             queryset_list = queryset_list.filter(item_height__range=(heights, heightx))
     #Type
@@ -272,6 +290,7 @@ def search_mens_tops_hoodies(request):
         'CATEGORY_CHOICES_MALE': CATEGORY_CHOICES_MALE,
         'GENDER_CHOICES': GENDER_CHOICES,
         'CONTINENT_CHOICES': CONTINENT_CHOICES,
+        'CONTINENT_CHOICES_US': CONTINENT_CHOICES_US,
         'listing': queryset_list,
         'my_total': my_total,
         'values': request.GET,
@@ -285,35 +304,36 @@ def search_mens_tops_hoodies(request):
     return render(request, 'search-mens-tops.html', context)
 
 def search_mens_tops_jumpers(request):
-    listing = Product_Clothes_Tops.objects.all()[:8]
-    my_total = Product_Clothes_Tops.objects.count()
+    listing = Product_Clothes_Tops_US.objects.all()[:8]
+    my_total = Product_Clothes_Tops_US.objects.count()
+
     # counting Mans clothes
-    my_total_men = Product_Clothes_Tops.objects.filter(item_gender__iexact="Male")
+    my_total_men = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Male")
     my_total_men_count = my_total_men.count()
 
     # counting Mans clothes
-    my_total_woman = Product_Clothes_Tops.objects.filter(item_gender__iexact="Female")
+    my_total_woman = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Female")
     my_total_woman_count = my_total_woman.count()
 
     # counting Mans clothes
-    my_total_kid = Product_Clothes_Tops.objects.filter(item_gender__iexact="Kids")
+    my_total_kid = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Kids")
     my_total_kid_count = my_total_kid.count()
 
     # counting Mans clothes
-    my_total_uni = Product_Clothes_Tops.objects.filter(item_gender__iexact="Unisex")
+    my_total_uni = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Unisex")
     my_total_uni_count = my_total_uni.count()
 
-    queryset_list = Product_Clothes_Tops.objects.order_by('?')
+    queryset_list = Product_Clothes_Tops_US.objects.order_by('?')
     #Width
     if 'width' in request.GET:
         widths = request.GET['width']
-        widthx = int(widths) + 2
+        widthx = float(widths) + 1
         if widths:
             queryset_list = queryset_list.filter(item_width__range=(widths, widthx))
     #Height
     if 'height' in request.GET:
         heights = request.GET['height']
-        heightx = int(heights) + 2
+        heightx = float(heights) + 1
         if heights:
             queryset_list = queryset_list.filter(item_height__range=(heights, heightx))
     #Type
@@ -335,6 +355,7 @@ def search_mens_tops_jumpers(request):
         'CATEGORY_CHOICES_MALE': CATEGORY_CHOICES_MALE,
         'GENDER_CHOICES': GENDER_CHOICES,
         'CONTINENT_CHOICES': CONTINENT_CHOICES,
+        'CONTINENT_CHOICES_US': CONTINENT_CHOICES_US,
         'listing': queryset_list,
         'my_total': my_total,
         'values': request.GET,
@@ -352,35 +373,36 @@ def search_mens_tops_jumpers(request):
 #
 
 def search_womens_tops(request):
-    listing = Product_Clothes_Tops.objects.all()[:8]
-    my_total = Product_Clothes_Tops.objects.count()
+    listing = Product_Clothes_Tops_US.objects.all()[:8]
+    my_total = Product_Clothes_Tops_US.objects.count()
+
     # counting Mans clothes
-    my_total_men = Product_Clothes_Tops.objects.filter(item_gender__iexact="Male")
+    my_total_men = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Male")
     my_total_men_count = my_total_men.count()
 
     # counting Mans clothes
-    my_total_woman = Product_Clothes_Tops.objects.filter(item_gender__iexact="Female")
+    my_total_woman = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Female")
     my_total_woman_count = my_total_woman.count()
 
     # counting Mans clothes
-    my_total_kid = Product_Clothes_Tops.objects.filter(item_gender__iexact="Kids")
+    my_total_kid = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Kids")
     my_total_kid_count = my_total_kid.count()
 
     # counting Mans clothes
-    my_total_uni = Product_Clothes_Tops.objects.filter(item_gender__iexact="Unisex")
+    my_total_uni = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Unisex")
     my_total_uni_count = my_total_uni.count()
 
-    queryset_list = Product_Clothes_Tops.objects.order_by('?')
+    queryset_list = Product_Clothes_Tops_US.objects.order_by('?')
     #Width
     if 'width' in request.GET:
         widths = request.GET['width']
-        widthx = int(widths) + 2
+        widthx = float(widths) + 1
         if widths:
             queryset_list = queryset_list.filter(item_width__range=(widths, widthx))
     #Height
     if 'height' in request.GET:
         heights = request.GET['height']
-        heightx = int(heights) + 2
+        heightx = float(heights) + 1
         if heights:
             queryset_list = queryset_list.filter(item_height__range=(heights, heightx))
     #Type
@@ -404,6 +426,7 @@ def search_womens_tops(request):
         'CATEGORY_CHOICES_FEMALE': CATEGORY_CHOICES_FEMALE,
         'GENDER_CHOICES': GENDER_CHOICES,
         'CONTINENT_CHOICES': CONTINENT_CHOICES,
+        'CONTINENT_CHOICES_US': CONTINENT_CHOICES_US,
         'listing': queryset_list,
         'my_total': my_total,
         'values': request.GET,
@@ -419,35 +442,36 @@ def search_womens_tops(request):
     return render(request, 'search-womens-tops.html', context)
 
 def search_womens_tops_sweatshirts(request):
-    listing = Product_Clothes_Tops.objects.all()[:8]
-    my_total = Product_Clothes_Tops.objects.count()
+    listing = Product_Clothes_Tops_US.objects.all()[:8]
+    my_total = Product_Clothes_Tops_US.objects.count()
+
     # counting Mans clothes
-    my_total_men = Product_Clothes_Tops.objects.filter(item_gender__iexact="Male")
+    my_total_men = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Male")
     my_total_men_count = my_total_men.count()
 
     # counting Mans clothes
-    my_total_woman = Product_Clothes_Tops.objects.filter(item_gender__iexact="Female")
+    my_total_woman = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Female")
     my_total_woman_count = my_total_woman.count()
 
     # counting Mans clothes
-    my_total_kid = Product_Clothes_Tops.objects.filter(item_gender__iexact="Kids")
+    my_total_kid = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Kids")
     my_total_kid_count = my_total_kid.count()
 
     # counting Mans clothes
-    my_total_uni = Product_Clothes_Tops.objects.filter(item_gender__iexact="Unisex")
+    my_total_uni = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Unisex")
     my_total_uni_count = my_total_uni.count()
 
-    queryset_list = Product_Clothes_Tops.objects.order_by('?')
+    queryset_list = Product_Clothes_Tops_US.objects.order_by('?')
     #Width
     if 'width' in request.GET:
         widths = request.GET['width']
-        widthx = int(widths) + 2
+        widthx = float(widths) + 1
         if widths:
             queryset_list = queryset_list.filter(item_width__range=(widths, widthx))
     #Height
     if 'height' in request.GET:
         heights = request.GET['height']
-        heightx = int(heights) + 2
+        heightx = float(heights) + 1
         if heights:
             queryset_list = queryset_list.filter(item_height__range=(heights, heightx))
     #Type
@@ -469,6 +493,7 @@ def search_womens_tops_sweatshirts(request):
         'CATEGORY_CHOICES_FEMALE': CATEGORY_CHOICES_FEMALE,
         'GENDER_CHOICES': GENDER_CHOICES,
         'CONTINENT_CHOICES': CONTINENT_CHOICES,
+        'CONTINENT_CHOICES_US': CONTINENT_CHOICES_US,
         'listing': queryset_list,
         'my_total': my_total,
         'values': request.GET,
@@ -482,35 +507,36 @@ def search_womens_tops_sweatshirts(request):
     return render(request, 'search-womens-tops.html', context)
 
 def search_womens_tops_hoodies(request):
-    listing = Product_Clothes_Tops.objects.all()[:8]
-    my_total = Product_Clothes_Tops.objects.count()
+    listing = Product_Clothes_Tops_US.objects.all()[:8]
+    my_total = Product_Clothes_Tops_US.objects.count()
+
     # counting Mans clothes
-    my_total_men = Product_Clothes_Tops.objects.filter(item_gender__iexact="Male")
+    my_total_men = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Male")
     my_total_men_count = my_total_men.count()
 
     # counting Mans clothes
-    my_total_woman = Product_Clothes_Tops.objects.filter(item_gender__iexact="Female")
+    my_total_woman = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Female")
     my_total_woman_count = my_total_woman.count()
 
     # counting Mans clothes
-    my_total_kid = Product_Clothes_Tops.objects.filter(item_gender__iexact="Kids")
+    my_total_kid = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Kids")
     my_total_kid_count = my_total_kid.count()
 
     # counting Mans clothes
-    my_total_uni = Product_Clothes_Tops.objects.filter(item_gender__iexact="Unisex")
+    my_total_uni = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Unisex")
     my_total_uni_count = my_total_uni.count()
 
-    queryset_list = Product_Clothes_Tops.objects.order_by('?')
+    queryset_list = Product_Clothes_Tops_US.objects.order_by('?')
     #Width
     if 'width' in request.GET:
         widths = request.GET['width']
-        widthx = int(widths) + 2
+        widthx = float(widths) + 1
         if widths:
             queryset_list = queryset_list.filter(item_width__range=(widths, widthx))
     #Height
     if 'height' in request.GET:
         heights = request.GET['height']
-        heightx = int(heights) + 2
+        heightx = float(heights) + 1
         if heights:
             queryset_list = queryset_list.filter(item_height__range=(heights, heightx))
     #Type
@@ -532,6 +558,7 @@ def search_womens_tops_hoodies(request):
         'CATEGORY_CHOICES_FEMALE': CATEGORY_CHOICES_FEMALE,
         'GENDER_CHOICES': GENDER_CHOICES,
         'CONTINENT_CHOICES': CONTINENT_CHOICES,
+        'CONTINENT_CHOICES_US': CONTINENT_CHOICES_US,
         'listing': queryset_list,
         'my_total': my_total,
         'values': request.GET,
@@ -545,35 +572,36 @@ def search_womens_tops_hoodies(request):
     return render(request, 'search-womens-tops.html', context)
 
 def search_womens_tops_jumpers(request):
-    listing = Product_Clothes_Tops.objects.all()[:8]
-    my_total = Product_Clothes_Tops.objects.count()
+    listing = Product_Clothes_Tops_US.objects.all()[:8]
+    my_total = Product_Clothes_Tops_US.objects.count()
+
     # counting Mans clothes
-    my_total_men = Product_Clothes_Tops.objects.filter(item_gender__iexact="Male")
+    my_total_men = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Male")
     my_total_men_count = my_total_men.count()
 
     # counting Mans clothes
-    my_total_woman = Product_Clothes_Tops.objects.filter(item_gender__iexact="Female")
+    my_total_woman = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Female")
     my_total_woman_count = my_total_woman.count()
 
     # counting Mans clothes
-    my_total_kid = Product_Clothes_Tops.objects.filter(item_gender__iexact="Kids")
+    my_total_kid = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Kids")
     my_total_kid_count = my_total_kid.count()
 
     # counting Mans clothes
-    my_total_uni = Product_Clothes_Tops.objects.filter(item_gender__iexact="Unisex")
+    my_total_uni = Product_Clothes_Tops_US.objects.filter(item_gender__iexact="Unisex")
     my_total_uni_count = my_total_uni.count()
 
-    queryset_list = Product_Clothes_Tops.objects.order_by('?')
+    queryset_list = Product_Clothes_Tops_US.objects.order_by('?')
     #Width
     if 'width' in request.GET:
         widths = request.GET['width']
-        widthx = int(widths) + 2
+        widthx = float(widths) + 1
         if widths:
             queryset_list = queryset_list.filter(item_width__range=(widths, widthx))
     #Height
     if 'height' in request.GET:
         heights = request.GET['height']
-        heightx = int(heights) + 2
+        heightx = float(heights) + 1
         if heights:
             queryset_list = queryset_list.filter(item_height__range=(heights, heightx))
     #Type
@@ -595,6 +623,7 @@ def search_womens_tops_jumpers(request):
         'CATEGORY_CHOICES_FEMALE': CATEGORY_CHOICES_FEMALE,
         'GENDER_CHOICES': GENDER_CHOICES,
         'CONTINENT_CHOICES': CONTINENT_CHOICES,
+        'CONTINENT_CHOICES_US': CONTINENT_CHOICES_US,
         'listing': queryset_list,
         'my_total': my_total,
         'values': request.GET,
@@ -612,6 +641,7 @@ def filter_womens_tops(request):
     context = {
         'CATEGORY_CHOICES_FEMALE': CATEGORY_CHOICES_FEMALE,
         'CONTINENT_CHOICES': CONTINENT_CHOICES,
+        'CONTINENT_CHOICES_US': CONTINENT_CHOICES_US,
     }
 
     return render(request, 'filter-womens-tops.html', context)

@@ -1,0 +1,25 @@
+  {% extends 'base.html' %}
+  {% load bootstrap %}
+  {% load static %}
+  {% block content %}
+
+  {% if error %}
+  <div class="container" style="text-align: center">
+    <p style="color: red">{{error}}</p>
+  </div>
+  {% endif %}
+  <hr>
+  <div class="container">
+    <h1 style="text-align:center">Edit profile</h1>
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Submit</button>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  {% endblock %}

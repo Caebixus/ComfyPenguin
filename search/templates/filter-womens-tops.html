@@ -5,7 +5,50 @@
 {% block content %}
 <title>2019 | Find fashion | Women's tops filter</title>
 <link rel="canonical" href="https://www.comfy-penguin.com/search/filter-womens-tops" />
+<meta name="description" content="Comfy-penguin helps you find fashion with right size. Just take your favorite women's sweatshirt, shirt or hoodie and copy parameters to our size search engine!">
+<meta name="keywords" content="filter women's tops">
+<meta name="author" content="Comfy-penguin.com">
 <!------ content ---------->
+<div class="nav-fashion" style="text-align: center">
+  <nav class="navbar navbar-expand navbar-light">
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" name="nav-link-style" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Women
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'filter_womens_tops' %}"><b>Tops</b></a>
+          <a class="dropdown-item disabled" href="#">Bottoms - soon</a>
+          <a class="dropdown-item disabled" href="#">Accessories - soon</a>
+          <a class="dropdown-item disabled" href="#">Underwear - soon</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Men
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'filter_mens_tops' %}"><b>Tops</b></a>
+          <a class="dropdown-item disabled" href="#">Bottoms - soon</a>
+          <a class="dropdown-item disabled" href="#">Accessories - soon</a>
+          <a class="dropdown-item disabled" href="#">Underwear - soon</a>
+        </div>
+      </li>
+      <li hidden class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="max-width:5rem">
+          Kids
+        </a>
+        <div class="dropdown-menu disabled" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item disabled" href="#">Tops</a>
+          <a class="dropdown-item disabled" href="#">Bottoms</a>
+          <a class="dropdown-item disabled" href="#">Accessories</a>
+          <a class="dropdown-item disabled" href="#">Underwear</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</div>
+<hr>
 <div class="container" style="padding-top: 4rem">
   <h1 class="card-text" style="text-align: center">Women's Tops</h1>
   <h2 class="card-text" style="text-align: center">Find similar clothes by size</h2>
@@ -16,12 +59,12 @@
     <div class="row align-items-center justify-content-md-center" style="padding-top: 1rem">
       <div class="col-md-auto">
         <div class="form-group">
-          <input type="number" name="width" class="form-control" placeholder="Width/Bust (in cm)" value="{{ values.width }}" style="align-items:center; text-align:center; width:15rem; margin:auto" required>
+          <input type="number" name="width" class="form-control" placeholder="Width/Bust (in cm)" value="{{ values.width }}" style="align-items:center; text-align:center; width:15rem; margin:auto" step="0.5" required>
         </div>
       </div>
       <div class="col-md-auto">
         <div class="form-group">
-          <input type="number" name="height" class="form-control" placeholder="Length (in cm)" value="{{ values.height }}" style="align-items:center; text-align:center; width:15rem; margin:auto" required>
+          <input type="number" name="height" class="form-control" placeholder="Length (in cm)" value="{{ values.height }}" style="align-items:center; text-align:center; width:15rem; margin:auto" step="0.5" required>
         </div>
       </div>
     </div>
@@ -39,7 +82,7 @@
       </div>
     </div>
     <br>
-    <div class="col-md-auto">
+    <div hidden class="col-md-auto">
       <div class="form-group">
         <select name="Continent" class="form-control" style="align-items:center; text-align:center; width:15rem; margin:auto">
           <option value="" selected>Select continent</option>{% for key, value in CONTINENT_CHOICES.items %}
