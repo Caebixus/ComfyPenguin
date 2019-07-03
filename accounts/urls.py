@@ -10,6 +10,7 @@ urlpatterns = [
     path('profile', views.profile, name='profile'),
     path('Change-password', views.change_password, name='Change-password'),
     path('My-comfy-clothes/<int:myclothes_id>', views.My_comfy_clothes, name='My-comfy-clothes'),
+    path('Update-comfy-clothes/<int:myclothes_id>', views.Update_comfy_clothes, name='Update-comfy-clothes'),
     path('Delete-comfy-clothes/<int:myclothes_id>', views.Delete_comfy_clothes, name='Delete-comfy-clothes'),
     path('Create-comfy-clothes', views.Create_comfy_clothes, name='Create-comfy-clothes'),
     path('Edit-profile', views.edit_profile, name='Edit-profile'),

@@ -22,6 +22,9 @@
         <p>Saved gender: <strong>{{ product.item_gender }}</strong></p>
         <p>Saved width: <strong>{{ product.item_width }}</strong></p>
         <p>Saved length: <strong>{{ product.item_length }}</strong></p>
+        <p align="center">
+          <a href="{% url 'Update-comfy-clothes' product.id %}" role="button" class="btn btn-dark" style="align-items:center; text-align:center; width:15rem; margin:auto">Update item</a>
+        </p>
       </div>
     </div>
     <br>

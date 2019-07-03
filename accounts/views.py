@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
+from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
-from .forms import EditProfileForm
+from .forms import EditProfileForm, PostForm
 from django.contrib import auth
 from comfy.choices import GENDER_CHOICES, CATEGORY_CHOICES, CONTINENT_CHOICES, CATEGORY_CHOICES_MALE, CATEGORY_CHOICES_FEMALE, CONTINENT_CHOICES_US, CATEGORY_CHOICES_COUNTRY
 from django.contrib.auth.decorators import login_required
@@ -107,9 +108,28 @@ def Create_comfy_clothes(request):
     return render(request, 'Create-comfy-clothes.html', context)
 
 @login_required
+def Update_comfy_clothes(request, myclothes_id):
+    instance = get_object_or_404(MyClothes, pk=myclothes_id)
+    form = PostForm(request.POST or None, request.FILES or None, instance=instance)
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
+        return redirect(profile)
+
+    context = {
+        'instance': instance,
+        'form': form,
+        'CATEGORY_CHOICES': CATEGORY_CHOICES,
+        'GENDER_CHOICES': GENDER_CHOICES,
+        'CATEGORY_CHOICES_COUNTRY': CATEGORY_CHOICES_COUNTRY,
+    }
+
+    return render(request, 'Update-comfy-clothes.html', context)
+
+
+@login_required
 def My_comfy_clothes(request, myclothes_id):
     product = get_object_or_404(MyClothes, pk=myclothes_id)
-
     context = {
         'product': product,
         'CATEGORY_CHOICES': CATEGORY_CHOICES,

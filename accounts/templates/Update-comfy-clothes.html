@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+{% load static %}
+{% block content %}
+<title>2019 | Comfy-penguin | Update comfy clothes</title>
+
+<br />
+<br />
+
+<main role="main">
+  <div class="container" style="max-width: 50rem">
+    <h1 style="text-align: center">Update comfy clothes</h1>
+    <hr>
+    <br>
+    <div class="container" style="text-align: center">
+      <form method='POST' enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.errors }}
+        {{ form.as_p }}
+        <hr>
+        <input class="btn btn-dark" type='submit' value='save' />
+      </form>
+    </div>
+  </div>
+</main>
+<br>
+<br>
+<br>
+<br>
+
+{% endblock %}
