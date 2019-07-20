@@ -14,25 +14,31 @@
   <p>Choose type of fashion to load up our instructions on how to measure it correctly and use these parameters for our size search engine.</p>
 </div>
 <div class="container" style="text-align: center">
-  <div class="row" style="text-align: center">
-    <div class="col d-flex justify-content-center py-3">
-      <div class="card" style="width: 18rem;">
-        <img src="{% static 'clothes/sweatshirt.png' %}" alt="Main product image" style="height: 20rem;">
-        <a class="btn btn-dark btn-lg" href="{% url 'how_to_measure_sweatshirt' %}" role="button" style="font-size:90%;">How to measure sweatshirt?</a>
+  <a href="{% url 'how_to_measure_sweatshirt' %}">
+    <div class="row" style="text-align: center">
+      <div class="col d-flex justify-content-center py-3">
+        <div class="card" style="width: 18rem; border: none">
+          <img src="{% static 'clothes/sweatshirt.png' %}" alt="Main product image" style="height: 20rem;">
+          <a class="btn btn-dark btn-lg" href="{% url 'how_to_measure_sweatshirt' %}" role="button" style="font-size:90%;">How to measure sweatshirt?</a>
+        </div>
       </div>
-    </div>
-    <div class="col d-flex justify-content-center py-3">
-      <div class="card" style="width: 18rem;">
-        <img src="{% static 'clothes/jumper.png' %}" style="max-height: 20rem" alt="">
-        <a class="btn btn-dark btn-lg" href="{% url 'how_to_measure_jumper' %}" role="button" style="font-size:90%;">How to measure jumper?</a>
+    </a>
+    <a href="{% url 'how_to_measure_jumper' %}">
+      <div class="col d-flex justify-content-center py-3">
+        <div class="card" style="width: 18rem; border: none">
+          <img src="{% static 'clothes/jumper.png' %}" style="max-height: 20rem" alt="">
+          <a class="btn btn-dark btn-lg" href="{% url 'how_to_measure_jumper' %}" role="button" style="font-size:90%;">How to measure jumper?</a>
+        </div>
       </div>
-    </div>
-    <div class="col d-flex justify-content-center py-3">
-      <div class="card" style="width: 18rem;">
-        <img src="{% static 'clothes/hoodie.png' %}" style="max-height: 20rem" alt="">
-        <a class="btn btn-dark btn-lg" href="{% url 'how_to_measure_hoodie' %}" role="button" style="font-size:90%;">How to measure hoodie?</a>
+    </a>
+    <a href="{% url 'how_to_measure_hoodie' %}">
+      <div class="col d-flex justify-content-center py-3">
+        <div class="card" style="width: 18rem; border: none">
+          <img src="{% static 'clothes/hoodie.png' %}" style="max-height: 20rem" alt="">
+          <a class="btn btn-dark btn-lg" href="{% url 'how_to_measure_hoodie' %}" role="button" style="font-size:90%;">How to measure hoodie?</a>
+        </div>
       </div>
-    </div>
+    </a>
   </div>
 </div>
 <br>
