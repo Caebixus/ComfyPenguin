@@ -12,6 +12,7 @@ urlpatterns = [
     path('how-to-measure-sweatshirt', views.how_to_measure_sweatshirt, name='how_to_measure_sweatshirt'),
     path('how-to-measure-jumper', views.how_to_measure_jumper, name='how_to_measure_jumper'),
     path('how-to-measure-hoodie', views.how_to_measure_hoodie, name='how_to_measure_hoodie'),
+    path('chatbots-example', views.chatbots_example, name='chatbots_example'),
     path('search/', include('search.urls'), name='search'),
     path('clothes/', include('clothes.urls'), name='clothes'),
     path('Interesting-facts/', include('blog.urls'), name='blog'),

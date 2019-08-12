@@ -98,3 +98,6 @@ def how_to_measure_jumper(request):
 
 def how_to_measure_hoodie(request):
     return render(request, 'how-to-measure-hoodie.html')
+
+def chatbots_example(request):
+    return render(request, 'chatbots-example.html')

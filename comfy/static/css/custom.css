@@ -1,15 +1,15 @@
 p {
   color: #1a0000;
   font-size: 20px;
-  font-family: 'Didact Gothic';
+  font-family: 'Comic Sans';
 }
 
 h1 {
-  font-family: 'Didact Gothic';
+  font-family: 'Comic Sans';
 }
 
 h2 {
-  font-family: 'Didact Gothic';
+  font-family: 'Comic Sans';
   font-weight: bold;
 }
 
@@ -45,3 +45,13 @@ a:not(.BlogImage):not(.dropdown-item):not(.navbar-brand):hover {
 .cardClothes {
   height: 10rem;
 }
+
+.imgHover {
+  border: 1px solid #ddd; /* Gray border */
+  border-radius: 4px;  /* Rounded border */
+  padding: 5px; /* Some padding */
+  width: 150px; /* Set a small width */
+}
+
+.imgHover:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);

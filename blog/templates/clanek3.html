@@ -3,63 +3,124 @@
 {% load static %}
 <link rel="canonical" href="https://www.comfy-penguin.com/Interesting-facts/dress-size-calculator" />
 <link rel="stylesheet" href="{% static 'css/custom.css' %}" media="all">
-<meta name="description" content="If you looking for a tool to help you find online clothes that fits you. Search no more and check out our brand new dress size calculator!">
+<meta name="description" content="If you looking for a best dress size calculator to help you find online clothes that fits you, search no more and check out our brand new prototype!">
 <meta name="keywords" content="Dress size calculator">
 <meta name="author" content="Comfy-penguin.com">
 <title>2019 | How to use dress size calculator correctly?</title>
 <article>
+  <hr>
   <div class="container" style="padding-top: 4rem; max-width: 55rem">
-    <div class="heading" style="text-align: center">
-      <h1><b>What is dress size calculator and why are so many people using it?</b></h1>
+    <div class="heading" style="text-align: left">
+      <h1>What is <b style="color: #c64119;">Dress Size Calculator</b> and why is it so popular?</h1>
     </div>
     <br>
     <br>
-    <p>Shopping for clothes online is quite awkward for many, and you have the feeling that you are buying something that you don't want in reality.</p>
-    <p>There is still a problem with the size of the clothes. Because we are different beings with different bodies, it creates a huge problem when shopping online for clothes.</p>
-    <p>So there may be clothes that you absolutely love, but they don't fit you when they arrive, and eventually, you will have to return them. That's what we decided to change with our "Dress size calculator". We cannot always avoid the wrong size, but we can minimize this risk as much as possible! And it really works.</p>
+    <p>Shopping for clothes is a production and let me show you why!</p>
+    <p>Sorting through <b>sizes</b>, making frequent <b>trips</b> to the fitting room, guessing how much a certain article is going to <b>shrink</b> in the wash; there’s a lot of trial and error when purchasing a new wardrobe.</p>
+    <p>And that’s when shopping in <b style="color: #c64119;">person!</b></p>
+    <p>Shopping online for clothes is an absolute nightmare. All of the elements that make it so difficult in real life are still there, only now you can’t try on any of your clothes, which is unarguably the most important part of the process.</p>
+    <p>Sizes only get you so far, as we’re all different people with wildly different body types.</p>
+    <div class="col">
+      <img src="{% static 'jeans-different-sizes.jpg' %}" alt="different sizes of jeans at store" style="max-width:50rem; width: 100%; padding-top:2rem; padding-bottom: 2rem">
+    </div>
+    <br>
+    <p>There’s nothing worse than buying something online only to be disappointed when it shows up in the mail and isn’t what you hoped it would be.</p>
+    <p>This happens <b style="color: #c64119;">frequently with clothes</b>, which rarely fit as well as we’d hoped.</p>
+    <p>Then you have to return them - and returning something you bought online is no picnic – only to start the whole <b>process over again with a new size.</b></p>
+    <br>
+    <p>This is where the  <b style="color: #c64119;">Dress Size Calculator</b> comes in. Does it guarantee clothes that fit perfectly every time?</p>
+    <p>Of course not, but <b>it will help you get as close as possible</b> to that perfect fit, hopefully drastically reducing the amount of clothes you have to return in the future.</p>
+    <br>
+    <br>
+    <h2>How does it work?</h2>
+    <br>
+    <p>There’s no magic here, only <b style="color: #c64119;">numbers</b>.</p>
+    <p>The calculator works by taking the <b>measurements</b> of your <b>favorite clothes</b> (<u>currently limited to jumpers, sweatshirts, and hoodies</u>) and searching the database and partnering retailers for clothing with <b>similar measurements.</b></p>
+    <p>We offer helpful infographics that show you just how to get the measurements that we’re looking for, with different tutorials (<a href="{% url 'how_to_measure' %}">here</a>) for different styles of clothing.</p>
+    <p>It’s a <b>simple process</b> that anyone should be able to figure out.</p>
+    <div class="row">
+      <div class="col-sm">
+        <a target="_blank" href="{% static 'SOLID1.jpg' %}">
+          <img class="imgHover" src="{% static 'SOLID1.jpg' %}" alt="how to measure length hoodies" style="max-width:50rem; width: 100%;">
+        </a>
+      </div>
+      <div class="col-sm">
+        <a target="_blank" href="{% static 'SOLID2.jpg' %}">
+          <img class="imgHover" src="{% static 'SOLID2.jpg' %}" alt="how to measure length hoodies detail" style="max-width:50rem; width: 100%;">
+        </a>
+      </div>
+    </div>
+    <br>
+    <p><u>What do you do once you get the measurements?</u></p>
+    <p>Take, for example, a sweater that you really like that has a width of just about 22-inches and a length of 28-inches.</p>
+    <p>Width and length are the most widely used parameters, so the <b style="color: #c64119;">Dress Size Calculator</b> uses these criteria to find the most accurate results.</p>
+    <p>Inputting these measurements will return products that <b>match as closely as possible.</b></p>
+    <br>
+    <p>The site will then show you all the articles of clothing that came close to matching your numbers.</p>
+    <p>You’ll be able to see the exact length and width of the clothes, <b style="color: #c64119;">down to half an inch</b>, so you can see for yourself how closely they match what you’re looking for.</p>
+    <div class="col">
+      <img src="{% static 'Comfy-search-page.png' %}" alt="different sizes of jeans at store" style="max-width:50rem; width: 100%; padding-top:2rem; padding-bottom: 2rem">
+    </div>
+    <p>And though you don’t need to use them with our method, we still display the traditional industry sizes, for peace of mind if nothing else.</p>
+    <p>If everything was entered correctly, the size of the matching clothing should fall in line with what you <b>usually wear.</b></p>
+    <p>Once you find a sweater, jumper, or hoodie that you like, you can click through to the offering website (Amazon.com, for example) and complete the purchase if you’re happy with it.</p>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <div class="picture" style="text-align:center">
+      <a href="{% url 'filter' %}">
+        <button type="button" class="btn btn-lg btn-outline-secondary">Try it yourself</button>
+      </a>
+    </div>
+    <hr>
+    <br>
+    <br>
+    <br>
+    <h2>What makes the Dress Size Calculator unique?</h2>
+    <br>
+    <p>We recognize that clothing sizes leave a lot to be desired.</p>
+    <p>Brand, material, and clothing type can all have an effect on how the article fits, meaning that a <b>“large” in one brand could fit a lot differently</b> than the same size in another brand.</p>
+    <p>That’s why our Dress Size Calculator <b style="color: #c64119;">works off of measurements</b> and not industry sizes.</p>
+    <br>
+    <p>Measurements don’t change (at least not in between the time you order your clothes and they arrive). Again, it’s not a perfect system.</p>
+    <p><u>Material can still have an effect on how something fits</u>, regardless of the measurements, but it’s as close to perfect as you can get when buying online.</p>
+    <p>And by knowing your measurements, if you suspect a certain material will shrink or fit too tightly, you can always <b style="color: #c64119;">add a few inches to width or length</b> and go from there.</p>
+    <p><b>With our calculator</b>, you have a lot more options when shopping.</p>
+    <br>
+    <h2>Perfect for Buying Gifts</h2>
+    <br>
+    <p>There’s nothing worse than buying someone clothes as a gift, only to have them <b>not fit properly.</b></p>
+    <p><b style="color: #c64119;">It happens so often</b> that the person giving the gift usually <b style="color: #c64119;">gives a gift receipt right along with it</b>, knowing that the recipient will more than likely have to return it for a size that fits better.</p>
+    <p>The Dress Size Calculator can you save you a lot of <b>embarrassment</b> in these situations.</p>
+    <p>You can become <b>legendary</b> for your gift-giving skills!</p>
+    <p>You just need to get the measurements, but we can’t exactly help you with that.</p>
+    <p>Once you know your recipients preferred measurements, however, you can confidently get them something they’ll be comfortable wearing.</p>
+    <div class="col">
+      <img src="{% static 'HappyPair.jpg' %}" alt="different sizes of jeans at store" style="max-width:50rem; width: 100%;">
+    </div>
+    <br>
+    <h2>Goodbye Brick-and-Mortar Stores</h2>
+    <br>
+    <p><b style="color: #c64119;">The Comfy-Penguin's Dress Size Calculator</b> has a chance to revolutionize the way we buy clothes. Suddenly, buying clothes online is the easiest way to get clothes that fit, when it used to be the exact opposite.</p>
+    <p>Purchasing clothes online was a gamble, one the consumer often lost. Now it’s just as accurate as purchasing in-person, and even more accurate if you don’t want to go <b>through the whole fitting room experience.</b></p>
+    <p>Standing in line to try on clothes that have also been tried on by previous customers isn’t anybody’s idea of fun.</p>
+    <br>
+    <p>So skip the fitting rooms and the stores altogether and give the Dress Size Calculator a spin. Be sure to let us to know how it works out for you.</p>
+    <p>We’re confident that you’ll end up happy with your purchase. We offer products from the biggest brands out there, so we’re sure you’ll find something you’re happy with.</p>
+    <br>
+    <p>We’re always building and expanding our database, so we’re only going to get bigger and better going forward. Our goal is to continue adding different articles of clothing and fine-tuning the Dress Size Calculator to be as accurate as possible.</p>
+    <p>And with honest feedback from our loyal customers, we’re forever tweaking and modifying our calculator in an effort to design the perfect clothes shopping experience – or the closest thing to it.</p>
+    <br>
+    <br>
+    <br>
+    <hr>
     <div class="picture" style="text-align:center">
       <a href="{% url 'filter' %}">
         <button type="button" class="btn btn-lg btn-outline-secondary">Dress size calculator</button>
       </a>
     </div>
     <hr>
-    <br>
-    <h2>How does it work?</h2>
-    <p>Our dress size calculator works by measuring your favorite clothes (currently only jumpers, sweatshirts and hoodies) according to the most widely used parameters, that is, width and length of a product.</p>
-    <p>Here I can show you how I manage to measure my sweatshirt with inch measuring tape:</p>
-    <br>
-    <div class="col">
-      <img src="{% static 'SOLID1.jpg' %}" alt="how to measure length hoodies" style="max-width:50rem; width: 100%; padding-top:4rem; padding-bottom: 4rem">
-    </div>
-    <div class="col">
-      <img src="{% static 'SOLID2.jpg' %}" alt="how to measure length hoodies detail" style="max-width:50rem; width: 100%; padding-top:4rem; padding-bottom: 4rem">
-    </div>
-    <p>So now I know that my blue SOLID sweatshirt has a width of almost <strong>22 inches</strong> and a length of <strong>28 inches.</strong></p>
-    <p>After entering these parameters, our dress size calculator will go through the database and collaborating sites and select clothes that match the parameters you entered and provide them to you. You can then view details of each product with a button which will direct you to the e-shop website. You can complete the purchase there.</p>
-    <div class="col">
-      <img src="{% static 'screen1.png' %}" alt="how to measure length hoodies detail" style="max-width:50rem; width: 100%; padding-top:4rem; padding-bottom: 4rem">
-    </div>
-    <br>
-    <hr>
-    <h2>Who is this for?</h2>
-    <p>What makes our “Dress size calculator” unique? Especially by deriving the right size from users' already used clothes. In other words, each of us has a favorite sweater or a sweatshirt. That's because the sweater or sweatshirt is in the right size and for example cut, fabric or color.</p>
-    <p>You know longer need to know your dress size exactly determined by your body measurements. Instead, you need to find the most comfortable dress and then buy the size of that dress. It is suitable for those who do not want to be stressed and constantly measure their body again to find the right size. Instead, they will simply find the clothes they feel best and try to find more new and better clothes that 100% knows to have the same parameters!</p>
-    <br>
-    <hr>
-    <h2>Why use a dress size calculator?</h2>
-    <p>It works great if you want to buy a new sweater or sweatshirt for your loved ones, but don't know their size. And of course, you don't want to ask them about their size even if they knew it from their heads and also because it was supposed to be a surprise.</p>
-    <p>It's easy, first, you have to observe what kind of clothes the person wears the most. Once you know which to measure it. In the case of a sweater or T-shirt, it is by default the width and length. Then copy the measured parameters to our “Dress size calculator” and find suitable clothes according to your wishes. You will have more than 99% chance that the clothes will fit the person you are giving.</p>
-    <br>
-    <hr>
-    <p style="font-size: 150%"><strong>This method and dress size calculator is working!</strong></p>
-    <p>So where to buy hoodies? It's easy, try my size search engine and choose from biggest brands outhere!</p>
-    <p>I'm still building and expanding my database for sweatshirts, jumper and hoodies. Also will add new types like shirts, t-shirts, shorts and pants. If you try size search engine, let us know how you ended up so we can adjust our system and database.</p>
-    <br>
-    <div class="picture" style="text-align:center">
-      <a href="{% url 'filter' %}">
-        <button type="button" class="btn btn-lg btn-outline-secondary">Try it</button>
-      </a>
-    </div>
   </div>
 </article>
 <br>
