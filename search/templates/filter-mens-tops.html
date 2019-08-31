@@ -55,16 +55,16 @@
   <hr width="70%">
   <br>
   <form action="{% url 'search_mens_tops' %}">
-    <h5 class="card-text" style="text-align: center">Copy the parameters by which you want to find new clothes</h5>
+    <h5 class="card-text" style="text-align: center">Copy the parameters of your favorite clothing</h5>
     <div class="row align-items-center justify-content-md-center" style="padding-top: 1rem">
       <div class="col-md-auto">
         <div class="form-group">
-          <input type="number" name="width" class="form-control" placeholder="Width/Chest (inches)" value="{{ values.width }}" style="align-items:center; text-align:center; width:15rem; margin:auto" step="0.5" required>
+          <input type="number" name="width" class="form-control" placeholder="Item width (in inches)" value="{{ values.width }}" style="align-items:center; text-align:center; width:15rem; margin:auto" step="0.5" required>
         </div>
       </div>
       <div class="col-md-auto">
         <div class="form-group">
-          <input type="number" name="height" class="form-control" placeholder="Length (inches)" value="{{ values.height }}" style="align-items:center; text-align:center; width:15rem; margin:auto" step="0.5" required>
+          <input type="number" name="height" class="form-control" placeholder="Item length (in inches)" value="{{ values.height }}" style="align-items:center; text-align:center; width:15rem; margin:auto" step="0.5" required>
         </div>
       </div>
     </div>

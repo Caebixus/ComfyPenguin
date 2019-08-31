@@ -66,12 +66,12 @@
           <div class="row align-items-center justify-content-md-center" style="padding-top: 1rem">
             <div class="col-md-auto">
               <div class="form-group">
-                <input type="number" name="width" class="form-control" placeholder="Width/Chest (in inches)" value="{{ values.width }}" style="align-items:center; text-align:center; width:15rem; margin:auto" step="0.5" required>
+                <input type="number" name="width" class="form-control" placeholder="Item width (in inches)" value="{{ values.width }}" style="align-items:center; text-align:center; width:15rem; margin:auto" step="0.5" required>
               </div>
             </div>
             <div class="col-md-auto">
               <div class="form-group">
-                <input type="number" name="height" class="form-control" placeholder="Length (in inches)" value="{{ values.height }}" style="align-items:center; text-align:center; width:15rem; margin:auto" step="0.5" required>
+                <input type="number" name="height" class="form-control" placeholder="Item length (in inches)" value="{{ values.height }}" style="align-items:center; text-align:center; width:15rem; margin:auto" step="0.5" required>
               </div>
             </div>
           </div>
@@ -120,12 +120,12 @@
         <div hidden class="row align-items-center justify-content-md-center" style="padding-top: 1rem">
           <div class="col-md-auto">
             <div class="form-group">
-              <input type="number" name="width" class="form-control" placeholder="Width/Chest (in inches)" value="{{ values.width }}" style="align-items:center; text-align:center; width:15rem; margin:auto" step=".01" required>
+              <input type="number" name="width" class="form-control" placeholder="Item width (in inches)" value="{{ values.width }}" style="align-items:center; text-align:center; width:15rem; margin:auto" step=".01" required>
             </div>
           </div>
           <div hidden class="col-md-auto">
             <div class="form-group">
-              <input type="number" name="height" class="form-control" placeholder="Height (in inches)" value="{{ values.height }}" style="align-items:center; text-align:center; width:15rem; margin:auto" step=".01" required>
+              <input type="number" name="height" class="form-control" placeholder="Item length (in inches)" value="{{ values.height }}" style="align-items:center; text-align:center; width:15rem; margin:auto" step=".01" required>
             </div>
           </div>
         </div>
@@ -158,12 +158,12 @@
           <div hidden class="row align-items-center justify-content-md-center" style="padding-top: 1rem">
             <div class="col-md-auto">
               <div class="form-group">
-                <input type="number" name="width" class="form-control" placeholder="Width/Chest (in inches)" value="{{ values.width }}" style="align-items:center; text-align:center; width:15rem; margin:auto" step=".01" required>
+                <input type="number" name="width" class="form-control" placeholder="Item width (in inches)" value="{{ values.width }}" style="align-items:center; text-align:center; width:15rem; margin:auto" step=".01" required>
               </div>
             </div>
             <div hidden class="col-md-auto">
               <div class="form-group">
-                <input type="number" name="height" class="form-control" placeholder="Height (in inches)" value="{{ values.height }}" style="align-items:center; text-align:center; width:15rem; margin:auto" step=".01" required>
+                <input type="number" name="height" class="form-control" placeholder="Item length (in inches)" value="{{ values.height }}" style="align-items:center; text-align:center; width:15rem; margin:auto" step=".01" required>
               </div>
             </div>
           </div>
@@ -197,12 +197,12 @@
           <div hidden class="row align-items-center justify-content-md-center" style="padding-top: 1rem">
             <div class="col-md-auto">
               <div class="form-group">
-                <input type="number" name="width" class="form-control" placeholder="Width/Chest (in inches)" value="{{ values.width }}" style="align-items:center; text-align:center; width:15rem; margin:auto" step=".01" required>
+                <input type="number" name="width" class="form-control" placeholder="Item width (in inches)" value="{{ values.width }}" style="align-items:center; text-align:center; width:15rem; margin:auto" step=".01" required>
               </div>
             </div>
             <div hidden class="col-md-auto">
               <div class="form-group">
-                <input type="number" name="height" class="form-control" placeholder="Height (in inches)" value="{{ values.height }}" style="align-items:center; text-align:center; width:15rem; margin:auto" step=".01" required>
+                <input type="number" name="height" class="form-control" placeholder="Item length (in inches)" value="{{ values.height }}" style="align-items:center; text-align:center; width:15rem; margin:auto" step=".01" required>
               </div>
             </div>
           </div>
@@ -297,13 +297,13 @@
         </div>
 
         <div class="card-body">
-          <p id="paragraphSearchProduct" style="font-size:95%;">Product width = {{ Product_Clothes_Tops_US.item_width }} inch</p>
+          <p id="paragraphSearchProduct" style="font-size:95%;">Product width = {{ Product_Clothes_Tops_US.item_width }} inches</p>
           <div class="text-right">
-            <p class="paragraphMyParameters" style="font-size:90%;">My width = {{ values.width }} inch</p>
+            <p class="paragraphMyParameters" style="font-size:90%;">Width of my product = {{ values.width }} inches</p>
           </div>
-          <p id="paragraphSearchProduct" style="font-size:95%;">Product length = {{ Product_Clothes_Tops_US.item_height }} inch</p>
+          <p id="paragraphSearchProduct" style="font-size:95%;">Product length = {{ Product_Clothes_Tops_US.item_height }} inches</p>
           <div class="text-right">
-            <p class="paragraphMyParameters" style="font-size:90%;">My length = {{ values.height }} inch</p>
+            <p class="paragraphMyParameters" style="font-size:90%;">Length of my product = {{ values.height }} inches</p>
           </div>
           <br>
           <div class="text-center">
