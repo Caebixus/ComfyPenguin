@@ -1,12 +1,91 @@
-{% extends 'base.html' %}
-{% block content %}
+{% load staticfiles %}
 {% load static %}
-<link rel="canonical" href="https://www.comfy-penguin.com/Interesting-facts/dress-size-calculator" />
-<link rel="stylesheet" href="{% static 'css/custom.css' %}" media="all">
-<meta name="description" content="If you looking for a best dress size calculator to help you find online clothes that fits you, search no more and check out our brand new prototype!">
-<meta name="keywords" content="Dress size calculator">
-<meta name="author" content="Comfy-penguin.com">
-<title>2019 | How to use dress size calculator correctly?</title>
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NQVWT8T');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="fo-verify" content="9cd43a88-8fc9-4bbc-a4b2-b41e2161ae56">
+  <meta name="msvalidate.01" content="7D0F9463E815E73F694F564D4FF70DEB" />
+  <link rel="icon" href="{% static 'Comfyfav.png' %}" sizes="32x32" type="image/png">
+  <link rel="icon" href="{% static 'favicon-57.png' %}" sizes="57x57">
+  <link rel="icon" href="{% static 'favicon-76.png' %}" sizes="76x76">
+  <link rel="icon" href="{% static 'favicon-96.png' %}" sizes="96x96">
+  <link rel="icon" href="{% static 'favicon-120.png' %}" sizes="120x120">
+  <link rel="icon" href="{% static 'favicon-128.png' %}" sizes="128x128">
+  <link rel="icon" href="{% static 'favicon-144.png' %}" sizes="144x144">
+  <link rel="icon" href="{% static 'favicon-228.png' %}" sizes="228x228">
+  <link rel="apple-touch-icon" href="{% static 'touch-icon-iphone.png'%}">
+  <link rel="apple-touch-icon" sizes="120x120" href="{% static 'favicon-120.png' %}">
+  <link rel="apple-touch-icon" sizes="152x152" href="{% static 'touch-icon-ipad.png'%}">
+  <link rel="apple-touch-icon" sizes="167x167" href="{% static 'touch-icon-ipad-retina.png'%}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'touch-icon-iphone-retina.png'%}">
+  <link rel="icon" sizes="192x192" href="{% static 'android-icon.png'%}">
+  <meta name="msapplication-square310x310logo" content="{% static 'microsoft-icon.png'%}">
+  <link rel="apple-touch-icon" href="{% static 'favicon-120.png' %}" sizes="120x120">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" media="all">
+  <link rel="stylesheet" href="{% static 'css/custom.css' %}" media="all">
+  <link rel="canonical" href="https://www.comfy-penguin.com/Interesting-facts/dress-size-calculator" />
+  <meta name="description" content="If you looking for a best dress size calculator to help you find online clothes that fits you, search no more and check out our brand new prototype!">
+  <meta name="keywords" content="Dress size calculator">
+  <meta name="author" content="Comfy-penguin.com">
+  <meta property="og:url" content="https://www.comfy-penguin.com/Interesting-facts/dress-size-calculator" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="2019 | How to use dress size calculator correctly?" />
+  <meta property="og:description" content="How size to use Dress Size Calculator in 2019" />
+  <meta property="og:image" content="{% static 'blog3pic2a.jpg' %}" />
+  <title>2019 | How to use dress size calculator correctly?</title>
+  <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
+    <a class="navbar-brand" href="{% url 'homepage' %}">
+      <img src="{% static 'LogoComfyPenguin.png' %}" width="160" height="45" alt="Logo Comfy-penguin.com">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="navbar-nav ml-auto">
+        {% if user.is_authenticated %}
+        <a class="nav-item nav-link" href="{% url 'profile' %}" style="color: black"><img src="{% static 'man-user.png' %}" style="height:1.5rem" alt="my profile icon"> My profile</a>
+        <a hidden class="nav-item nav-link" href="{% url 'profile' %}" style="color: black"><img src="{% static 'wishlist.png' %}" style="height:1.5rem" alt="wishlist icon"> My wishlist</a>
+        <a hidden class="nav-item nav-link" href="{% url 'profile' %}" style="color: black"><img src="{% static 'fair-stand.png' %}" style="height:1.5rem" alt="selling icon"> My offers</a>
+        <a class="nav-item nav-link" href="{% url 'filter' %}" style="color: black"><img src="{% static 'magnifier.png' %}" style="height:1.5rem" alt="magnifier icon"> Searchpage</a>
+        <a class="nav-item nav-link" href="javascript:{document.getElementById('logout').submit()}" onclick="" style="color: black"><img src="{% static 'tshirt-solid.svg' %}" style="height:1.5rem" alt="tshirt icon"> Logout</a>
+        <form id='logout' method="POST" action="{% url 'logout' %}">
+          {% csrf_token %}
+          <input type="hidden" />
+        </form>
+        {% else %}
+        <a class="nav-item nav-link" href="{% url 'filter' %}" style="color: black"><i class="fa fa-fw fa-search"></i> Size search engine</a>
+        <a class="nav-item nav-link" href="{% url 'interesting-facts' %}" style="color: black"><i class="fa fa-fw fa-book"></i> Interesting facts</a>
+        <a class="nav-item nav-link" href="{% url 'aboutus' %}" style="color: black"><i class="fa fa-fw fa-child"></i> About</a>
+        <a class="nav-item nav-link" href="{% url 'signup' %}" style="color: black"><i class="fa fa-fw fa-user-plus"></i> Sign up</a>
+        <a class="nav-item nav-link" href="{% url 'login' %}" style="color: black"><i class="fa fa-fw fa-sign-in"></i> Sign in</a>
+        {% endif %}
+      </div>
+    </div>
+  </nav>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NQVWT8T"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <script type="text/javascript">
+    /* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+    (function(d, m){
+      var kommunicateSettings = {"appId":"3941b9c211db04521832421198dd7948c","popupWidget":true,"automaticChatOpenOnNavigation":true};
+      var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+      s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+      var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+      window.kommunicate = m; m._globals = kommunicateSettings;
+    })(document, window.kommunicate || {});
+    </script>
 <article>
   <hr>
   <div class="container" style="padding-top: 4rem; max-width: 55rem">
@@ -126,5 +205,59 @@
 <br>
 <br>
 <br>
+</body>
 <br>
-{% endblock %}
+<div class="footer bg-dark" id="footer" style="padding-top: 2rem">
+  <div class="container text-light">
+    <div class="row">
+      <div class="col-md-4">
+        <span class="copyright">Copyright &copy; 2019 Comfy-penguin.com</span>
+      </div>
+      <div class="col-md-4">
+        <span class="copyright">Social networks</span>
+        <ul class="list-inline social-buttons">
+          <li hidden class="list-inline-item">
+            <a href="">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li class="list-inline-item" style="padding-top: 4px">
+            <a href="https://www.facebook.com/Comfy-penguin-2176026249317885/">
+              <img src="{% static 'facebook-logo-white.png' %}" width="30" height="30" alt="facebook icon">
+            </a>
+          </li>
+          <li hidden class="list-inline-item">
+            <a href="#">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <a href="{% url 'how_to_measure' %}" type="btn btn-lg" style="color: white">
+          How to measure?
+        </a>
+      </div>
+      <div hidden class="col-md-3">
+        <ul class="list-inline quicklinks">
+          <li class="list-inline-item">
+            <a href="#">Ochrana osobních údajů</a>
+          </li>
+          <li hidden class="list-inline-item">
+            <a href="#">Terms of Use</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="{% static 'comfy/js/myjavascript.js' %}"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</html>
