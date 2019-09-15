@@ -101,3 +101,8 @@ def how_to_measure_hoodie(request):
 
 def chatbots_example(request):
     return render(request, 'chatbots-example.html')
+
+def handler404(request, exception, template_name="404.html"):
+    response = render_to_response("404.html")
+    response.status_code = 404
+    return response
