@@ -53,8 +53,13 @@ class Product_Clothes_Tops(models.Model):
     )
     item_continent = models.CharField(max_length=20, choices=CONTINENT_CHOICES, null = True, default="Europe")
     upload_date = models.DateTimeField(default=datetime.now, null = True)
+
     def __str__(self):
         return self.item_title
+
+class ProductClothesTopsProxy(Product_Clothes_Tops):
+    class Meta:
+        proxy = True
 
 
 # USA Model -----------------------------------------------------------------------------------------------------------------------------
@@ -106,3 +111,7 @@ class Product_Clothes_Tops_US(models.Model):
 
     def __str__(self):
         return self.item_title
+
+class ProductClothesTopsUSProxy(Product_Clothes_Tops_US):
+    class Meta:
+        proxy = True
