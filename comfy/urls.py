@@ -2,10 +2,12 @@ from django.contrib import admin
 from django.urls import path, include
 from . import views
 from django.conf import settings
-from django.conf.urls import handler400
+from django.conf.urls import handler400, handler500, handler404
 from django.conf.urls.static import static
 
+handler400 = 'comfy.views.handler400'
 handler404 = 'comfy.views.handler404'
+handler500 = 'comfy.views.handler500'
 
 urlpatterns = [
     path('', views.homepage, name='homepage'),
