@@ -13,3 +13,6 @@ def clanek2(request):
 
 def clanek3(request):
     return render(request, 'clanek3.html',)
+
+def clanek4(request):
+    return render(request, 'clanek4.html',)

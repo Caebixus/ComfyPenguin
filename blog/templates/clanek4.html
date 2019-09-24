@@ -1,0 +1,256 @@
+{% load staticfiles %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NQVWT8T');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="fo-verify" content="9cd43a88-8fc9-4bbc-a4b2-b41e2161ae56">
+  <meta name="msvalidate.01" content="7D0F9463E815E73F694F564D4FF70DEB" />
+  <link rel="icon" href="{% static 'Comfyfav.png' %}" sizes="32x32" type="image/png">
+  <link rel="icon" href="{% static 'favicon-57.png' %}" sizes="57x57">
+  <link rel="icon" href="{% static 'favicon-76.png' %}" sizes="76x76">
+  <link rel="icon" href="{% static 'favicon-96.png' %}" sizes="96x96">
+  <link rel="icon" href="{% static 'favicon-120.png' %}" sizes="120x120">
+  <link rel="icon" href="{% static 'favicon-128.png' %}" sizes="128x128">
+  <link rel="icon" href="{% static 'favicon-144.png' %}" sizes="144x144">
+  <link rel="icon" href="{% static 'favicon-228.png' %}" sizes="228x228">
+  <link rel="apple-touch-icon" href="{% static 'touch-icon-iphone.png'%}">
+  <link rel="apple-touch-icon" sizes="120x120" href="{% static 'favicon-120.png' %}">
+  <link rel="apple-touch-icon" sizes="152x152" href="{% static 'touch-icon-ipad.png'%}">
+  <link rel="apple-touch-icon" sizes="167x167" href="{% static 'touch-icon-ipad-retina.png'%}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'touch-icon-iphone-retina.png'%}">
+  <link rel="icon" sizes="192x192" href="{% static 'android-icon.png'%}">
+  <meta name="msapplication-square310x310logo" content="{% static 'microsoft-icon.png'%}">
+  <link rel="apple-touch-icon" href="{% static 'favicon-120.png' %}" sizes="120x120">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" media="all">
+  <link rel="stylesheet" href="{% static 'css/custom.css' %}" media="all">
+  <link rel="canonical" href="https://www.comfy-penguin.com/Interesting-facts/find-comfy-clothes-online" />
+  <meta name="description" content="This calculator fot comfy clothing can help you buy clothes online that fit much more comfortably than clothes bought without it.">
+  <meta name="keywords" content="Comfy clothes, comfy clothing, comfy usa clothing">
+  <meta name="author" content="Comfy-penguin.com">
+  <meta property="og:url" content="https://www.comfy-penguin.com/Interesting-facts/find-comfy-clothes-online" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="2019 | Comfy clothes and how to find them online" />
+  <meta property="og:description" content="Comfy clothes and how to find them online" />
+  <meta property="og:image" content="{% static 'blog3pic2a.jpg' %}" />
+  <title>2019 | Comfy clothes and how to find them online</title>
+  <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
+    <a class="navbar-brand" href="{% url 'homepage' %}">
+      <img src="{% static 'LogoComfyPenguin.png' %}" width="160" height="45" alt="Logo Comfy-penguin.com">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="navbar-nav ml-auto">
+        {% if user.is_authenticated %}
+        <a class="nav-item nav-link" href="{% url 'profile' %}" style="color: black"><img src="{% static 'man-user.png' %}" style="height:1.5rem" alt="my profile icon"> My profile</a>
+        <a hidden class="nav-item nav-link" href="{% url 'profile' %}" style="color: black"><img src="{% static 'wishlist.png' %}" style="height:1.5rem" alt="wishlist icon"> My wishlist</a>
+        <a hidden class="nav-item nav-link" href="{% url 'profile' %}" style="color: black"><img src="{% static 'fair-stand.png' %}" style="height:1.5rem" alt="selling icon"> My offers</a>
+        <a class="nav-item nav-link" href="{% url 'filter' %}" style="color: black"><img src="{% static 'magnifier.png' %}" style="height:1.5rem" alt="magnifier icon"> Searchpage</a>
+        <a class="nav-item nav-link" href="javascript:{document.getElementById('logout').submit()}" onclick="" style="color: black"><img src="{% static 'tshirt-solid.svg' %}" style="height:1.5rem" alt="tshirt icon"> Logout</a>
+        <form id='logout' method="POST" action="{% url 'logout' %}">
+          {% csrf_token %}
+          <input type="hidden" />
+        </form>
+        {% else %}
+        <a class="nav-item nav-link" href="{% url 'filter' %}" style="color: black"><i class="fa fa-fw fa-search"></i> Size search engine</a>
+        <a class="nav-item nav-link" href="{% url 'interesting-facts' %}" style="color: black"><i class="fa fa-fw fa-book"></i> Interesting facts</a>
+        <a class="nav-item nav-link" href="{% url 'aboutus' %}" style="color: black"><i class="fa fa-fw fa-child"></i> About</a>
+        <a class="nav-item nav-link" href="{% url 'signup' %}" style="color: black"><i class="fa fa-fw fa-user-plus"></i> Sign up</a>
+        <a class="nav-item nav-link" href="{% url 'login' %}" style="color: black"><i class="fa fa-fw fa-sign-in"></i> Sign in</a>
+        {% endif %}
+      </div>
+    </div>
+  </nav>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NQVWT8T"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <script type="text/javascript">
+    /* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+    (function(d, m){
+      var kommunicateSettings = {"appId":"3941b9c211db04521832421198dd7948c","popupWidget":true,"automaticChatOpenOnNavigation":true};
+      var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+      s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+      var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+      window.kommunicate = m; m._globals = kommunicateSettings;
+    })(document, window.kommunicate || {});
+    </script>
+<article>
+  <hr>
+  <div class="container" style="padding-top: 4rem; max-width: 55rem">
+    <div class="heading" style="text-align: left">
+      <h1><b style="color: #c64119;">Comfy clothes</b> that fit and how to find them online</h1>
+    </div>
+    <br>
+    <br>
+    <h2>Frustration with clothing that fit the best</h2>
+    <br>
+    <p>Purchasing things online is always a bit of a <b style="color: #c64119;">gamble</b>. Even when you purchase through reputable websites and online retailers, you can never be absolutely sure that you’re getting exactly what you think you’re getting.</p>
+    <p>Even with helpful features like Amazon’s Questions and Answers, you really don’t know if you’re going to be satisfied with what arrives at your doorstep. When shopping online for clothes, multiple this problem by a hefty number.</p>
+    <p>Our <b style="color: #c64119;">clothing size calculator</b> is designed to make shopping for clothes online a lot more enjoyable and a lot less frustrating.</p>
+
+
+    <div class="col">
+      <img src="{% static 'jeans-different-sizes-low.jpeg' %}" alt="different sizes of jeans at store" style="max-width:50rem; width: 100%; padding-top:2rem; padding-bottom: 2rem">
+    </div>
+    <br>
+
+    <p>We’re all built different. We use general sizes to help us navigate the world of fashion, but in truth, nobody adheres to those <b style="color: #c64119;">sizes perfectly</b>, neither consumer nor manufacturer.</p>
+    <p>One brand’s XL size could be similar to another brand’s 2XL size or even Large or Medium. And then you have the person wearing it. People are like snowflakes; no two are exactly the same.</p>
+    <p>Our bodies grow and shrink and stretch as we get older. Even though we may wear the <b style="color: #c64119;">same size</b> as someone else, maybe our shoulders are broader or our arms are thicker and longer.</p>
+    <p>There are lots variables that go into <b style="color: #c64119;">well-fitting clothes</b> and this is what we’re here to help with.</p>
+    <br>
+    <br>
+    <h2>So How Does the <b style="color: #c64119;">Clothing Size Calculator</b> Work?</h2>
+    <br>
+    <p>The clothing size calculator <u>can’t guarantee you clothes that fit perfectly</u>. Nothing short of a miracle will do that! However, the calculator can help you buy clothes that fit much more comfortably than clothes bought without it.</p>
+    <p>This is because the calculator gets to the heart of the problem: <b style="color: #c64119;">measurements</b>. Few things are set in stone in this world, but numbers tell the truth, always. And by adhering to those numbers, you’ll get something that you know is going to fit.</p>
+    <p>For example: I’m a tall guy. I frequently <u>have an issue with shirts not hanging low enough</u> to cover my stomach, or they come down just enough that when I lift my arms up you can see my navel. With the clothing size calculator, I can put in the <b style="color: #c64119;">exact length</b> of my torso and it’ll help me find a shirt that will go down just as far as I want it to go. </p>
+    <br>
+    <hr width="100%">
+    <br>
+    <p>You can input the width of your torso, too, to make sure it’s going to be nice and snug or free and loose, whatever you desire. Here’s the <b style="color: #c64119;">trick</b>, though. Don’t measure your actual torso. Not only can it be difficult to do yourself, but there are variables there, too.</p>
+    <p>For a measurement that won’t fail, <b style="color: #c64119;">find a garment of the same type</b> as the one you’re looking to purchase (presently limited to sweatshirts, hoodies, and jumpers, for both men and women) and that fits you well and measure that.</p>
+    <p>Simply lay it down flat and get the width and the length and you should wind up with something that fits just as well.</p>
+    <div class="row">
+      <div class="col-sm">
+        <a target="_blank" href="{% static 'SOLID1.jpg' %}">
+          <img class="imgHover" src="{% static 'SOLID1.jpg' %}" alt="how to measure length hoodies" style="max-width:50rem; width: 100%;">
+        </a>
+      </div>
+      <div class="col-sm">
+        <a target="_blank" href="{% static 'SOLID2.jpg' %}">
+          <img class="imgHover" src="{% static 'SOLID2.jpg' %}" alt="how to measure length hoodies detail" style="max-width:50rem; width: 100%;">
+        </a>
+      </div>
+    </div>
+    <br>
+    <p>Bottoms and accessories currently aren’t available through the clothing size calculator, but they are <b style="color: #c64119;">coming soon</b>! We realize that an outfit is far from complete with only a top, so we’re hard at work helping you pick out an entire ensemble.</p>
+    <br>
+    <h2>So Do I Buy My Actual Clothes From <b style="color: #c64119;">Clothing Size Calculator</b> ?</h2>
+    <br>
+    <p>We don’t actually sell you the clothes; we simply help you find clothes that fit.</p>
+    <p>Once you input your <b style="color: #c64119;">measurements</b>, you’re then searching through several external websites for the clothes, such as the resoundingly popular <u>Amazon.com</u>, for instance. <b>We feature retailers that you know and trust.</b></p>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <div class="picture" style="text-align:center">
+      <a href="{% url 'filter' %}">
+        <button type="button" class="btn btn-lg btn-outline-secondary">Try it yourself</button>
+      </a>
+    </div>
+    <hr>
+    <br>
+    <br>
+    <br>
+    <p>The more common your size, the more results you’ll get to choose from. However, the clothing sizes calculator is perfect for those of us that don’t fit snugly into common sizes. It was built to help people like us.</p>
+    <br>
+    <h2>Is This Really That Big of an Issue?</h2>
+    <br>
+    <p>Yes! Have you ever gone through the trouble of <b style="color: #c64119;">buying clothes online</b>, only to realize that they <u>don’t fit like you wanted? </u></p>
+    <p>You then have to send them back and wait for them to be received by the warehouse. Oftentimes then, and only then, will they send you a corrected order, with no guarantee that those clothes will fit well, either.</p>
+    <p>Some online retailers try to work quickly to rectify messed up orders and returns, but the point I’m trying to make is that there’s a <b style="color: #c64119;">long waiting game</b> to play regardless. </p>
+    <p><u>Nobody wants that!</u> Even if you’re that patient, nobody wants to wait a long time for their clothes to show up, especially when you know you might have to send them back. Skip the hassle of return shipping by using our calculator to get it right the first time.</p>
+    <br>
+    <div class="col">
+      <a target="_blank" href="{% static 'blog4pic2.jpg' %}">
+        <img class="imgHover" src="{% static 'blog4pic2.jpg' %}" alt="how to measure length hoodies" style="max-width:50rem; width: 100%;">
+      </a>
+    </div>
+    <br>
+    <br>
+    <h2>Why Not Just Shop in a Brick and Mortar Store?</h2>
+    <br>
+    <p>That’s always an option! There are a few things to consider, however.</p>
+    <p>One, brick and mortar stores are growing <b style="color: #c64119;">less and less common</b> and your shopping options are likely limited unless you live in a large commercial area. </p>
+    <p>It’s not uncommon for consumers in rural areas to have to drive 20 miles or more to visit their nearest department store. Oftentimes a dedicated <b style="color: #c64119;">clothing store</b> is much, much further away, or out of the question entirely.</p>
+    <p>Speaking of options, even if you have easy access to a physical store, their <u>stock will pale in comparison to what you can find online. </u></p>
+    <p>Even you have access to several stores, it could take you <b style="color: #c64119;">hours or even days</b> to shop enough outlets to find something that fits correctly, when you could do that in a fraction of the time online using our tool.</p>
+    <br>
+    <h2>An Essential Tool For Online Clothes Shopping</h2>
+    <br>
+    <p><b style="color: #c64119;">The Clothing Sizes Calculator</b> serves a much-needed but rarely thought about purpose. </p>
+    <p><u>Take the hassle out of clothes shopping</u> by taking a few extra minutes to do some measurements that could ultimately <b>save you weeks and weeks of waiting</b> for the right garment. </p>
+    <p>Don’t make frequent trips to the store, don’t make multiple trips to the post office, just get your purchase correct the first time. <b style="color: #c64119;">Shopping should be a treat</b>, not a chore.</p>
+    <br>
+    <br>
+    <hr>
+    <div class="picture" style="text-align:center">
+      <a href="{% url 'filter' %}">
+        <button type="button" class="btn btn-lg btn-outline-secondary">Clothing size calculator</button>
+      </a>
+    </div>
+    <hr>
+  </div>
+</article>
+<br>
+<br>
+<br>
+</body>
+<br>
+<div class="footer bg-dark" id="footer" style="padding-top: 2rem">
+  <div class="container text-light">
+    <div class="row">
+      <div class="col-md-4">
+        <span class="copyright">Copyright &copy; 2019 Comfy-penguin.com</span>
+      </div>
+      <div class="col-md-4">
+        <span class="copyright">Social networks</span>
+        <ul class="list-inline social-buttons">
+          <li hidden class="list-inline-item">
+            <a href="">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li class="list-inline-item" style="padding-top: 4px">
+            <a href="https://www.facebook.com/Comfy-penguin-2176026249317885/">
+              <img src="{% static 'facebook-logo-white.png' %}" width="30" height="30" alt="facebook icon">
+            </a>
+          </li>
+          <li hidden class="list-inline-item">
+            <a href="#">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <a href="{% url 'how_to_measure' %}" type="btn btn-lg" style="color: white">
+          How to measure?
+        </a>
+      </div>
+      <div hidden class="col-md-3">
+        <ul class="list-inline quicklinks">
+          <li class="list-inline-item">
+            <a href="#">Ochrana osobních údajů</a>
+          </li>
+          <li hidden class="list-inline-item">
+            <a href="#">Terms of Use</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="{% static 'comfy/js/myjavascript.js' %}"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</html>
