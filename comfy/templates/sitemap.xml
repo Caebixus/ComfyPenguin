@@ -7,87 +7,94 @@
   <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
   <url>
     <loc>https://comfy-penguin.com/</loc>
-    <lastmod>2019-07-20T14:47:14+00:00</lastmod>
+    <lastmod>2019-09-24T20:08:04+00:00</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://comfy-penguin.com/search/filter</loc>
-    <lastmod>2019-07-20T14:47:14+00:00</lastmod>
+    <lastmod>2019-09-24T20:08:04+00:00</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://comfy-penguin.com/Interesting-facts/</loc>
-    <lastmod>2019-07-20T14:47:14+00:00</lastmod>
+    <lastmod>2019-09-24T20:08:04+00:00</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://comfy-penguin.com/about</loc>
-    <lastmod>2019-07-20T14:47:14+00:00</lastmod>
+    <lastmod>2019-09-24T20:08:04+00:00</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://comfy-penguin.com/accounts/signup</loc>
-    <lastmod>2019-07-20T14:47:14+00:00</lastmod>
+    <lastmod>2019-09-24T20:08:04+00:00</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://comfy-penguin.com/accounts/login</loc>
-    <lastmod>2019-07-20T14:47:14+00:00</lastmod>
+    <lastmod>2019-09-24T20:08:04+00:00</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>
       https://comfy-penguin.com/search/filter-womens-tops
     </loc>
-    <lastmod>2019-07-20T14:47:14+00:00</lastmod>
+    <lastmod>2019-09-24T20:08:04+00:00</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://comfy-penguin.com/search/filter-mens-tops</loc>
-    <lastmod>2019-07-20T14:47:14+00:00</lastmod>
+    <lastmod>2019-09-24T20:08:04+00:00</lastmod>
     <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>
-      https://comfy-penguin.com/Interesting-facts/where-to-buy-hoodies-online-which-will-fit
-    </loc>
-    <lastmod>2019-07-20T14:47:14+00:00</lastmod>
-    <priority>0.90</priority>
   </url>
   <url>
     <loc>
       https://comfy-penguin.com/Interesting-facts/dress-size-calculator
     </loc>
-    <lastmod>2019-07-20T14:47:14+00:00</lastmod>
-    <priority>0.90</priority>
+    <lastmod>2019-09-24T20:08:04+00:00</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>
+      https://comfy-penguin.com/Interesting-facts/where-to-buy-hoodies-online-which-will-fit
+    </loc>
+    <lastmod>2019-09-24T20:08:04+00:00</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>
+      https://comfy-penguin.com/Interesting-facts/find-comfy-clothes-online
+    </loc>
+    <lastmod>2019-09-24T20:08:04+00:00</lastmod>
+    <priority>1.00</priority>
   </url>
   <url>
     <loc>https://comfy-penguin.com/how-to-measure</loc>
-    <lastmod>2019-07-20T14:47:14+00:00</lastmod>
+    <lastmod>2019-09-24T20:08:04+00:00</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>
       https://comfy-penguin.com/Interesting-facts/Why-size-chart-doesnt-work
     </loc>
-    <lastmod>2019-07-20T14:47:14+00:00</lastmod>
-    <priority>0.90</priority>
+    <lastmod>2019-09-24T20:08:04+00:00</lastmod>
+    <priority>1.00</priority>
   </url>
   <url>
     <loc>
       https://comfy-penguin.com/how-to-measure-sweatshirt
     </loc>
-    <lastmod>2019-07-20T14:47:14+00:00</lastmod>
-    <priority>0.64</priority>
+    <lastmod>2019-09-24T20:08:04+00:00</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://comfy-penguin.com/how-to-measure-jumper</loc>
-    <lastmod>2019-07-20T14:47:14+00:00</lastmod>
-    <priority>0.64</priority>
+    <lastmod>2019-09-24T20:08:04+00:00</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://comfy-penguin.com/how-to-measure-hoodie</loc>
-    <lastmod>2019-07-20T14:47:14+00:00</lastmod>
-    <priority>0.64</priority>
+    <lastmod>2019-09-24T20:08:04+00:00</lastmod>
+    <priority>0.80</priority>
   </url>
 </urlset>
