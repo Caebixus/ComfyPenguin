@@ -13,5 +13,6 @@ urlpatterns = [
     path('Update-comfy-clothes/<int:myclothes_id>', views.Update_comfy_clothes, name='Update-comfy-clothes'),
     path('Delete-comfy-clothes/<int:myclothes_id>', views.Delete_comfy_clothes, name='Delete-comfy-clothes'),
     path('Create-comfy-clothes', views.Create_comfy_clothes, name='Create-comfy-clothes'),
+    path('Offer-your-clothes', views.Offer_your_clothes, name='Offer_your_clothes'),
     path('Edit-profile', views.edit_profile, name='Edit-profile'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -77,7 +77,7 @@
           </div>
           <hr width="70%">
           <br>
-          <div class="col-md-auto">
+          <div hidden class="col-md-auto">
             <div class="form-group" style="align-items:center; text-align:center; width:15rem; margin:auto">
               <select name="Type" class="form-control">
                 <option value="" selected>Select type</option>
@@ -88,7 +88,7 @@
             </div>
           </div>
           <br>
-          <div class="col-md-auto">
+          <div hidden class="col-md-auto">
             <div class="form-group">
               <select name="Continent" class="form-control" style="align-items:center; text-align:center; width:15rem; margin:auto">
                 <option value="" selected>Select continent</option>
@@ -106,14 +106,13 @@
     </form>
   </div>
 </div>
-<hr width="70%">
 <br>
 <div class="container" style="text-align: center">
   <h4 class="card-text" style="text-align: center">Found products with your parameters</h4>
   <button class="btn btn-dark" style="width: 6rem"><strong>{{ my_total_searched }}</strong></button>
 </div>
 <hr>
-<div class="container" style="text-align: center">
+<div hidden class="container" style="text-align: center">
   <div class="row">
     <div class="col-md-4" style="padding-top:1rem">
       <form action="{% url 'search_mens_tops_sweatshirts' %}">

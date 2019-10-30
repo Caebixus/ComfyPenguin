@@ -43,6 +43,7 @@
       <div class="navbar-nav ml-auto">
         {% if user.is_authenticated %}
         <a class="nav-item nav-link" href="{% url 'profile' %}" style="color: black"><img src="{% static 'man-user.png' %}" style="height:1.5rem" alt="my profile icon"> My profile</a>
+        <a hidden class="nav-item nav-link" href="{% url 'Offer_your_clothes' %}" style="color: black"><img src="{% static 'man-user.png' %}" style="height:1.5rem" alt="my profile icon"> Offer my clothes</a>
         <a hidden class="nav-item nav-link" href="{% url 'profile' %}" style="color: black"><img src="{% static 'wishlist.png' %}" style="height:1.5rem" alt="wishlist icon"> My wishlist</a>
         <a hidden class="nav-item nav-link" href="{% url 'profile' %}" style="color: black"><img src="{% static 'fair-stand.png' %}" style="height:1.5rem" alt="selling icon"> My offers</a>
         <a class="nav-item nav-link" href="{% url 'filter' %}" style="color: black"><img src="{% static 'magnifier.png' %}" style="height:1.5rem" alt="magnifier icon"> Searchpage</a>

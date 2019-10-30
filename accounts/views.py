@@ -176,3 +176,7 @@ def change_password(request):
         form = PasswordChangeForm(user=request.user)
         args = {'form': form}
         return render(request, 'Change-password.html', args)
+
+@login_required
+def Offer_your_clothes(request):
+    return render(request, 'Offer-your-clothes.html')
